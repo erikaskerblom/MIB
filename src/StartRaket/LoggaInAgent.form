@@ -25,30 +25,33 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnLoggaIn" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblLoggaIN" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAnvandarNamn" alignment="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="txtLosenord" alignment="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="lblLoggaIN" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAnvandarNamn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtLosenord" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="233" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblTips" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="lblLoggaIN" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="txtAnvandarNamn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtAnvandarNamn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTips" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="btnLoggaIn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,6 +68,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtLosenordMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLosenordActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAnvandarNamn">
@@ -79,6 +83,17 @@
     <Component class="javax.swing.JButton" name="btnLoggaIn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logga In"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoggaInActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTips">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ditt anv&#xe4;ndarnamn &#xe4;r ditt AgentID"/>
       </Properties>
     </Component>
   </SubComponents>

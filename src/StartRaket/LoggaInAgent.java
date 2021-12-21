@@ -4,6 +4,9 @@
  */
 package StartRaket;
 
+import oru.inf.InfException;
+
+
 /**
  *
  * @author erika
@@ -30,6 +33,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
         txtLosenord = new javax.swing.JPasswordField();
         txtAnvandarNamn = new javax.swing.JTextField();
         btnLoggaIn = new javax.swing.JButton();
+        lblTips = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +43,11 @@ public class LoggaInAgent extends javax.swing.JFrame {
         txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtLosenordMouseClicked(evt);
+            }
+        });
+        txtLosenord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLosenordActionPerformed(evt);
             }
         });
 
@@ -55,6 +64,14 @@ public class LoggaInAgent extends javax.swing.JFrame {
         });
 
         btnLoggaIn.setText("Logga In");
+        btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoggaInActionPerformed(evt);
+            }
+        });
+
+        lblTips.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        lblTips.setText("Ditt användarnamn är ditt AgentID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,26 +79,29 @@ public class LoggaInAgent extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnLoggaIn)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblLoggaIN)
-                        .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(txtLosenord)))
-                .addContainerGap(233, Short.MAX_VALUE))
+                    .addComponent(lblLoggaIN)
+                    .addComponent(txtAnvandarNamn)
+                    .addComponent(txtLosenord))
+                .addGap(18, 18, 18)
+                .addComponent(lblTips)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(37, 37, 37)
                 .addComponent(lblLoggaIN)
-                .addGap(45, 45, 45)
-                .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTips, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addComponent(btnLoggaIn)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +118,20 @@ public class LoggaInAgent extends javax.swing.JFrame {
     private void txtAnvandarNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnvandarNamnActionPerformed
         
     }//GEN-LAST:event_txtAnvandarNamnActionPerformed
+
+    private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
+    
+    //Validering test = new Validering();
+    Validering.textFaltHarVarde(txtAnvandarNamn);
+    Validering.textFaltHarVarde(txtLosenord);
+    Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
+
+    
+    }//GEN-LAST:event_btnLoggaInActionPerformed
+
+    private void txtLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLosenordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLosenordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +172,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
     private javax.swing.JLabel lblLoggaIN;
+    private javax.swing.JLabel lblTips;
     private javax.swing.JTextField txtAnvandarNamn;
     private javax.swing.JPasswordField txtLosenord;
     // End of variables declaration//GEN-END:variables

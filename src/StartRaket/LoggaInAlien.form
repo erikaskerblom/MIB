@@ -36,7 +36,7 @@
                       <Component id="txtLosenord" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="239" max="32767" attributes="0"/>
+              <EmptySpace pref="150" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,7 +59,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblLoggaIN">
       <Properties>
-        <Property name="text" type="java.lang.String" value="V&#xe4;nligen logga in"/>
+        <Property name="text" type="java.lang.String" value="Var h&#xe4;lsad Alien. V&#xe4;nligen logga in"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtLosenord">
@@ -83,6 +83,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Logga In"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoggaInActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

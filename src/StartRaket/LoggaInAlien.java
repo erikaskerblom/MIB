@@ -34,7 +34,7 @@ public class LoggaInAlien extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(429, 342));
 
-        lblLoggaIN.setText("Vänligen logga in");
+        lblLoggaIN.setText("Var hälsad Alien. Vänligen logga in");
 
         txtLosenord.setText("jPasswordField1");
         txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -56,6 +56,11 @@ public class LoggaInAlien extends javax.swing.JFrame {
         });
 
         btnLoggaIn.setText("Logga In");
+        btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoggaInActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,7 +74,7 @@ public class LoggaInAlien extends javax.swing.JFrame {
                         .addComponent(lblLoggaIN)
                         .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(txtLosenord)))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,6 +104,10 @@ public class LoggaInAlien extends javax.swing.JFrame {
     private void txtAnvandarNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnvandarNamnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAnvandarNamnActionPerformed
+
+    private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
+  
+    }//GEN-LAST:event_btnLoggaInActionPerformed
 
     /**
      * @param args the command line arguments

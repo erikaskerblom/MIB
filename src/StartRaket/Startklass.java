@@ -6,6 +6,11 @@ import oru.inf.InfException;
 
 public class Startklass {
 
+public Startklass(InfDB databas)
+{
+
+}
+
     private static InfDB databas;
     
     public static void main(String[] args) {

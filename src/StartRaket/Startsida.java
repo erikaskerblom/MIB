@@ -1,16 +1,7 @@
 package StartRaket;
 
-
-
-/**
- *
- * @author erika
- */
 public class Startsida extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Startsida
-     */
     public Startsida() {
         initComponents();
     }
@@ -34,7 +25,6 @@ public class Startsida extends javax.swing.JFrame {
         lblValkommen.setFont(new java.awt.Font("Arial Nova", 1, 18)); // NOI18N
         lblValkommen.setText("MIB Sektor Skandinavien");
 
-        btnAgent.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAgent.setText("Agent");
         btnAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,8 +32,12 @@ public class Startsida extends javax.swing.JFrame {
             }
         });
 
-        btnAlien.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAlien.setText("Alien");
+        btnAlien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlienActionPerformed(evt);
+            }
+        });
 
         btnAdmin.setText("Administratör");
 
@@ -56,14 +50,14 @@ public class Startsida extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnAlien, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(btnAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(btnAdmin))))
+                            .addComponent(btnAlien, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                            .addComponent(btnAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(lblValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(btnAdmin)))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -75,9 +69,9 @@ public class Startsida extends javax.swing.JFrame {
                 .addComponent(btnAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addComponent(btnAdmin)
-                .addGap(36, 36, 36))
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -85,10 +79,12 @@ public class Startsida extends javax.swing.JFrame {
 
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
         new LoggaInAgent().setVisible(true);
-        
+
     }//GEN-LAST:event_btnAgentActionPerformed
 
- 
+    private void btnAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlienActionPerformed
+        new LoggaInAlien().setVisible(true);
+    }//GEN-LAST:event_btnAlienActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
