@@ -8,12 +8,12 @@ package StartRaket;
  *
  * @author erika
  */
-public class LoggaIN extends javax.swing.JFrame {
+public class LoggaInAgent extends javax.swing.JFrame {
 
     /**
      * Creates new form LoggaIN
      */
-    public LoggaIN() {
+    public LoggaInAgent() {
         initComponents();
     }
 
@@ -48,6 +48,11 @@ public class LoggaIN extends javax.swing.JFrame {
                 txtAnvandarNamnMouseClicked(evt);
             }
         });
+        txtAnvandarNamn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAnvandarNamnActionPerformed(evt);
+            }
+        });
 
         btnLoggaIn.setText("Logga In");
 
@@ -61,7 +66,7 @@ public class LoggaIN extends javax.swing.JFrame {
                     .addComponent(btnLoggaIn)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lblLoggaIN)
-                        .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                        .addComponent(txtAnvandarNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(txtLosenord)))
                 .addContainerGap(233, Short.MAX_VALUE))
         );
@@ -90,6 +95,10 @@ public class LoggaIN extends javax.swing.JFrame {
         txtLosenord.setText("");
     }//GEN-LAST:event_txtLosenordMouseClicked
 
+    private void txtAnvandarNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnvandarNamnActionPerformed
+        
+    }//GEN-LAST:event_txtAnvandarNamnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -107,20 +116,21 @@ public class LoggaIN extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoggaIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoggaIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoggaIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoggaIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoggaIN().setVisible(true);
+                new LoggaInAgent().setVisible(true);
             }
         });
     }

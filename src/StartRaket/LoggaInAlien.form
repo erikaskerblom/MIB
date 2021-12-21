@@ -3,6 +3,9 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[429, 342]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -26,14 +29,14 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnLoggaIn" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblLoggaIN" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAnvandarNamn" alignment="0" pref="109" max="32767" attributes="0"/>
+                  <Component id="btnLoggaIn" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblLoggaIN" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtAnvandarNamn" alignment="0" pref="0" max="32767" attributes="0"/>
                       <Component id="txtLosenord" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="233" max="32767" attributes="0"/>
+              <EmptySpace pref="239" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,7 +51,7 @@
               <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnLoggaIn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,6 +76,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtAnvandarNamnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAnvandarNamnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnLoggaIn">

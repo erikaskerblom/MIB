@@ -84,7 +84,8 @@ public class Startsida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
-        new LoggaIN().setVisible(true);
+        new LoggaInAgent().setVisible(true);
+        
     }//GEN-LAST:event_btnAgentActionPerformed
 
  
