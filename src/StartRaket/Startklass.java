@@ -6,22 +6,22 @@ import oru.inf.InfException;
 
 public class Startklass {
 
-public Startklass(InfDB databas)
+public Startklass()
 {
 
 }
 
-    private static InfDB databas;
+    private static InfDB idb;
     
     public static void main(String[] args) {
         try {
-            databas = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ettUndantag) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println("Internt felmeddalande" + ettUndantag.getMessage());
         }
     
-          new Startsida().setVisible(true);
+          new MainMenu().setVisible(true);
     }
 
     
