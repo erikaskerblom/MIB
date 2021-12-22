@@ -10,8 +10,10 @@ import javax.swing.JTextField;
 
 
 
+
 public class Validering {
-    
+
+
     //Kollar så att fältet inte lämnats tomt
 public static boolean textFaltHarVarde(JTextField rutaAttKolla)
 {

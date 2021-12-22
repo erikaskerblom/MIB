@@ -4,6 +4,8 @@
  */
 package StartRaket;
 
+import javax.swing.JOptionPane;
+import oru.inf.InfDB;
 import oru.inf.InfException;
 
 
@@ -12,6 +14,7 @@ import oru.inf.InfException;
  * @author erika
  */
 public class LoggaInAgent extends javax.swing.JFrame {
+    private InfDB idb;
 
     /**
      * Creates new form LoggaIN
@@ -125,8 +128,21 @@ public class LoggaInAgent extends javax.swing.JFrame {
     Validering.textFaltHarVarde(txtAnvandarNamn);
     Validering.textFaltHarVarde(txtLosenord);
     Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
-
     
+try{
+    String fraga = "SELECT Losenord FROM Agent where agent_Id="+txtAnvandarNamn.getText();
+    String svar = idb.fetchSingle(fraga);
+    if(txtLosenord.getPassword().equals(fraga)){
+    new InloggadAgent().setVisible(true);
+    }
+
+else {
+JOptionPane.showMessageDialog(null,"Fel lösenord!"); 
+ }
+ }
+catch(InfException e){
+JOptionPane.showMessageDialog(null, "Något gick fel");
+ }
     }//GEN-LAST:event_btnLoggaInActionPerformed
 
     private void txtLosenordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLosenordActionPerformed
@@ -176,4 +192,5 @@ public class LoggaInAgent extends javax.swing.JFrame {
     private javax.swing.JTextField txtAnvandarNamn;
     private javax.swing.JPasswordField txtLosenord;
     // End of variables declaration//GEN-END:variables
+     
 }
