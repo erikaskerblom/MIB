@@ -17,8 +17,9 @@ public class LoggaInAgent extends javax.swing.JFrame {
     private InfDB idb;
 
     /** Creates new form LoggaInAgent */
-    public LoggaInAgent() {
+    public LoggaInAgent(InfDB db) {
         initComponents();
+        idb = db;
     }
 
     /** This method is called from within the constructor to
@@ -35,7 +36,6 @@ public class LoggaInAgent extends javax.swing.JFrame {
         txtLosen = new javax.swing.JPasswordField();
         btnLoggaIn = new javax.swing.JButton();
         lblTips = new javax.swing.JLabel();
-        txtTest = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,8 +70,6 @@ public class LoggaInAgent extends javax.swing.JFrame {
         lblTips.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         lblTips.setText("Användarnamn är ditt ID");
 
-        txtTest.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,13 +83,8 @@ public class LoggaInAgent extends javax.swing.JFrame {
                             .addComponent(btnLoggaIn)
                             .addComponent(txtAnvandarNamn)
                             .addComponent(txtLosen))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(lblTips, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(txtTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTips, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -106,9 +99,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLoggaIn)
-                    .addComponent(txtTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnLoggaIn)
                 .addContainerGap(115, Short.MAX_VALUE))
         );
 
@@ -128,54 +119,31 @@ public class LoggaInAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLosenMouseClicked
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
-        txtAnvandarNamn.requestFocus();
-        String query = "SELECT Losenord FROM Agent WHERE Agent_ID = " + txtAnvandarNamn.getText();
-        String värde = "";
+        
         
         try {
-            värde = idb.fetchSingle(query);
-                    txtTest.setText(värde);
+            
+            txtAnvandarNamn.requestFocus();
+            String anvandarNamn = txtAnvandarNamn.getText();
+            String query = "SELECT Losenord FROM Agent WHERE Agent_ID = " + anvandarNamn;
+            String query2 = "SELECT Namn from Agent Where Agent_ID = " + anvandarNamn;
+            String losenText = new String(txtLosen.getPassword());
+            String namn = idb.fetchSingle(query2);
+            String lösen = idb.fetchSingle(query);
+            if(losenText.equals(lösen))
+            {
+            new InloggadAgent(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+            
+            }
+            else JOptionPane.showMessageDialog(null, "Fel lösenord");
+            
+         
         } catch (InfException undantag) {
                 JOptionPane.showMessageDialog(null, "råtta");
                 //System.out.println(undantag.getMessage());
         }
-
+        
     }//GEN-LAST:event_btnLoggaInActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoggaInAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoggaInAgent().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
@@ -183,7 +151,6 @@ public class LoggaInAgent extends javax.swing.JFrame {
     private javax.swing.JLabel lblTips;
     private javax.swing.JTextField txtAnvandarNamn;
     private javax.swing.JPasswordField txtLosen;
-    private javax.swing.JTextField txtTest;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -21,7 +21,7 @@ public Startklass()
             System.out.println("Internt felmeddalande" + ettUndantag.getMessage());
         }
     
-          new MainMenu().setVisible(true);
+          new MainMenu(idb).setVisible(true);
     }
 
     
