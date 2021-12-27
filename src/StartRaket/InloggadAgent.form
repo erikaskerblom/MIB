@@ -24,18 +24,44 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Component id="lblVälkommen" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="238" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblVälkommen" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnNyUtrustning" max="32767" attributes="0"/>
+                          <Component id="btnHanteraAlien" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnNyttLosen" min="-2" pref="128" max="-2" attributes="0"/>
+                          <Component id="btnOmrådesChef" min="-2" pref="128" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="lblVälkommen" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="238" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnHanteraAlien" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="btnOmrådesChef" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnNyUtrustning" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="btnNyttLosen" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,6 +70,29 @@
     <Component class="javax.swing.JLabel" name="lblV&#xe4;lkommen">
       <Properties>
         <Property name="text" type="java.lang.String" value="V&#xe4;lkommen Agent"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnHanteraAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hantera Alien"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNyUtrustning">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrera Utrustning"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNyUtrustningActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNyttLosen">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra l&#xf6;senord"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOmr&#xe5;desChef">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Omr&#xe5;deschefer"/>
       </Properties>
     </Component>
   </SubComponents>

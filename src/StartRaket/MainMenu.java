@@ -49,8 +49,18 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         btnAlien.setText("ALIEN");
+        btnAlien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlienActionPerformed(evt);
+            }
+        });
 
         btnAdmin.setText("Admin");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,6 +101,14 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
         new LoggaInAgent(idb).setVisible(true);
     }//GEN-LAST:event_btnAgentActionPerformed
+
+    private void btnAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlienActionPerformed
+        new LoggaInAlien(idb).setVisible(true);
+    }//GEN-LAST:event_btnAlienActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        new LoggaInAdmin(idb).setVisible(true);
+    }//GEN-LAST:event_btnAdminActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
