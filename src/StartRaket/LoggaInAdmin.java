@@ -95,30 +95,34 @@ public class LoggaInAdmin extends javax.swing.JFrame {
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
               
         
-        try {
-            Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
-            Validering.textFaltHarVarde(txtAnvandarNamn);
-            txtAnvandarNamn.requestFocus();
-            String anvandarNamn = txtAnvandarNamn.getText();
-            String query = "SELECT Losenord FROM Agent WHERE Agent_ID = " + anvandarNamn;
-            String query2 = "SELECT Namn from Agent Where Agent_ID = " + anvandarNamn;
-            String losenText = new String(txtLosen.getPassword());
-            String namn = idb.fetchSingle(query2);
-            String lösen = idb.fetchSingle(query);
-            if(losenText.equals(lösen))
-            {
-            new InloggadAdmin(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
-            
-            }
-            else JOptionPane.showMessageDialog(null, "Fel lösenord");
-            
-         
-        } catch (InfException undantag) {
-                JOptionPane.showMessageDialog(null, "råtta");
-                //System.out.println(undantag.getMessage());
-        }
+        try{ 
+        Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
+        Validering.textFaltHarVarde(txtAnvandarNamn);
+        String anvandarNamn = txtAnvandarNamn.getText();
+        String losen = "Select Losenord from Agent where Agent_ID = " + anvandarNamn;
+        String hittaLosen = idb.fetchSingle(losen);
+        String hittaNamn = "Select Namn from Agent where Agent_ID = " + anvandarNamn;
+        String namn = idb.fetchSingle(hittaNamn);
+        String passText = new String(txtLosen.getPassword());
+        if(passText.equals(hittaLosen))
+        {
+        String fraga = "Select Administrator FROM Agent where Agent_ID = " + anvandarNamn;
+        String arAdmin=idb.fetchSingle(fraga);
         
-    
+        if(arAdmin.equals("J"))
+        
+        new InloggadAdmin(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+        
+        if(arAdmin.equals("N"))
+        
+        JOptionPane.showMessageDialog(null, "Du har inte behörighet för att logga in som admin" );
+        }
+        }
+        catch (InfException undantag) 
+        {
+                JOptionPane.showMessageDialog(null, "råtta");
+                System.out.println(undantag.getMessage());
+        }      
     }//GEN-LAST:event_btnLoggaInActionPerformed
 
     private void txtAnvandarNamnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAnvandarNamnMouseClicked
