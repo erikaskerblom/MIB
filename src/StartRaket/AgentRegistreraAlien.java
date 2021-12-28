@@ -30,33 +30,23 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblID = new javax.swing.JLabel();
         lblNamn = new javax.swing.JLabel();
-        txtAnsvarigAgent = new javax.swing.JTextField();
         txtTelefon = new javax.swing.JTextField();
         txtNamn = new javax.swing.JTextField();
-        txtID = new javax.swing.JTextField();
         txtRegDatum = new javax.swing.JTextField();
-        txtLösenord = new javax.swing.JTextField();
-        txtPlats = new javax.swing.JTextField();
+        txtLosenord = new javax.swing.JTextField();
         lblTelefon = new javax.swing.JLabel();
         lblAnsvarigAgent = new javax.swing.JLabel();
         lblRegDatum = new javax.swing.JLabel();
         lblPlats = new javax.swing.JLabel();
-        lblLösenord = new javax.swing.JLabel();
+        lblLosenord = new javax.swing.JLabel();
+        btnLaggTill = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblID.setText("ID");
-
         lblNamn.setText("Namn");
-
-        txtAnsvarigAgent.setText("Ansvarig Agent");
-        txtAnsvarigAgent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtAnsvarigAgentMouseClicked(evt);
-            }
-        });
 
         txtTelefon.setText("Telefon");
         txtTelefon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,13 +62,6 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        txtID.setText("ID");
-        txtID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtIDMouseClicked(evt);
-            }
-        });
-
         txtRegDatum.setText("RegDatum");
         txtRegDatum.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,17 +69,10 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        txtLösenord.setText("Lösenord");
-        txtLösenord.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtLosenord.setText("Lösenord");
+        txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtLösenordMouseClicked(evt);
-            }
-        });
-
-        txtPlats.setText("Plats");
-        txtPlats.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtPlatsMouseClicked(evt);
+                txtLosenordMouseClicked(evt);
             }
         });
 
@@ -108,42 +84,51 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
 
         lblPlats.setText("Plats");
 
-        lblLösenord.setText("Lösenord");
+        lblLosenord.setText("Lösenord");
+
+        btnLaggTill.setText("Lägg Till");
+        btnLaggTill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLaggTillActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtLösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNamn)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblPlats)
-                                    .addComponent(lblAnsvarigAgent)
-                                    .addComponent(lblLösenord)
-                                    .addComponent(lblRegDatum)
-                                    .addComponent(lblTelefon)
-                                    .addComponent(lblID))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblLosenord)
+                            .addComponent(lblAnsvarigAgent)
+                            .addComponent(lblPlats)
+                            .addComponent(lblTelefon)
+                            .addComponent(lblRegDatum))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtPlats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtTelefon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtNamn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtAnsvarigAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap())
+                                        .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLaggTill)
+                                .addGap(12, 12, 12)))
+                        .addGap(144, 144, 144))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblNamn)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,31 +137,29 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNamn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTelefon))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRegDatum))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPlats))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAnsvarigAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAnsvarigAgent))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLösenord))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLosenord))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(btnLaggTill)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -186,10 +169,6 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         txtNamn.setText("");
     }//GEN-LAST:event_txtNamnMouseClicked
 
-    private void txtIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIDMouseClicked
-        txtID.setText("");
-    }//GEN-LAST:event_txtIDMouseClicked
-
     private void txtTelefonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonMouseClicked
         txtTelefon.setText("");
     }//GEN-LAST:event_txtTelefonMouseClicked
@@ -198,34 +177,32 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         txtRegDatum.setText("");
     }//GEN-LAST:event_txtRegDatumMouseClicked
 
-    private void txtPlatsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPlatsMouseClicked
-        txtPlats.setText("");
-    }//GEN-LAST:event_txtPlatsMouseClicked
+    private void txtLosenordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLosenordMouseClicked
+        txtLosenord.setText("");
+    }//GEN-LAST:event_txtLosenordMouseClicked
 
-    private void txtAnsvarigAgentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAnsvarigAgentMouseClicked
-        txtAnsvarigAgent.setText("");
-    }//GEN-LAST:event_txtAnsvarigAgentMouseClicked
-
-    private void txtLösenordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLösenordMouseClicked
-        txtLösenord.setText("");
-    }//GEN-LAST:event_txtLösenordMouseClicked
+    private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
+        String namn = txtNamn.getText();
+        String telefon = txtTelefon.getText();
+        String regdatum = txtRegDatum.getText();
+        String losenord = txtLosenord.getText();
+    }//GEN-LAST:event_btnLaggTillActionPerformed
 
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLaggTill;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel lblAnsvarigAgent;
-    private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblLösenord;
+    private javax.swing.JLabel lblLosenord;
     private javax.swing.JLabel lblNamn;
     private javax.swing.JLabel lblPlats;
     private javax.swing.JLabel lblRegDatum;
     private javax.swing.JLabel lblTelefon;
-    private javax.swing.JTextField txtAnsvarigAgent;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtLösenord;
+    private javax.swing.JTextField txtLosenord;
     private javax.swing.JTextField txtNamn;
-    private javax.swing.JTextField txtPlats;
     private javax.swing.JTextField txtRegDatum;
     private javax.swing.JTextField txtTelefon;
     // End of variables declaration//GEN-END:variables
