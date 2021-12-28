@@ -40,7 +40,7 @@
                               <Component id="txtNamn" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbPlats" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBox2" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                       <Component id="txtTelefon" min="-2" max="-2" attributes="0"/>
@@ -83,7 +83,7 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbPlats" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblPlats" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -174,17 +174,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLaggTillActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cbPlats">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="6">
+            <StringItem index="0" value="&#xd6;rebro"/>
+            <StringItem index="1" value="Kalmar"/>
+            <StringItem index="2" value="Mariefred"/>
+            <StringItem index="3" value="Danmark"/>
+            <StringItem index="4" value="Tyskland "/>
+            <StringItem index="5" value="R&#xe5;tta"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPlatsActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
