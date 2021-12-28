@@ -12,18 +12,18 @@ import oru.inf.InfDB;
  */
 public class InloggadAlien extends javax.swing.JFrame {
     private InfDB idb;
-    private String AlienNamn;
-    private int AlienID;
+    private String alienNamn;
+    private int alienID;
 
     /**
      * Creates new form InloggadAlien
      */
-    public InloggadAlien(InfDB idb, String AlienNamn, int AlienID) {
+    public InloggadAlien(InfDB idb, String alienNamn, int alienID) {
         initComponents();
         this.idb = idb;
-        this.AlienNamn = AlienNamn;
-        this.AlienID = AlienID;
-        lblVälkommen.setText("Välkommen " + AlienNamn);
+        this.alienNamn = alienNamn;
+        this.alienID = alienID;
+        lblVälkommen.setText("Välkommen " + alienNamn);
     }
 
     /**
@@ -45,9 +45,19 @@ public class InloggadAlien extends javax.swing.JFrame {
 
         btnOmrådesChef.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnOmrådesChef.setText("Områdeschef");
+        btnOmrådesChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOmrådesChefActionPerformed(evt);
+            }
+        });
 
         btnNyttLosen.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnNyttLosen.setText("Ändra lösenord");
+        btnNyttLosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNyttLosenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,6 +89,14 @@ public class InloggadAlien extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
+        new AndraLosenAlien(idb, alienNamn, alienID).setVisible(true);
+    }//GEN-LAST:event_btnNyttLosenActionPerformed
+
+    private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
+        new OmradeschefInfoForAlien(idb, alienNamn, alienID).setVisible(true);
+    }//GEN-LAST:event_btnOmrådesChefActionPerformed
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -115,7 +115,7 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         
         if(arAdmin.equals("N"))
         
-        JOptionPane.showMessageDialog(null, "Du har inte behörighet för att logga in som admin" );
+        JOptionPane.showMessageDialog(null, "Du har inte behörighet att logga in som admin" );
         }
         }
         catch (InfException undantag) 

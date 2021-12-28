@@ -68,6 +68,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Omr&#xe5;deschef"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOmr&#xe5;desChefActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnNyttLosen">
       <Properties>
@@ -76,6 +79,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&#xc4;ndra l&#xf6;senord"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNyttLosenActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

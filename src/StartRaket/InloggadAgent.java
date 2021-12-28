@@ -55,6 +55,11 @@ public class InloggadAgent extends javax.swing.JFrame {
         });
 
         btnNyttLosen.setText("Ändra lösenord");
+        btnNyttLosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNyttLosenActionPerformed(evt);
+            }
+        });
 
         btnOmrådesChef.setText("Områdeschefer");
 
@@ -100,6 +105,10 @@ public class InloggadAgent extends javax.swing.JFrame {
     private void btnNyUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyUtrustningActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNyUtrustningActionPerformed
+
+    private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
+        new AndraLosenAgent(idb, agentNamn, agentID).setVisible(true);
+    }//GEN-LAST:event_btnNyttLosenActionPerformed
 
    
 
