@@ -112,6 +112,7 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         if(arAdmin.equals("J"))
         
         new InloggadAdmin(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+        this.setVisible(false); 
         
         if(arAdmin.equals("N"))
         

@@ -114,6 +114,7 @@ public class LoggaInAlien extends javax.swing.JFrame {
             if(losenText.equals(lösen))
             {
             new InloggadAlien(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+            this.setVisible(false);
             
             }
             else JOptionPane.showMessageDialog(null, "Fel lösenord");

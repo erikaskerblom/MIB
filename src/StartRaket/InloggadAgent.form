@@ -76,6 +76,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Hantera Alien"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHanteraAlienActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnNyUtrustning">
       <Properties>
@@ -97,6 +100,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Omr&#xe5;deschefer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOmr&#xe5;desChefActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

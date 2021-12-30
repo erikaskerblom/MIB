@@ -100,14 +100,17 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
         new LoggaInAgent(idb).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAgentActionPerformed
 
     private void btnAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlienActionPerformed
         new LoggaInAlien(idb).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAlienActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         new LoggaInAdmin(idb).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAdminActionPerformed
 
 

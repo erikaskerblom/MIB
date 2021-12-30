@@ -46,6 +46,11 @@ public class InloggadAgent extends javax.swing.JFrame {
         lblVälkommen.setText("Välkommen Agent");
 
         btnHanteraAlien.setText("Hantera Alien");
+        btnHanteraAlien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHanteraAlienActionPerformed(evt);
+            }
+        });
 
         btnNyUtrustning.setText("Registrera Utrustning");
         btnNyUtrustning.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +67,11 @@ public class InloggadAgent extends javax.swing.JFrame {
         });
 
         btnOmrådesChef.setText("Områdeschefer");
+        btnOmrådesChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOmrådesChefActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,12 +113,22 @@ public class InloggadAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNyUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyUtrustningActionPerformed
-        // TODO add your handling code here:
+        //this.setVisible(false);
     }//GEN-LAST:event_btnNyUtrustningActionPerformed
 
     private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
         new AndraLosenAgent(idb, agentNamn, agentID).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnNyttLosenActionPerformed
+
+    private void btnHanteraAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHanteraAlienActionPerformed
+        new AgentHanteraAlien(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnHanteraAlienActionPerformed
+
+    private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
+       //this.setVisible(false);
+    }//GEN-LAST:event_btnOmrådesChefActionPerformed
 
    
 

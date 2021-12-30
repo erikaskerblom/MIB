@@ -4,7 +4,11 @@
  */
 package StartRaket;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
+import oru.inf.InfException;
 
 /**
  *
@@ -33,21 +37,20 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         lblNamn = new javax.swing.JLabel();
         txtTelefon = new javax.swing.JTextField();
         txtNamn = new javax.swing.JTextField();
-        txtRegDatum = new javax.swing.JTextField();
-        txtLosenord = new javax.swing.JTextField();
         lblTelefon = new javax.swing.JLabel();
         lblAnsvarigAgent = new javax.swing.JLabel();
-        lblRegDatum = new javax.swing.JLabel();
         lblPlats = new javax.swing.JLabel();
         lblLosenord = new javax.swing.JLabel();
         btnLaggTill = new javax.swing.JButton();
         cbPlats = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbAgent = new javax.swing.JComboBox<>();
+        txtLosenord = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblNamn.setText("Namn");
 
+        txtTelefon.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
         txtTelefon.setText("Telefon");
         txtTelefon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -55,6 +58,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
+        txtNamn.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
         txtNamn.setText("Namn");
         txtNamn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -62,25 +66,9 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        txtRegDatum.setText("RegDatum");
-        txtRegDatum.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtRegDatumMouseClicked(evt);
-            }
-        });
-
-        txtLosenord.setText("Lösenord");
-        txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtLosenordMouseClicked(evt);
-            }
-        });
-
         lblTelefon.setText("Telefon");
 
         lblAnsvarigAgent.setText("Ansvarig Agent");
-
-        lblRegDatum.setText("RegDatum");
 
         lblPlats.setText("Plats");
 
@@ -93,14 +81,16 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebro", "Kalmar", "Mariefred", "Danmark", "Tyskland ", "Råtta" }));
+        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebro", "Västerårs", "Vilhelmina", "Borås" }));
         cbPlats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPlatsActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agent O", "Agent Z", "Agent K", "Agent J" }));
+
+        txtLosenord.setText("jPasswordField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,19 +104,16 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
                             .addComponent(lblLosenord)
                             .addComponent(lblAnsvarigAgent)
                             .addComponent(lblPlats)
-                            .addComponent(lblTelefon)
-                            .addComponent(lblRegDatum))
+                            .addComponent(lblTelefon))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnLaggTill)
                                 .addGap(12, 12, 12)))
@@ -146,23 +133,19 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTelefon))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRegDatum))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPlats))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAnsvarigAgent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLosenord))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                    .addComponent(lblLosenord)
+                    .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(btnLaggTill)
                 .addGap(20, 20, 20))
         );
@@ -178,19 +161,38 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         txtTelefon.setText("");
     }//GEN-LAST:event_txtTelefonMouseClicked
 
-    private void txtRegDatumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRegDatumMouseClicked
-        txtRegDatum.setText("");
-    }//GEN-LAST:event_txtRegDatumMouseClicked
-
-    private void txtLosenordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLosenordMouseClicked
-        txtLosenord.setText("");
-    }//GEN-LAST:event_txtLosenordMouseClicked
-
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        String namn = txtNamn.getText();
-        String telefon = txtTelefon.getText();
-        String regdatum = txtRegDatum.getText();
-        String losenord = txtLosenord.getText();
+       
+        try{
+        
+        String maxID = "SELECT max(Alien_ID) FROM Alien";
+        String ID = idb.fetchSingle(maxID);
+        int nyttID = Integer.parseInt(ID) + 1;
+        
+        Date ettDatum = new Date();
+        SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
+        String datum = datumet.format(ettDatum);
+
+        String fragaPlats = "SELECT Plats_ID FROM Plats WHERE Benamning = '" + cbPlats.getSelectedItem() + "'";
+        String platsID = idb.fetchSingle(fragaPlats);
+
+        String fragaAgent = "SELECT Agent_ID from Agent where Namn = '" + cbAgent.getSelectedItem() + "'";
+        String agentID = idb.fetchSingle(fragaAgent); 
+
+        String nyttLosen = new String(txtLosenord.getPassword());
+
+
+        idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + platsID + ", " + agentID + ")");
+        
+        JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
+        txtNamn.setVisible(false);
+        }
+
+        catch(InfException e)
+        {
+        JOptionPane.showMessageDialog(null, "Råtta");
+        }
+
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
     private void cbPlatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPlatsActionPerformed
@@ -202,17 +204,15 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTill;
+    private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbPlats;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel lblAnsvarigAgent;
     private javax.swing.JLabel lblLosenord;
     private javax.swing.JLabel lblNamn;
     private javax.swing.JLabel lblPlats;
-    private javax.swing.JLabel lblRegDatum;
     private javax.swing.JLabel lblTelefon;
-    private javax.swing.JTextField txtLosenord;
+    private javax.swing.JPasswordField txtLosenord;
     private javax.swing.JTextField txtNamn;
-    private javax.swing.JTextField txtRegDatum;
     private javax.swing.JTextField txtTelefon;
     // End of variables declaration//GEN-END:variables
 }

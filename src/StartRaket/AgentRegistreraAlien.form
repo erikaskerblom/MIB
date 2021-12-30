@@ -32,20 +32,16 @@
                           <Component id="lblAnsvarigAgent" min="-2" max="-2" attributes="0"/>
                           <Component id="lblPlats" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblRegDatum" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtNamn" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbPlats" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="cbPlats" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="txtTelefon" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtRegDatum" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbAgent" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -76,27 +72,22 @@
                   <Component id="txtTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtRegDatum" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblRegDatum" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cbPlats" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblPlats" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbAgent" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAnsvarigAgent" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
               <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -111,6 +102,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtTelefon">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="8" style="2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Telefon"/>
       </Properties>
       <Events>
@@ -119,26 +113,13 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtNamn">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="8" style="2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Namn"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNamnMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtRegDatum">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RegDatum"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtRegDatumMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtLosenord">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="L&#xf6;senord"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtLosenordMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTelefon">
@@ -149,11 +130,6 @@
     <Component class="javax.swing.JLabel" name="lblAnsvarigAgent">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ansvarig Agent"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblRegDatum">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RegDatum"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPlats">
@@ -177,13 +153,11 @@
     <Component class="javax.swing.JComboBox" name="cbPlats">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="4">
             <StringItem index="0" value="&#xd6;rebro"/>
-            <StringItem index="1" value="Kalmar"/>
-            <StringItem index="2" value="Mariefred"/>
-            <StringItem index="3" value="Danmark"/>
-            <StringItem index="4" value="Tyskland "/>
-            <StringItem index="5" value="R&#xe5;tta"/>
+            <StringItem index="1" value="V&#xe4;ster&#xe5;rs"/>
+            <StringItem index="2" value="Vilhelmina"/>
+            <StringItem index="3" value="Bor&#xe5;s"/>
           </StringArray>
         </Property>
       </Properties>
@@ -194,20 +168,25 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="cbAgent">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="Agent O"/>
+            <StringItem index="1" value="Agent Z"/>
+            <StringItem index="2" value="Agent K"/>
+            <StringItem index="3" value="Agent J"/>
           </StringArray>
         </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="txtLosenord">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -139,6 +139,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
             if(losenText.equals(lösen))
             {
             new InloggadAgent(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+            this.setVisible(false);
             
             }
             else JOptionPane.showMessageDialog(null, "Fel lösenord");
