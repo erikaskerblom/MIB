@@ -12,7 +12,7 @@ import oru.inf.InfException;
  *
  * @author erika
  */
-public class OmradeschefInfoForAlien extends javax.swing.JFrame {
+    public class OmradeschefInfoForAlien extends javax.swing.JFrame {
     private InfDB idb;
     private String alienNamn;
     private int alienID;
@@ -91,7 +91,25 @@ public class OmradeschefInfoForAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
-  
+  try {
+            
+            
+
+            String query = "SELECT Namn FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Alien_ID = " + alienID + ")";
+            String namn = idb.fetchSingle(query);
+
+            String query2 = "SELECT Telefon FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Alien_ID = " + alienID + ")";
+            String telNr = idb.fetchSingle(query2);
+            
+        
+
+            lblSeChef.setText("Områdeschef: " + namn);
+            lblTelNr.setText("Telefonnummer: " + telNr);
+           
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Något gick fel!");
+            System.out.println("Internt felmeddelande" + e.getMessage());
+        }
     }//GEN-LAST:event_btnInfoActionPerformed
 
 
