@@ -91,20 +91,7 @@ public class OmradeschefInfoForAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
-        try {
-            String query = "SELECT Namn FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Alien_ID = " + alienID + ")";
-            String namn = idb.fetchSingle(query);
-
-            String query2 = "SELECT Telefon FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Alien_ID = " + alienID + ")";
-            String telNr = idb.fetchSingle(query2);
-
-            lblSeChef.setText("Din områdeschef är " + namn);
-            lblTelNr.setText("Telefonnummer: " + telNr);
-           
-        } catch (InfException undantaget) {
-            JOptionPane.showMessageDialog(null, "Något gick fel!");
-            System.out.println("Internt felmeddelande" + undantaget.getMessage());
-        }
+  
     }//GEN-LAST:event_btnInfoActionPerformed
 
 

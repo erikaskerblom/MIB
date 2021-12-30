@@ -27,29 +27,35 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblLosenord" min="-2" max="-2" attributes="0"/>
                           <Component id="lblAnsvarigAgent" min="-2" max="-2" attributes="0"/>
                           <Component id="lblPlats" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNamn" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbPlats" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbAgent" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtNamn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cbPlats" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbAgent" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtLosenord" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="lblNamn" min="-2" max="-2" attributes="0"/>
@@ -72,24 +78,24 @@
                   <Component id="txtTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblTelefon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cbPlats" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblPlats" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbPlats" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cbAgent" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAnsvarigAgent" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbAgent" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,10 +108,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtTelefon">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="8" style="2"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Telefon"/>
+        <Property name="columns" type="int" value="8"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtTelefonMouseClicked"/>
@@ -113,10 +116,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtNamn">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="8" style="2"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Namn"/>
+        <Property name="columns" type="int" value="8"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNamnMouseClicked"/>
@@ -187,6 +187,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtLosenordMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

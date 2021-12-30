@@ -127,7 +127,8 @@ public class InloggadAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHanteraAlienActionPerformed
 
     private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
-       //this.setVisible(false);
+       new AgentSokOmradeschef(idb).setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btnOmrådesChefActionPerformed
 
    
