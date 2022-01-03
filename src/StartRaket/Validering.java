@@ -4,6 +4,7 @@
  */
 package StartRaket;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -59,6 +60,14 @@ public static boolean rattLangd(JPasswordField nyttLosen) {
 
 
 }
-
+    //Kollar så att comboboxen har ett valt värde
+    public static boolean rattIndexComboBox(JComboBox x) {
+        boolean IndexHarVarde = true;
+        if (x.getSelectedIndex() == 0) {
+            IndexHarVarde = false;
+            JOptionPane.showMessageDialog(null, "Vänligen välj ett alternativ i listan");
+        }
+        return IndexHarVarde;
+    }
 }
       

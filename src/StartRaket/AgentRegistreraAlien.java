@@ -80,14 +80,14 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebro", "Västerårs", "Vilhelmina", "Borås" }));
+        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en plats", "Örebro", "Västerårs", "Vilhelmina", "Borås" }));
         cbPlats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPlatsActionPerformed(evt);
             }
         });
 
-        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agent O", "Agent Z", "Agent K", "Agent J" }));
+        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent", "Agent O", "Agent Z", "Agent K", "Agent J" }));
 
         txtLosenord.setText("jPasswordField1");
         txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,7 +168,8 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord))
+        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) 
+              && Validering.rattIndexComboBox(cbPlats))
         try {
             
             String maxID = "SELECT max(Alien_ID) FROM Alien";

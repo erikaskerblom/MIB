@@ -60,7 +60,7 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
 
         lblTyp.setText("Typ");
 
-        cbTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vapen", "Kommunikation", "Teknik" }));
+        cbTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en typ", "Vapen", "Kommunikation", "Teknik" }));
 
         txtBenämning.setColumns(8);
         txtBenämning.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,7 +135,8 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEgenskapMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        try {
+            if(Validering.rattIndexComboBox(cbTyp) && Validering.textFaltHarVarde(txtBenämning) && Validering.textFaltHarVarde(txtEgenskap))
+             try {
                 String quary = "SELECT max(Utrustnings_ID) FROM utrustning";
                 String id = idb.fetchSingle(quary);
                 int nyttID = Integer.parseInt(id) + 1;
