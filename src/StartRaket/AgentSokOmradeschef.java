@@ -13,12 +13,14 @@ import oru.inf.InfException;
  * @author erika
  */
 public class AgentSokOmradeschef extends javax.swing.JFrame {
+
     private InfDB idb;
+
     /**
      * Creates new form AgentSokOmradeschef
      */
     public AgentSokOmradeschef(InfDB idb) {
-        this.idb=idb;
+        this.idb = idb;
         initComponents();
     }
 
@@ -109,23 +111,23 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDMouseClicked
 
     private void btnHamtaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHamtaInfoActionPerformed
-             try {
+        if (Validering.textFaltHarVarde(txtID))
+try {
             
             String id = txtID.getText();
-
+            
             String query = "SELECT Namn FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
             String namn = idb.fetchSingle(query);
-
+            
             String query2 = "SELECT Telefon FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
             String telNr = idb.fetchSingle(query2);
             
             lblNamn.setVisible(true);
             lblTelNr.setVisible(true);
             
-
             lblNamn.setText("Områdeschef: " + namn);
             lblTelNr.setText("Telefonnummer: " + telNr);
-           
+            
         } catch (InfException undantaget) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println("Internt felmeddelande" + undantaget.getMessage());

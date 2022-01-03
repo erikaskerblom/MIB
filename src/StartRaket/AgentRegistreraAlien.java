@@ -15,14 +15,15 @@ import oru.inf.InfException;
  * @author filip
  */
 public class AgentRegistreraAlien extends javax.swing.JFrame {
+
     InfDB idb;
-    
+
     /**
      * Creates new form AgentRegistreraAlien
      */
     public AgentRegistreraAlien(InfDB idb) {
         initComponents();
-        this.idb=idb;
+        this.idb = idb;
     }
 
     /**
@@ -167,35 +168,31 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-       
-        try{
-        
-        String maxID = "SELECT max(Alien_ID) FROM Alien";
-        String ID = idb.fetchSingle(maxID);
-        int nyttID = Integer.parseInt(ID) + 1;
-        
-        Date ettDatum = new Date();
-        SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
-        String datum = datumet.format(ettDatum);
-
-        String fragaPlats = "SELECT Plats_ID FROM Plats WHERE Benamning = '" + cbPlats.getSelectedItem() + "'";
-        String platsID = idb.fetchSingle(fragaPlats);
-
-        String fragaAgent = "SELECT Agent_ID from Agent where Namn = '" + cbAgent.getSelectedItem() + "'";
-        String agentID = idb.fetchSingle(fragaAgent); 
-
-        String nyttLosen = new String(txtLosenord.getPassword());
-
-
-        idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + platsID + ", " + agentID + ")");
-        
-        JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
-        this.setVisible(false);
-        }
-
-        catch(InfException e)
-        {
-        JOptionPane.showMessageDialog(null, "Råtta");
+        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord))
+        try {
+            
+            String maxID = "SELECT max(Alien_ID) FROM Alien";
+            String ID = idb.fetchSingle(maxID);
+            int nyttID = Integer.parseInt(ID) + 1;
+            
+            Date ettDatum = new Date();
+            SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
+            String datum = datumet.format(ettDatum);
+            
+            String fragaPlats = "SELECT Plats_ID FROM Plats WHERE Benamning = '" + cbPlats.getSelectedItem() + "'";
+            String platsID = idb.fetchSingle(fragaPlats);
+            
+            String fragaAgent = "SELECT Agent_ID from Agent where Namn = '" + cbAgent.getSelectedItem() + "'";
+            String agentID = idb.fetchSingle(fragaAgent);            
+            
+            String nyttLosen = new String(txtLosenord.getPassword());
+            
+            idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + platsID + ", " + agentID + ")");
+            
+            JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
+            this.setVisible(false);
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Råtta");
         }
 
     }//GEN-LAST:event_btnLaggTillActionPerformed
@@ -208,8 +205,6 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         txtLosenord.setText("");
     }//GEN-LAST:event_txtLosenordMouseClicked
 
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTill;
