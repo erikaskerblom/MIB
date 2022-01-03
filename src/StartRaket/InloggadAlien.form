@@ -33,10 +33,10 @@
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btnOmrådesChef" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="btnNyttLosen" min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="btnNyttLosen" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,9 +63,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnOmr&#xe5;desChef">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="0"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Omr&#xe5;deschef"/>
       </Properties>
       <Events>

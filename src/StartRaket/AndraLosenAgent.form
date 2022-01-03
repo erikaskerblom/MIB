@@ -50,16 +50,14 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="lblText" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtNuvarandeLosen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNuvarande" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="txtNyttLosen" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="lblNyttLosen" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtNuvarandeLosen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNuvarande" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtNyttLosen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNyttLosen" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="btnByt" min="-2" max="-2" attributes="0"/>

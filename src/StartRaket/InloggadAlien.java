@@ -43,7 +43,6 @@ public class InloggadAlien extends javax.swing.JFrame {
 
         lblVälkommen.setText("Välkommen Alien");
 
-        btnOmrådesChef.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnOmrådesChef.setText("Områdeschef");
         btnOmrådesChef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,8 +71,8 @@ public class InloggadAlien extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(btnOmrådesChef)
                         .addGap(36, 36, 36)
-                        .addComponent(btnNyttLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(btnNyttLosen)))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
