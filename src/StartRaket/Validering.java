@@ -46,6 +46,23 @@ public static boolean ogiltigtAnvandarNamn(JTextField rutaAttKolla) {
         
         return resultat;
     }
+    //Kollar så att man matat in en siffra i textrutan.
+public static boolean ogiltigtVarde(JTextField rutaAttKolla) {
+        boolean resultat = true;
+        
+        try{
+        String inString = rutaAttKolla.getText();
+        Integer.parseInt(inString);
+        }   
+        catch(NumberFormatException e)
+        {
+        JOptionPane.showMessageDialog(null,"Var vänlig ange en siffra");
+        rutaAttKolla.requestFocus();
+
+        }
+        
+        return resultat;
+    }
 
     //Kollar så att ett nytt lösenord är max 8 tecken
 public static boolean rattLangd(JPasswordField nyttLosen) {

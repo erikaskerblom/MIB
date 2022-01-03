@@ -97,7 +97,7 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
-        // TODO add your handling code here:
+        new AgentUppdateraAlien(idb).setVisible(true);
     }//GEN-LAST:event_btnUppdateraActionPerformed
 
     private void btnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokActionPerformed
