@@ -151,7 +151,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             int PlatsID = Integer.parseInt(txtPlats.getText());
             int AgentID = Integer.parseInt(txtAnsvarigAgent.getText());
             int AlienID = Integer.parseInt(txtAlienID.getText());
-            idb.update("Update alien set Namn = '"+Namnet+"', Telefon = '"+Telefon+"', Plats = '"+PlatsID+"', Ansvarig_Agent = '"+AgentID+"' where AlienID = '"+AlienID+"'");
+            idb.update("Update Alien SET Namn = '"+ Namnet + "', Telefon = '" + Telefon + "', Plats = '" + PlatsID + "', Ansvarig_Agent = '" + AgentID + "' where AlienID = '" + AlienID + ")");
         } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel.");
         }
