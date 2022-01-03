@@ -13,11 +13,11 @@ import oru.inf.InfException;
  * @author erika
  */
 public class AndraLosenAlien extends javax.swing.JFrame {
-    InfDB idb; 
+
+    InfDB idb;
     private String alienNamn;
     private int alienID;
 
-    
     /**
      * Creates new form AndraLosenAlien
      */
@@ -128,7 +128,8 @@ public class AndraLosenAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNyttLosenMouseClicked
 
     private void btnBytActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBytActionPerformed
-             try {
+        if (Validering.rattLangd(txtNyttLosen))
+try {
             String nuvarandeLosen = new String(txtNuvarandeLosen.getPassword());
             String nyttLosen = new String(txtNyttLosen.getPassword());
 
@@ -137,7 +138,6 @@ public class AndraLosenAlien extends javax.swing.JFrame {
 
             if (nuvarandeLosen.equals(rattLosen)) {
                 idb.update("UPDATE Alien SET Losenord = '" + nyttLosen + "' where Alien_ID = " + alienID);
-                
 
                 JOptionPane.showMessageDialog(null, "Ditt lösenord har ändrats");
             } else {
@@ -148,7 +148,6 @@ public class AndraLosenAlien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "strul");
         }
     }//GEN-LAST:event_btnBytActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

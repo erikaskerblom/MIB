@@ -47,7 +47,18 @@ public static boolean ogiltigtAnvandarNamn(JTextField rutaAttKolla) {
     }
 
     //Kollar så att ett nytt lösenord är max 8 tecken
-//public static boolean rattLangd(JPasswordField nyttLosen)
+public static boolean rattLangd(JPasswordField nyttLosen) {
+        boolean lagomLangd = true;
+        String losenord = new String(nyttLosen.getPassword());
+        if (losenord.length() > 8) {
+            JOptionPane.showMessageDialog(null, "Vänligen ange ett lösenord med MAX 8 tecken.");
+            lagomLangd = false;
+        }
+        return lagomLangd;
+
+
+
+}
 
 }
       

@@ -123,24 +123,25 @@ public class AndraLosenAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNyttLosenMouseClicked
 
     private void btnBytActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBytActionPerformed
-        try {
-            String nuvarandeLosen = new String(txtNuvarandeLosen.getPassword());
-            String nyttLosen = new String(txtNyttLosen.getPassword());
+        if (Validering.rattLangd(txtNyttLosen)) {
+            try {
+                String nuvarandeLosen = new String(txtNuvarandeLosen.getPassword());
+                String nyttLosen = new String(txtNyttLosen.getPassword());
 
-            String query = "Select Losenord from Agent where Agent_ID = " + agentID;
-            String rattLosen = idb.fetchSingle(query);
+                String query = "Select Losenord from Agent where Agent_ID = " + agentID;
+                String rattLosen = idb.fetchSingle(query);
 
-            if (nuvarandeLosen.equals(rattLosen)) {
-                idb.update("UPDATE Agent SET Losenord = '" + nyttLosen + "' where Agent_ID = " + agentID);
-                
+                if (nuvarandeLosen.equals(rattLosen)) {
+                    idb.update("UPDATE Agent SET Losenord = '" + nyttLosen + "' where Agent_ID = " + agentID);
 
-                JOptionPane.showMessageDialog(null, "Ditt lösenord har ändrats");
-            } else {
-                JOptionPane.showMessageDialog(null, "fel lösenord råtta");
+                    JOptionPane.showMessageDialog(null, "Ditt lösenord har ändrats");
+                } else {
+                    JOptionPane.showMessageDialog(null, "fel lösenord råtta");
+                }
+
+            } catch (InfException e) {
+                JOptionPane.showMessageDialog(null, "strul");
             }
-
-        } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, "strul");
         }
     }//GEN-LAST:event_btnBytActionPerformed
 
