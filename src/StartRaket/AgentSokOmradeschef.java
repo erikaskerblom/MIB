@@ -113,10 +113,10 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
             
             String id = txtID.getText();
 
-            String query = "SELECT Namn FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
+            String query = "SELECT Namn FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id +")";
             String namn = idb.fetchSingle(query);
 
-            String query2 = "SELECT Telefon FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
+            String query2 = "SELECT Telefon FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id +")";
             String telNr = idb.fetchSingle(query2);
             
             lblNamn.setVisible(true);
