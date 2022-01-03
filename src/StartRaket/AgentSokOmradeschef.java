@@ -113,21 +113,22 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
     private void btnHamtaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHamtaInfoActionPerformed
         if (Validering.textFaltHarVarde(txtID))
 try {
-            
+
             String id = txtID.getText();
-            
-            String query = "SELECT Namn FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
+
+            String query = "SELECT Namn FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id + ")";
             String namn = idb.fetchSingle(query);
-            
-            String query2 = "SELECT Telefon FROM agent WHERE Agent_ID = (SELECT Ansvarig_Agent FROM alien WHERE Ansvarig_Agent = " + id + ")";
+
+            String query2 = "SELECT Telefon FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id + ")";
+
             String telNr = idb.fetchSingle(query2);
-            
+
             lblNamn.setVisible(true);
             lblTelNr.setVisible(true);
-            
+
             lblNamn.setText("Områdeschef: " + namn);
             lblTelNr.setText("Telefonnummer: " + telNr);
-            
+
         } catch (InfException undantaget) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println("Internt felmeddelande" + undantaget.getMessage());

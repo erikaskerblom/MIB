@@ -111,7 +111,8 @@ public class InloggadAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNyUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyUtrustningActionPerformed
-        //this.setVisible(false);
+        //new AgentRegistreraUtrustning(idb).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnNyUtrustningActionPerformed
 
     private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
