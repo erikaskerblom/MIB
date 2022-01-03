@@ -4,6 +4,7 @@
  */
 package StartRaket;
 
+import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
 
 /**
@@ -15,6 +16,8 @@ public class InloggadAdmin extends javax.swing.JFrame {
     private String adminNamn;
     private int adminID;
     
+    
+    
 
     /**
      * Creates new form InloggadAdmin
@@ -25,6 +28,7 @@ public class InloggadAdmin extends javax.swing.JFrame {
         this.adminNamn = adminNamn;
         this.adminID = adminID;
         lblVälkommen.setText("Välkommen administratör " + adminNamn);
+       
     }
 
     /**
@@ -47,8 +51,18 @@ public class InloggadAdmin extends javax.swing.JFrame {
         lblVälkommen.setText("Välkommen");
 
         btnAgent.setText("Agenter");
+        btnAgent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgentActionPerformed(evt);
+            }
+        });
 
         btnAliens.setText("Aliens");
+        btnAliens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAliensActionPerformed(evt);
+            }
+        });
 
         btnUtrustning.setText("Utrustning");
         btnUtrustning.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +109,19 @@ public class InloggadAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUtrustningActionPerformed
-        // TODO add your handling code here:
+        new AdminTaBortUtrustning(idb).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnUtrustningActionPerformed
+
+    private void btnAliensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAliensActionPerformed
+        new AgentHanteraAlien(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAliensActionPerformed
+
+    private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
+        new AdminHanteraAgent(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAgentActionPerformed
 
 
 

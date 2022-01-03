@@ -93,11 +93,10 @@ public class LoggaInAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
-              
+        if( Validering.ogiltigtAnvandarNamn(txtAnvandarNamn) && Validering.textFaltHarVarde(txtAnvandarNamn))
         
         try{ 
-        Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
-        Validering.textFaltHarVarde(txtAnvandarNamn);
+        
         String anvandarNamn = txtAnvandarNamn.getText();
         String losen = "Select Losenord from Agent where Agent_ID = " + anvandarNamn;
         String hittaLosen = idb.fetchSingle(losen);
@@ -105,6 +104,13 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         String namn = idb.fetchSingle(hittaNamn);
         String passText = new String(txtLosen.getPassword());
         if(passText.equals(hittaLosen))
+        
+        /*if else
+        {
+        JOptionPane.showMessageDialog(null, "Fel lösenord");
+        }
+        */
+
         {
         String fraga = "Select Administrator FROM Agent where Agent_ID = " + anvandarNamn;
         String arAdmin=idb.fetchSingle(fraga);
