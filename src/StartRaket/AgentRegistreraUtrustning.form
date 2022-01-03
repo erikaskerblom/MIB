@@ -68,15 +68,15 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="lblText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblBenämning" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtBenämning" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblTyp" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cbTyp" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblBenämning" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBenämning" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -125,7 +125,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtBen&#xe4;mning">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ben&#xe4;mning"/>
+        <Property name="columns" type="int" value="8"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtBen&#xe4;mningMouseClicked"/>
@@ -138,7 +138,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtEgenskap">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Egenskap"/>
+        <Property name="columns" type="int" value="8"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtEgenskapMouseClicked"/>

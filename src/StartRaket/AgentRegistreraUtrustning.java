@@ -62,7 +62,7 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
 
         cbTyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vapen", "Kommunikation", "Teknik" }));
 
-        txtBenämning.setText("Benämning");
+        txtBenämning.setColumns(8);
         txtBenämning.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtBenämningMouseClicked(evt);
@@ -71,7 +71,7 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
 
         lblEgenskap.setText("Egenskap");
 
-        txtEgenskap.setText("Egenskap");
+        txtEgenskap.setColumns(8);
         txtEgenskap.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtEgenskapMouseClicked(evt);
@@ -106,14 +106,14 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(lblText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBenämning)
-                    .addComponent(txtBenämning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTyp)
                     .addComponent(cbTyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBenämning)
+                    .addComponent(txtBenämning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEgenskap)
@@ -140,14 +140,30 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
                 String id = idb.fetchSingle(quary);
                 int nyttID = Integer.parseInt(id) + 1;
                 
-                idb.insert("INSERT into utrustning values(" + nyttID + ", '" + txtBenämning.getText() + "')");
+                idb.insert("INSERT into Utrustning values(" + nyttID + ", '" + txtBenämning.getText() + "')");
 
                 if(cbTyp.getSelectedItem().equals("Vapen"))
                 {
-                idb.insert("Insert into Vapen values (" + nyttID + ",'" + txtEgenskap.getText());
+                idb.insert("Insert into Vapen values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen" );
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
                 }
-
-
+                else if(cbTyp.getSelectedItem().equals("Teknik"))
+                {
+                idb.insert("Insert into Teknik values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som teknik" );
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
+                }
+                else if(cbTyp.getSelectedItem().equals("Kommunikation"))
+                {
+                idb.insert("Insert into Kommunikation values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som kommunikation" );
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
+                }
+                
         } catch (InfException e) {
             JOptionPane.showMessageDialog(null, e);
         }
