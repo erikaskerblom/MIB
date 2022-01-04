@@ -3,21 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package StartRaket;
- 
-import oru.inf.InfDB;
 
+import oru.inf.InfDB;
 
 /**
  *
  * @author erika
  */
-public class AgentHanteraAlien extends javax.swing.JFrame {
-        private InfDB idb;
-
+public class AdminHanteraAgent extends javax.swing.JFrame {
+private InfDB idb;
     /**
-     * Creates new form AgentHanteraAlien
+     * Creates new form AdminHanteraAgent
      */
-    public AgentHanteraAlien(InfDB idb) {
+    public AdminHanteraAgent(InfDB idb) {
         initComponents();
         this.idb = idb;
     }
@@ -31,36 +29,31 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblText = new javax.swing.JLabel();
         btnRegistrera = new javax.swing.JButton();
-        lblHuvudText = new javax.swing.JLabel();
-        btnUppdatera = new javax.swing.JButton();
-        btnSok = new javax.swing.JButton();
+        btnTaBortAgent = new javax.swing.JButton();
+        btnAdminStatus = new javax.swing.JButton();
         btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnRegistrera.setText("Registrera ny Alien");
+        lblText.setText("Vad vill du göra");
+
+        btnRegistrera.setText("Registrera Agent");
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistreraActionPerformed(evt);
             }
         });
 
-        lblHuvudText.setText("Välj nedan vad du vill göra");
-
-        btnUppdatera.setText("Uppdatera Info");
-        btnUppdatera.addActionListener(new java.awt.event.ActionListener() {
+        btnTaBortAgent.setText("Ta bort Agent");
+        btnTaBortAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUppdateraActionPerformed(evt);
+                btnTaBortAgentActionPerformed(evt);
             }
         });
 
-        btnSok.setText("Sök Alien");
-        btnSok.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSokActionPerformed(evt);
-            }
-        });
+        btnAdminStatus.setText("Gör Agent till admin");
 
         btnTillbaka.setText("Tillbaka");
         btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
@@ -74,61 +67,58 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblHuvudText)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnSok, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnUppdatera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAdminStatus)
+                    .addComponent(btnRegistrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblText)
+                    .addComponent(btnTaBortAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
-                .addGap(64, 64, 64))
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(lblHuvudText)
-                .addGap(30, 30, 30)
+                .addComponent(lblText)
+                .addGap(26, 26, 26)
                 .addComponent(btnRegistrera)
                 .addGap(18, 18, 18)
-                .addComponent(btnUppdatera)
+                .addComponent(btnTaBortAgent)
                 .addGap(18, 18, 18)
-                .addComponent(btnSok)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(btnAdminStatus)
+                .addGap(37, 37, 37)
                 .addComponent(btnTillbaka)
-                .addGap(43, 43, 43))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
-        new AgentRegistreraAlien(idb).setVisible(true);
+        new AdminRegistreraAgent(idb).setVisible(true);
+        
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
-    private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
-        new AgentUppdateraAlien(idb).setVisible(true);
-    }//GEN-LAST:event_btnUppdateraActionPerformed
-
-    private void btnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokActionPerformed
-        //new SokaAlien(idb).setVisible(true);
-    }//GEN-LAST:event_btnSokActionPerformed
+    private void btnTaBortAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortAgentActionPerformed
+        new AdminTaBortAgent(idb).setVisible(true);
+    }//GEN-LAST:event_btnTaBortAgentActionPerformed
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         this.setVisible(false);
+        
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
-
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdminStatus;
     private javax.swing.JButton btnRegistrera;
-    private javax.swing.JButton btnSok;
+    private javax.swing.JButton btnTaBortAgent;
     private javax.swing.JButton btnTillbaka;
-    private javax.swing.JButton btnUppdatera;
-    private javax.swing.JLabel lblHuvudText;
+    private javax.swing.JLabel lblText;
     // End of variables declaration//GEN-END:variables
 }
