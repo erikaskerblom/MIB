@@ -36,6 +36,7 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         txtAnvandarNamn = new javax.swing.JTextField();
         txtLosen = new javax.swing.JPasswordField();
         btnLoggaIn = new javax.swing.JButton();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +63,13 @@ public class LoggaInAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,6 +82,9 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                     .addComponent(lblVälkommen)
                     .addComponent(txtLosen))
                 .addContainerGap(247, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnTillbaka)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +97,8 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                 .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btnLoggaIn)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(btnTillbaka))
         );
 
         pack();
@@ -140,10 +152,16 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         txtLosen.setText("");
     }//GEN-LAST:event_txtLosenMouseClicked
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.setVisible(false);
+        new MainMenu(idb).setVisible(true);
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblVälkommen;
     private javax.swing.JTextField txtAnvandarNamn;
     private javax.swing.JPasswordField txtLosen;

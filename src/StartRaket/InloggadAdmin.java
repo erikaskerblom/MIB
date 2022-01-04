@@ -45,6 +45,7 @@ public class InloggadAdmin extends javax.swing.JFrame {
         btnAliens = new javax.swing.JButton();
         btnUtrustning = new javax.swing.JButton();
         lblVälj = new javax.swing.JLabel();
+        btnLoggaUt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,13 @@ public class InloggadAdmin extends javax.swing.JFrame {
 
         lblVälj.setText("Välj vad du vill administrera");
 
+        btnLoggaUt.setText("Logga Ut");
+        btnLoggaUt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoggaUtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,12 +91,16 @@ public class InloggadAdmin extends javax.swing.JFrame {
                     .addComponent(lblVälkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblVälj)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnAliens, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addGap(7, 7, 7)
+                        .addComponent(btnAgent)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAliens, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnUtrustning)))
+                .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnLoggaUt)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +114,8 @@ public class InloggadAdmin extends javax.swing.JFrame {
                     .addComponent(btnAliens, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addComponent(btnLoggaUt))
         );
 
         pack();
@@ -110,24 +123,27 @@ public class InloggadAdmin extends javax.swing.JFrame {
 
     private void btnUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUtrustningActionPerformed
         new AdminTaBortUtrustning(idb).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnUtrustningActionPerformed
 
     private void btnAliensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAliensActionPerformed
         new AgentHanteraAlien(idb).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnAliensActionPerformed
 
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
         new AdminHanteraAgent(idb).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnAgentActionPerformed
+
+    private void btnLoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaUtActionPerformed
+        new MainMenu(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLoggaUtActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgent;
     private javax.swing.JButton btnAliens;
+    private javax.swing.JButton btnLoggaUt;
     private javax.swing.JButton btnUtrustning;
     private javax.swing.JLabel lblVälj;
     private javax.swing.JLabel lblVälkommen;

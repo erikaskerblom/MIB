@@ -32,6 +32,7 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
 
         lblText = new javax.swing.JLabel();
         btnRegistrera = new javax.swing.JButton();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +42,13 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistreraActionPerformed(evt);
+            }
+        });
+
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
             }
         });
 
@@ -54,6 +62,9 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
                     .addComponent(btnRegistrera)
                     .addComponent(lblText))
                 .addContainerGap(258, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnTillbaka)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,7 +73,8 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
                 .addComponent(lblText)
                 .addGap(57, 57, 57)
                 .addComponent(btnRegistrera)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addComponent(btnTillbaka))
         );
 
         pack();
@@ -73,10 +85,15 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrera;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblText;
     // End of variables declaration//GEN-END:variables
 }

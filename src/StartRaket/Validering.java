@@ -68,8 +68,8 @@ public static boolean ogiltigtVarde(JTextField rutaAttKolla) {
 public static boolean rattLangd(JPasswordField nyttLosen) {
         boolean lagomLangd = true;
         String losenord = new String(nyttLosen.getPassword());
-        if (losenord.length() > 8) {
-            JOptionPane.showMessageDialog(null, "Vänligen ange ett lösenord med MAX 8 tecken.");
+        if (losenord.length() > 6) {
+            JOptionPane.showMessageDialog(null, "Vänligen ange ett lösenord med MAX 6 tecken.");
             lagomLangd = false;
         }
         return lagomLangd;

@@ -36,6 +36,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
         txtLosen = new javax.swing.JPasswordField();
         btnLoggaIn = new javax.swing.JButton();
         lblTips = new javax.swing.JLabel();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,13 @@ public class LoggaInAgent extends javax.swing.JFrame {
         lblTips.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         lblTips.setText("Användarnamn är ditt ID");
 
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,6 +99,9 @@ public class LoggaInAgent extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblTips, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnTillbaka)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +116,8 @@ public class LoggaInAgent extends javax.swing.JFrame {
                 .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnLoggaIn)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(btnTillbaka))
         );
 
         pack();
@@ -156,8 +168,14 @@ public class LoggaInAgent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoggaInKeyPressed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.setVisible(false);
+        new MainMenu(idb).setVisible(true);
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoggaIn;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblTips;
     private javax.swing.JLabel lblVälkommen;
     private javax.swing.JTextField txtAnvandarNamn;
