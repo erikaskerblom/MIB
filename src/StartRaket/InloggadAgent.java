@@ -40,6 +40,7 @@ public class InloggadAgent extends javax.swing.JFrame {
         btnNyUtrustning = new javax.swing.JButton();
         btnNyttLosen = new javax.swing.JButton();
         btnOmrådesChef = new javax.swing.JButton();
+        btnLoggaUt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,13 @@ public class InloggadAgent extends javax.swing.JFrame {
             }
         });
 
+        btnLoggaUt.setText("Logga Ut");
+        btnLoggaUt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoggaUtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,6 +98,9 @@ public class InloggadAgent extends javax.swing.JFrame {
                             .addComponent(btnNyttLosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOmrådesChef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnLoggaUt)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,11 +111,12 @@ public class InloggadAgent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHanteraAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOmrådesChef, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNyUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNyttLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(btnLoggaUt))
         );
 
         pack();
@@ -112,28 +124,30 @@ public class InloggadAgent extends javax.swing.JFrame {
 
     private void btnNyUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyUtrustningActionPerformed
         new AgentRegistreraUtrustning(idb).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnNyUtrustningActionPerformed
 
     private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
         new AndraLosenAgent(idb, agentNamn, agentID).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnNyttLosenActionPerformed
 
     private void btnHanteraAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHanteraAlienActionPerformed
         new AgentHanteraAlien(idb).setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnHanteraAlienActionPerformed
 
     private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
        new AgentSokOmradeschef(idb).setVisible(true);
-       this.setVisible(false);
     }//GEN-LAST:event_btnOmrådesChefActionPerformed
+
+    private void btnLoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaUtActionPerformed
+        new MainMenu(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLoggaUtActionPerformed
 
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHanteraAlien;
+    private javax.swing.JButton btnLoggaUt;
     private javax.swing.JButton btnNyUtrustning;
     private javax.swing.JButton btnNyttLosen;
     private javax.swing.JButton btnOmrådesChef;

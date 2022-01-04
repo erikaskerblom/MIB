@@ -38,6 +38,7 @@ public class InloggadAlien extends javax.swing.JFrame {
         lblVälkommen = new javax.swing.JLabel();
         btnOmrådesChef = new javax.swing.JButton();
         btnNyttLosen = new javax.swing.JButton();
+        btnLoggaUt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,13 @@ public class InloggadAlien extends javax.swing.JFrame {
             }
         });
 
+        btnLoggaUt.setText("Logga Ut");
+        btnLoggaUt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoggaUtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,7 +79,8 @@ public class InloggadAlien extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(btnOmrådesChef)
                         .addGap(36, 36, 36)
-                        .addComponent(btnNyttLosen)))
+                        .addComponent(btnNyttLosen))
+                    .addComponent(btnLoggaUt))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,7 +92,8 @@ public class InloggadAlien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnOmrådesChef, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(btnNyttLosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(btnLoggaUt))
         );
 
         pack();
@@ -96,11 +106,17 @@ public class InloggadAlien extends javax.swing.JFrame {
 
     private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
         new OmradeschefInfoForAlien(idb, alienNamn, alienID).setVisible(true);
-      
+
     }//GEN-LAST:event_btnOmrådesChefActionPerformed
+
+    private void btnLoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaUtActionPerformed
+        new MainMenu(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLoggaUtActionPerformed
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLoggaUt;
     private javax.swing.JButton btnNyttLosen;
     private javax.swing.JButton btnOmrådesChef;
     private javax.swing.JLabel lblVälkommen;
