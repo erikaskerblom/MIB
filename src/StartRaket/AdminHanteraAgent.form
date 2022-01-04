@@ -44,6 +44,10 @@
               <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -54,6 +58,7 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="btnRegistrera" min="-2" max="-2" attributes="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnTaBortAgent" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -63,6 +68,10 @@
               <EmptySpace pref="149" max="32767" attributes="0"/>
               <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
 >>>>>>> cd17883a69fd838e8ff7cd6e3a44fd594868fadc
+=======
+              <EmptySpace pref="149" max="32767" attributes="0"/>
+              <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
+>>>>>>> 64946853851a78155fad913190413568edcd7098
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,6 +91,7 @@
       </Events>
     </Component>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Component class="javax.swing.JButton" name="btnTaBortAgent">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ta bort Agent"/>
@@ -97,13 +107,18 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminStatusActionPerformed"/>
 =======
+=======
+>>>>>>> 64946853851a78155fad913190413568edcd7098
     <Component class="javax.swing.JButton" name="btnTillbaka">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tillbaka"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbakaActionPerformed"/>
+<<<<<<< HEAD
 >>>>>>> cd17883a69fd838e8ff7cd6e3a44fd594868fadc
+=======
+>>>>>>> 64946853851a78155fad913190413568edcd7098
       </Events>
     </Component>
   </SubComponents>

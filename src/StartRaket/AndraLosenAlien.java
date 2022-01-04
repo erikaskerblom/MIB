@@ -43,6 +43,7 @@ public class AndraLosenAlien extends javax.swing.JFrame {
         btnByt = new javax.swing.JButton();
         lblNuvarande = new javax.swing.JLabel();
         lblNyttLosen = new javax.swing.JLabel();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,14 +76,21 @@ public class AndraLosenAlien extends javax.swing.JFrame {
         lblNyttLosen.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lblNyttLosen.setText("Nytt lösenord");
 
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblText)
                             .addGroup(layout.createSequentialGroup()
@@ -92,11 +100,12 @@ public class AndraLosenAlien extends javax.swing.JFrame {
                                 .addGap(50, 50, 50)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNyttLosen)
-                                    .addComponent(lblNuvarande))))
-                        .addContainerGap(120, Short.MAX_VALUE))
+                                    .addComponent(lblNuvarande)))
+                            .addComponent(btnByt)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnByt)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap()
+                        .addComponent(btnTillbaka)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +122,9 @@ public class AndraLosenAlien extends javax.swing.JFrame {
                     .addComponent(lblNyttLosen))
                 .addGap(29, 29, 29)
                 .addComponent(btnByt)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnTillbaka)
+                .addContainerGap())
         );
 
         pack();
@@ -149,9 +160,14 @@ try {
         }
     }//GEN-LAST:event_btnBytActionPerformed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnByt;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblNuvarande;
     private javax.swing.JLabel lblNyttLosen;
     private javax.swing.JLabel lblText;
