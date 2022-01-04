@@ -20,7 +20,7 @@ public Startklass()
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println("Internt felmeddalande" + ettUndantag.getMessage());
         }
-    
+          MetoderFyllaCB.databas(idb);
           new MainMenu(idb).setVisible(true);
     }
 

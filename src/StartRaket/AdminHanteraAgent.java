@@ -32,23 +32,42 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
 
         lblText = new javax.swing.JLabel();
         btnRegistrera = new javax.swing.JButton();
+<<<<<<< Updated upstream
         btnTillbaka = new javax.swing.JButton();
+=======
+        btnTaBortAgent = new javax.swing.JButton();
+        btnAdminStatus = new javax.swing.JButton();
+>>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblText.setText("Vad vill du göra");
 
-        btnRegistrera.setText("Registrera Agent");
+        btnRegistrera.setText("Registrera ny Agent");
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistreraActionPerformed(evt);
             }
         });
 
+<<<<<<< Updated upstream
         btnTillbaka.setText("Tillbaka");
         btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTillbakaActionPerformed(evt);
+=======
+        btnTaBortAgent.setText("Ta bort Agent");
+        btnTaBortAgent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaBortAgentActionPerformed(evt);
+            }
+        });
+
+        btnAdminStatus.setText("Göra Agent till admin");
+        btnAdminStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminStatusActionPerformed(evt);
+>>>>>>> Stashed changes
             }
         });
 
@@ -57,24 +76,44 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
                     .addComponent(btnRegistrera)
                     .addComponent(lblText))
                 .addContainerGap(258, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnTillbaka)
                 .addGap(0, 0, Short.MAX_VALUE))
+=======
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblText))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRegistrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTaBortAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAdminStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(234, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(lblText)
-                .addGap(57, 57, 57)
+                .addGap(33, 33, 33)
                 .addComponent(btnRegistrera)
+<<<<<<< Updated upstream
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addComponent(btnTillbaka))
+=======
+                .addGap(18, 18, 18)
+                .addComponent(btnTaBortAgent)
+                .addGap(18, 18, 18)
+                .addComponent(btnAdminStatus)
+                .addContainerGap(114, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
 
         pack();
@@ -82,18 +121,36 @@ public class AdminHanteraAgent extends javax.swing.JFrame {
 
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
         new AdminRegistreraAgent(idb).setVisible(true);
-        
+        this.setVisible(true);
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
+<<<<<<< Updated upstream
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+=======
+    private void btnTaBortAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortAgentActionPerformed
+        new AdminTaBortAgent(idb).setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnTaBortAgentActionPerformed
+
+    private void btnAdminStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminStatusActionPerformed
+       // new AdminAndraAdminStatus(idb).setVisible(true);
+        this.setVisible(true);
+    }//GEN-LAST:event_btnAdminStatusActionPerformed
+>>>>>>> Stashed changes
 
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdminStatus;
     private javax.swing.JButton btnRegistrera;
+<<<<<<< Updated upstream
     private javax.swing.JButton btnTillbaka;
+=======
+    private javax.swing.JButton btnTaBortAgent;
+>>>>>>> Stashed changes
     private javax.swing.JLabel lblText;
     // End of variables declaration//GEN-END:variables
 }
