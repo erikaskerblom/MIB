@@ -125,17 +125,17 @@ public class InloggadAdmin extends javax.swing.JFrame {
 
     private void btnUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUtrustningActionPerformed
         new AdminTaBortUtrustning(idb).setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnUtrustningActionPerformed
 
     private void btnAliensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAliensActionPerformed
         new AgentHanteraAlien(idb).setVisible(true);
-        this.setVisible(false);
+       
     }//GEN-LAST:event_btnAliensActionPerformed
 
     private void btnAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgentActionPerformed
         new AdminHanteraAgent(idb).setVisible(true);
-        this.setVisible(false);
+       
     }//GEN-LAST:event_btnAgentActionPerformed
 
 

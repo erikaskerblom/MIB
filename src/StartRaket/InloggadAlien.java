@@ -91,12 +91,12 @@ public class InloggadAlien extends javax.swing.JFrame {
 
     private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
         new AndraLosenAlien(idb, alienNamn, alienID).setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btnNyttLosenActionPerformed
 
     private void btnOmrådesChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmrådesChefActionPerformed
         new OmradeschefInfoForAlien(idb, alienNamn, alienID).setVisible(true);
-        this.setVisible(false);
+      
     }//GEN-LAST:event_btnOmrådesChefActionPerformed
 
  

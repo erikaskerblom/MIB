@@ -123,11 +123,19 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         if(arAdmin.equals("N"))
         
         JOptionPane.showMessageDialog(null, "Du har inte behörighet att logga in som admin" );
+        } else {
+        if(!txtLosen.equals(losen)){
+        
+        JOptionPane.showMessageDialog(null, "Fel lösenord. Prova ett annat!" );
         }
+
+        }
+
+
         }
         catch (InfException undantag) 
         {
-                JOptionPane.showMessageDialog(null, "råtta");
+                JOptionPane.showMessageDialog(null, "Hoppsan! Något gick fel.");
                 System.out.println(undantag.getMessage());
         }      
     }//GEN-LAST:event_btnLoggaInActionPerformed
