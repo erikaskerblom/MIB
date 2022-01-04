@@ -23,13 +23,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnRegistrera" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblText" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="lblText" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnRegistrera" max="32767" attributes="0"/>
+                          <Component id="btnTaBortAgent" max="32767" attributes="0"/>
+                          <Component id="btnAdminStatus" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="258" max="32767" attributes="0"/>
+              <EmptySpace pref="234" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,9 +51,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="lblText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="btnRegistrera" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="184" max="32767" attributes="0"/>
+<<<<<<< HEAD
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnTaBortAgent" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnAdminStatus" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="114" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="149" max="32767" attributes="0"/>
+              <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
+>>>>>>> cd17883a69fd838e8ff7cd6e3a44fd594868fadc
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,10 +75,35 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegistrera">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrera Agent"/>
+        <Property name="text" type="java.lang.String" value="Registrera ny Agent"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistreraActionPerformed"/>
+      </Events>
+    </Component>
+<<<<<<< HEAD
+    <Component class="javax.swing.JButton" name="btnTaBortAgent">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ta bort Agent"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaBortAgentActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAdminStatus">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="G&#xf6;ra Agent till admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminStatusActionPerformed"/>
+=======
+    <Component class="javax.swing.JButton" name="btnTillbaka">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tillbaka"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbakaActionPerformed"/>
+>>>>>>> cd17883a69fd838e8ff7cd6e3a44fd594868fadc
       </Events>
     </Component>
   </SubComponents>
