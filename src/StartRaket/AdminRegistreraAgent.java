@@ -76,7 +76,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
 
         lblOmråde.setText("Område");
 
-        cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "Svealand", "Götaland", "Norrland" }));
+        cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "1", "2", "4" }));
 
         btnRegistrera.setText("Registrera");
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
@@ -166,8 +166,12 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
-        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosen) &&
+       
+        
+         if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosen) &&
             Validering.rattLangd(txtLosen) && Validering.rattIndexComboBox(cbAdmin) && Validering.rattIndexComboBox(cbOmråde))
+
+            
         try 
         {
             String maxID = "SELECT max(Agent_ID) FROM Agent";
@@ -183,9 +187,14 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
             String arAdmin = (String) cbAdmin.getSelectedItem();
             
             String område = (String) cbOmråde.getSelectedItem();
+
+            String fraga = "INSERT INTO Agent values(" + nyttID + ", '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', '" + datum + "', '" + arAdmin + "', '" +nyttLosen + "', " + område + ")";
             
+
+            idb.insert(fraga);
             
-            idb.insert("INSERT INTO AGENT values(" + nyttID + ", " + txtNamn.getText() + ", '" + txtNamn.getText() + "', '" + datum + "', '" + arAdmin + "', " + nyttLosen + ", " + område + ")");
+                
+      
             
             JOptionPane.showMessageDialog(null, "En ny agent har registrerats");
             this.setVisible(false);
@@ -196,6 +205,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
         catch (InfException e) 
         {
             JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
