@@ -193,7 +193,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
             this.setVisible(false);
         } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, "Råtta");
+            JOptionPane.showMessageDialog(null, "Något gick fel");
         }
 
     }//GEN-LAST:event_btnLaggTillActionPerformed
