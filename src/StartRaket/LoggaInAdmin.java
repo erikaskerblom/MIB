@@ -82,9 +82,10 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                     .addComponent(lblVälkommen)
                     .addComponent(txtLosen))
                 .addContainerGap(247, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,8 +98,9 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                 .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btnLoggaIn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(btnTillbaka))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnTillbaka)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,7 +131,7 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         
         if(arAdmin.equals("J"))
         
-        //new InloggadAdmin(idb, namn, Integer.parseInt(anvandarNamn)).setVisible(true);
+        new InloggadAdmin(idb).setVisible(true);
         this.setVisible(false); 
         
         if(arAdmin.equals("N"))
