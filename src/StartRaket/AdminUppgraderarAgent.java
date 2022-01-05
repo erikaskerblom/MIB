@@ -92,10 +92,10 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
         String dbNamn = "select Namn from Agent";
         idb.fetchSingle(dbNamn);
 
-       // String admin="select Administrator from Agent where namn='" + namnPaAgent + "'";
-       // idb.fetchSingle(admin);
+        String admin="select Administrator from Agent where namn='" + namnPaAgent + "'";
+        idb.fetchSingle(admin);
     
-    if(namnPaAgent.equals(dbNamn)){
+    if(namnPaAgent.equals(dbNamn) && admin.equals("N")){
     idb.update("update Agent set Administrator='J' where Namn = '" + namnPaAgent + "'");
     JOptionPane.showMessageDialog(null,"Agenten har uppgraderats");
 }
