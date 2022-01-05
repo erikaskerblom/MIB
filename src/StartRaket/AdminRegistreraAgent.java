@@ -72,11 +72,21 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
 
         lblAdmin.setText("Administratör");
 
-        cbAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "J", "N" }));
+        cbAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "Ja", "Nej" }));
+        cbAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAdminActionPerformed(evt);
+            }
+        });
 
         lblOmråde.setText("Område");
 
         cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "Svealand", "Götaland", "Norrland" }));
+        cbOmråde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOmrådeActionPerformed(evt);
+            }
+        });
 
         btnRegistrera.setText("Registrera");
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
@@ -170,22 +180,37 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
             Validering.rattLangd(txtLosen) && Validering.rattIndexComboBox(cbAdmin) && Validering.rattIndexComboBox(cbOmråde))
         try 
         {
+            int Omrades_ID=1;
+            String omradet = (String) cbOmråde.getSelectedItem();
+            if (omradet.equals("Svealand")) {
+                Omrades_ID = 1;
+            } else if (omradet.equals("Götaland")) {
+                Omrades_ID = 2;
+            } else if (omradet.equals("Norrland")) {
+                Omrades_ID = 4;
+            } 
+
             String maxID = "SELECT max(Agent_ID) FROM Agent";
             String ID = idb.fetchSingle(maxID);
             int nyttID = Integer.parseInt(ID) + 1;
             
+            String agentNamn=new String(txtNamn.getText());
+
             Date ettDatum = new Date();
             SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
             String datum = datumet.format(ettDatum);
             
             String nyttLosen = new String(txtLosen.getPassword());
             
-            String arAdmin = (String) cbAdmin.getSelectedItem();
-            
-            String område = (String) cbOmråde.getSelectedItem();
-            
-            
-            idb.insert("INSERT INTO AGENT values(" + nyttID + ", " + txtNamn.getText() + ", '" + txtNamn.getText() + "', '" + datum + "', '" + arAdmin + "', " + nyttLosen + ", " + område + ")");
+            String arAdmin;
+            arAdmin = (String) cbAdmin.getSelectedItem();
+            if(arAdmin.equals("Ja")){
+            arAdmin="J";
+            } else {
+            arAdmin="N";
+            }
+ 
+            idb.insert("INSERT INTO AGENT values(" + nyttID + ", '" + agentNamn + "', '" + txtTelefon.getText() + "', '" + datum + "', '" + arAdmin + "', '" + nyttLosen + "', " + Omrades_ID + ")");
             
             JOptionPane.showMessageDialog(null, "En ny agent har registrerats");
             this.setVisible(false);
@@ -196,6 +221,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
         catch (InfException e) 
         {
             JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
@@ -207,6 +233,14 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
         this.setVisible(false);
         //new AdminHanteraAgent(idb).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAdminActionPerformed
+     //
+    }//GEN-LAST:event_cbAdminActionPerformed
+
+    private void cbOmrådeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOmrådeActionPerformed
+ 
+    }//GEN-LAST:event_cbOmrådeActionPerformed
 
 
 
