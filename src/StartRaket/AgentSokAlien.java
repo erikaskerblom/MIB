@@ -16,6 +16,7 @@ public class AgentSokAlien extends javax.swing.JFrame {
         private InfDB idb;
     /**
      * Creates new form AgentSokAlien
+     * @param idb
      */
     public AgentSokAlien(InfDB idb) {
         initComponents();
