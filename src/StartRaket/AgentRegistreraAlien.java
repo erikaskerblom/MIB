@@ -6,6 +6,7 @@ package StartRaket;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
@@ -24,6 +25,8 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     public AgentRegistreraAlien(InfDB idb) {
         initComponents();
         this.idb = idb;
+        MetoderFyllaCB.laggTillAgent(cbAgent);
+        MetoderFyllaCB.laggTillPlats(cbPlats);
     }
 
     /**
@@ -80,14 +83,19 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en plats", "Örebro", "Västerårs", "Vilhelmina", "Borås" }));
+        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett område" }));
         cbPlats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPlatsActionPerformed(evt);
             }
         });
 
-        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent", "Agent O", "Agent Z", "Agent K", "Agent J" }));
+        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent" }));
+        cbAgent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAgentActionPerformed(evt);
+            }
+        });
 
         txtLosenord.setText("jPasswordField1");
         txtLosenord.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,7 +179,17 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) 
               && Validering.rattIndexComboBox(cbPlats))
         try {
-            
+            int platsID;
+            if (cbPlats.equals("Örebro")) {
+                platsID = 1;
+            } else if (cbPlats.equals("Västerås")) {
+                platsID = 2;
+            } else if (cbPlats.equals("Vilhelmina")) {
+                platsID = 3;
+            } else if (cbPlats.equals("Borås")) {
+                platsID = 4;
+            }
+
             String maxID = "SELECT max(Alien_ID) FROM Alien";
             String ID = idb.fetchSingle(maxID);
             int nyttID = Integer.parseInt(ID) + 1;
@@ -181,14 +199,14 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             String datum = datumet.format(ettDatum);
             
             String fragaPlats = "SELECT Plats_ID FROM Plats WHERE Benamning = '" + cbPlats.getSelectedItem() + "'";
-            String platsID = idb.fetchSingle(fragaPlats);
+            String pID = idb.fetchSingle(fragaPlats);
             
             String fragaAgent = "SELECT Agent_ID from Agent where Namn = '" + cbAgent.getSelectedItem() + "'";
             String agentID = idb.fetchSingle(fragaAgent);            
             
             String nyttLosen = new String(txtLosenord.getPassword());
             
-            idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + platsID + ", " + agentID + ")");
+            idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + pID + ", " + agentID + ")");
             
             JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
             this.setVisible(false);
@@ -205,6 +223,10 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     private void txtLosenordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLosenordMouseClicked
         txtLosenord.setText("");
     }//GEN-LAST:event_txtLosenordMouseClicked
+
+    private void cbAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAgentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAgentActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

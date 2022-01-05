@@ -41,4 +41,19 @@ public class MetoderFyllaCB {
 
        
     }
+
+    public static void laggTillPlats(JComboBox cb) {
+        String platsFraga = "Select benamning From plats";
+
+        ArrayList<String> allaPlatser;
+
+        try {
+            allaPlatser = idb.fetchColumn(platsFraga);
+            for (String o : allaPlatser) {
+                cb.addItem(o);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
