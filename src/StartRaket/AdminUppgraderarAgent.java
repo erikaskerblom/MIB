@@ -85,6 +85,7 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
 
     private void btnUppgraderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppgraderaActionPerformed
 
+
         if (Validering.rattIndexComboBox(cbNamn))
         try {
 
@@ -103,6 +104,8 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
             System.out.println(e.getMessage());
 
         }
+
+
     }//GEN-LAST:event_btnUppgraderaActionPerformed
 
 
