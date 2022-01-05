@@ -4,6 +4,7 @@
  */
 package StartRaket;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
@@ -134,44 +135,52 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_cbAgentAttTaBortActionPerformed
 
     private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
-    
-    
-    if(Validering.rattIndexComboBox(cbAgentAttTaBort) && Validering.rattIndexComboBox(cbNyAgent))
-    try{
-        
+    if (Validering.rattIndexComboBox(cbAgentAttTaBort) && Validering.rattIndexComboBox(cbNyAgent))
+    try {
 
-        String namnPaAgent = (String) cbAgentAttTaBort.getSelectedItem();
-        String idPaAgent = "Select Agent_ID from agent where Namn = " + namnPaAgent; 
-        
-        String namnNyAgent = (String) cbNyAgent.getSelectedItem();
-        String idNyAgent = "Select Agent_ID FROM agent where Namn = " + namnNyAgent;
-                   
-        String uppdateraAlien = "Update alien set Ansvarig_Agent = " + idNyAgent + " where Ansvarig_Agent = " + idPaAgent;
-        idb.update(uppdateraAlien);
-        
-        String uppdateraOmrade = "Update omradeschef set Agent_ID = " + idNyAgent + " where Agent_ID = " + idPaAgent;
-        idb.update(uppdateraOmrade);
-        
-        String taBortFordon = "Delete from innehar_fordon where Agent_ID = " + idPaAgent;
-        idb.delete(taBortFordon);
+            String namnPaAgent = cbAgentAttTaBort.getSelectedItem().toString();
+            String idPaAgent = "Select Agent_ID from agent where Namn = '" + namnPaAgent+"'";
+            String agent1 = idb.fetchSingle(idPaAgent);
 
-        String taBortUtrustning = "Delete from innehar_utrustning where Agent_ID = " + idPaAgent;
-        idb.delete(taBortUtrustning);
-        
-        String taBortAgent = "Delete from agent where id = " + idPaAgent;
-        idb.delete(taBortAgent);
-        
-        
-        JOptionPane.showMessageDialog(null, "Agenten är borttagen ur systemet");
-        this.setVisible(false);
+            
+            String namnNyAgent = cbNyAgent.getSelectedItem().toString();
+            String idNyAgent = "Select Agent_ID FROM agent where Namn = '" + namnNyAgent+"'";
+            String agent2 = idb.fetchSingle(idNyAgent);
+
+            String uppdateraAlien = "Update alien set Ansvarig_Agent = " + agent2 + " where ansvarig_Agent = " + agent1;
+         
+            String taBortOmradesChef = "DELETE FROM omradeschef where Agent_ID = " + agent1;
+            
+            String taBortFordon = "Delete from innehar_fordon where Agent_ID = " + agent1;
+          
+            String taBortUtrustning = "Delete from innehar_utrustning where Agent_ID = " + agent1;
+            
+            String taBortKontorsChef = "Delete FROM kontorschef where Agent_ID = " + agent1;
+            
+            String taBortFaltAgent = "Delete from faltagent where Agent_ID = " + agent1;
+
+            String taBortAgent = "Delete from agent where Agent_ID = " + agent1;
+            
+
+            idb.update(uppdateraAlien);
+            idb.delete(taBortOmradesChef);
+            idb.delete(taBortFordon);
+            idb.delete(taBortUtrustning);
+            idb.delete(taBortKontorsChef);
+            idb.delete(taBortFaltAgent);
+            idb.delete(taBortAgent);
+
+
+
+            JOptionPane.showMessageDialog(null, "Agenten är borttagen ur systemet");
+            this.setVisible(false);
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Det strular");
+            System.out.println(e.getMessage());
+
         }
-        catch(InfException e)
-        {
-        JOptionPane.showMessageDialog(null, "Det strular");
-        System.out.println(e.getMessage());
+
         
-        }
-       
     }//GEN-LAST:event_btnTaBortActionPerformed
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
