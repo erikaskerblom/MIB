@@ -23,6 +23,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
     public AdminRegistreraAgent(InfDB idb) {
         initComponents();
         this.idb = idb;
+        MetoderFyllaCB.laggTillOmrade(cbOmråde);
     }
 
     /**
@@ -81,7 +82,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
 
         lblOmråde.setText("Område");
 
-        cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ", "Svealand", "Götaland", "Norrland" }));
+        cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett alternativ" }));
         cbOmråde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbOmrådeActionPerformed(evt);
