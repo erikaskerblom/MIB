@@ -150,12 +150,8 @@
     <Component class="javax.swing.JComboBox" name="cbPlats">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="V&#xe4;lj en plats"/>
-            <StringItem index="1" value="&#xd6;rebro"/>
-            <StringItem index="2" value="V&#xe4;ster&#xe5;rs"/>
-            <StringItem index="3" value="Vilhelmina"/>
-            <StringItem index="4" value="Bor&#xe5;s"/>
+          <StringArray count="1">
+            <StringItem index="0" value="V&#xe4;lj ett omr&#xe5;de"/>
           </StringArray>
         </Property>
       </Properties>
@@ -169,15 +165,14 @@
     <Component class="javax.swing.JComboBox" name="cbAgent">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="1">
             <StringItem index="0" value="V&#xe4;lj en agent"/>
-            <StringItem index="1" value="Agent O"/>
-            <StringItem index="2" value="Agent Z"/>
-            <StringItem index="3" value="Agent K"/>
-            <StringItem index="4" value="Agent J"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbAgentActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
