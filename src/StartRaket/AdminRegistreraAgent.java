@@ -180,40 +180,37 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
             Validering.rattLangd(txtLosen) && Validering.rattIndexComboBox(cbAdmin) && Validering.rattIndexComboBox(cbOmråde))
         try 
         {
+            int Omrades_ID=1;
+            String omradet = (String) cbOmråde.getSelectedItem();
+            if (omradet.equals("Svealand")) {
+                Omrades_ID = 1;
+            } else if (omradet.equals("Götaland")) {
+                Omrades_ID = 2;
+            } else if (omradet.equals("Norrland")) {
+                Omrades_ID = 4;
+            } 
+
             String maxID = "SELECT max(Agent_ID) FROM Agent";
             String ID = idb.fetchSingle(maxID);
             int nyttID = Integer.parseInt(ID) + 1;
             
+            String agentNamn=new String(txtNamn.getText());
+
             Date ettDatum = new Date();
             SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
             String datum = datumet.format(ettDatum);
             
             String nyttLosen = new String(txtLosen.getPassword());
             
-            String arAdmin = (String) cbAdmin.getSelectedItem();
-            if(arAdmin.contains("Ja")){
+            String arAdmin;
+            arAdmin = (String) cbAdmin.getSelectedItem();
+            if(arAdmin.equals("Ja")){
             arAdmin="J";
-        } else{
+            } else {
             arAdmin="N";
             }
-
-            
-            String område = (String) cbOmråde.getSelectedItem();
-            if(område.contains("Svealand")){
-            område="1";
-
-            if(område.contains("Götaland")){
-            område="2";
-
-            if(område.contains("Norrland")){
-            område="4";
-        }
-        }
-        }
-       
-            
-            
-            idb.insert("INSERT INTO AGENT values(" + nyttID + ", " + txtNamn.getText() + ", '" + txtTelefon.getText() + "', '" + datum + "', '" + arAdmin + "', " + nyttLosen + ", " + område + ")");
+ 
+            idb.insert("INSERT INTO AGENT values(" + nyttID + ", '" + agentNamn + "', '" + txtTelefon.getText() + "', '" + datum + "', '" + arAdmin + "', '" + nyttLosen + "', " + Omrades_ID + ")");
             
             JOptionPane.showMessageDialog(null, "En ny agent har registrerats");
             this.setVisible(false);
