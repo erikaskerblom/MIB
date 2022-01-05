@@ -134,7 +134,6 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
             String namn = idb.fetchSingle(query);
 
             String query2 = "SELECT Telefon FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + omradesID + ")";
-
             String telNr = idb.fetchSingle(query2);
 
             lblNamn.setVisible(true);
