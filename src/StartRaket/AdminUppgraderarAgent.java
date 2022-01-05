@@ -13,10 +13,12 @@ import oru.inf.InfException;
  * @author majahawia
  */
 public class AdminUppgraderarAgent extends javax.swing.JFrame {
- private InfDB idb;
+
+    private InfDB idb;
 
     /**
      * Creates new form AdminUppgraderarAlien
+     *
      * @param idb
      */
     public AdminUppgraderarAgent(InfDB idb) {
@@ -84,7 +86,6 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUppgraderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppgraderaActionPerformed
-
 
         if (Validering.rattIndexComboBox(cbNamn))
         try {
