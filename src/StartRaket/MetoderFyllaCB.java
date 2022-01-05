@@ -72,4 +72,18 @@ public class MetoderFyllaCB {
             Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public static void laggTillAlien(JComboBox cb) {
+        String alienFraga = "Select namn from alien";
+
+        ArrayList<String> allaAliens;
+
+        try {
+            allaAliens = idb.fetchColumn(alienFraga);
+            for (String a : allaAliens) {
+                cb.addItem(a);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
