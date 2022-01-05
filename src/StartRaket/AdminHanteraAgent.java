@@ -54,6 +54,11 @@ private InfDB idb;
         });
 
         btnAdminStatus.setText("Gör Agent till admin");
+        btnAdminStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminStatusActionPerformed(evt);
+            }
+        });
 
         btnTillbaka.setText("Tillbaka");
         btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +116,10 @@ private InfDB idb;
         this.setVisible(false);
         
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void btnAdminStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminStatusActionPerformed
+       new AdminUppgraderarAgent(idb).setVisible(true);
+    }//GEN-LAST:event_btnAdminStatusActionPerformed
 
  
 

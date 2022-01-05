@@ -84,6 +84,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="G&#xf6;r Agent till admin"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminStatusActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnTillbaka">
       <Properties>
