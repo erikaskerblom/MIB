@@ -85,32 +85,24 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
 
     private void btnUppgraderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppgraderaActionPerformed
 
-    if(Validering.rattIndexComboBox(cbNamn))
-    try{
-        
-        String namnPaAgent = (String) cbNamn.getSelectedItem();
-        String dbNamn = "select Namn from Agent";
-        idb.fetchSingle(dbNamn);
+        if (Validering.rattIndexComboBox(cbNamn))
+        try {
 
-       // String admin="select Administrator from Agent where namn='" + namnPaAgent + "'";
-       // idb.fetchSingle(admin);
-    
-    if(namnPaAgent.equals(dbNamn)){
-    idb.update("update Agent set Administrator='J' where Namn = '" + namnPaAgent + "'");
-    JOptionPane.showMessageDialog(null,"Agenten har uppgraderats");
-}
-   
-    else {
-       JOptionPane.showMessageDialog(null, "Hora");
-        
-        }}
-        catch(InfException e)
-        {
-        JOptionPane.showMessageDialog(null, "Ett fel har uppstått");
-        System.out.println(e.getMessage());
-        
-        
-    }
+            String namnPaAgent = (String) cbNamn.getSelectedItem();
+            String dbNamn = "Select Agent_ID from Agent where namn = '" + namnPaAgent + "'";
+            String id = idb.fetchSingle(dbNamn);
+
+            String uppdatering = "update Agent set Administrator= 'J' where Agent_ID = " + id;
+
+            idb.update(uppdatering);
+            JOptionPane.showMessageDialog(null, "Agenten har uppgraderats");
+
+        } catch (InfException e) {
+
+            JOptionPane.showMessageDialog(null, "Ett fel har uppstått");
+            System.out.println(e.getMessage());
+
+        }
     }//GEN-LAST:event_btnUppgraderaActionPerformed
 
 
