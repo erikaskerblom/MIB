@@ -21,7 +21,8 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
     public AdminTaBortAgent(InfDB idb) {
         initComponents();
         this.idb = idb;
-        MetoderFyllaCB.laggTillAgent(cbAgent);
+        MetoderFyllaCB.laggTillAgent(cbAgentAttTaBort);
+        MetoderFyllaCB.laggTillAgent(cbNyAgent);
         
     }
 
@@ -37,7 +38,11 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
         lblText = new javax.swing.JLabel();
         lblOBS = new javax.swing.JLabel();
         btnTaBort = new javax.swing.JButton();
-        cbAgent = new javax.swing.JComboBox<>();
+        cbAgentAttTaBort = new javax.swing.JComboBox<>();
+        btnTillbaka = new javax.swing.JButton();
+        lblAgentTaBort = new javax.swing.JLabel();
+        cbNyAgent = new javax.swing.JComboBox<>();
+        lblNyAgent = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,59 +58,108 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
             }
         });
 
-        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent" }));
-        cbAgent.addActionListener(new java.awt.event.ActionListener() {
+        cbAgentAttTaBort.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent" }));
+        cbAgentAttTaBort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbAgentActionPerformed(evt);
+                cbAgentAttTaBortActionPerformed(evt);
             }
         });
+
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
+        lblAgentTaBort.setText("Agent att ta bort");
+
+        cbNyAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent" }));
+
+        lblNyAgent.setText("Agent att ersätta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTillbaka)
+                .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTaBort)
                     .addComponent(lblOBS)
-                    .addComponent(lblText))
-                .addContainerGap(166, Short.MAX_VALUE))
+                    .addComponent(lblText)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAgentTaBort)
+                            .addComponent(lblNyAgent))
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbAgentAttTaBort, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTaBort)
+                            .addComponent(cbNyAgent, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(lblText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblOBS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblOBS)
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbAgentAttTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAgentTaBort))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbNyAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNyAgent))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btnTaBort)
-                .addGap(94, 94, 94))
+                .addGap(2, 2, 2)
+                .addComponent(btnTillbaka)
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAgentActionPerformed
+    private void cbAgentAttTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAgentAttTaBortActionPerformed
  
-    }//GEN-LAST:event_cbAgentActionPerformed
+    }//GEN-LAST:event_cbAgentAttTaBortActionPerformed
 
     private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
     
     
-    if(Validering.rattIndexComboBox(cbAgent))
+    if(Validering.rattIndexComboBox(cbAgentAttTaBort) && Validering.rattIndexComboBox(cbNyAgent))
     try{
-        String namn = (String) cbAgent.getSelectedItem();
-            
         
 
+        String namnPaAgent = (String) cbAgentAttTaBort.getSelectedItem();
+        String idPaAgent = "Select Agent_ID from agent where Namn = " + namnPaAgent; 
         
-        String fråga = "Delete from agent where namn = " + namn;
-        idb.delete(fråga);
+        String namnNyAgent = (String) cbNyAgent.getSelectedItem();
+        String idNyAgent = "Select Agent_ID FROM agent where Namn = " + namnNyAgent;
+                   
+        String uppdateraAlien = "Update alien set Ansvarig_Agent = " + idNyAgent + " where Ansvarig_Agent = " + idPaAgent;
+        idb.update(uppdateraAlien);
+        
+        String uppdateraOmrade = "Update omradeschef set Agent_ID = " + idNyAgent + " where Agent_ID = " + idPaAgent;
+        idb.update(uppdateraOmrade);
+        
+        String taBortFordon = "Delete from innehar_fordon where Agent_ID = " + idPaAgent;
+        idb.delete(taBortFordon);
+
+        String taBortUtrustning = "Delete from innehar_utrustning where Agent_ID = " + idPaAgent;
+        idb.delete(taBortUtrustning);
+        
+        String taBortAgent = "Delete from agent where id = " + idPaAgent;
+        idb.delete(taBortAgent);
         
         
         JOptionPane.showMessageDialog(null, "Agenten är borttagen ur systemet");
@@ -120,11 +174,19 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnTaBortActionPerformed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTaBort;
-    private javax.swing.JComboBox<String> cbAgent;
+    private javax.swing.JButton btnTillbaka;
+    private javax.swing.JComboBox<String> cbAgentAttTaBort;
+    private javax.swing.JComboBox<String> cbNyAgent;
+    private javax.swing.JLabel lblAgentTaBort;
+    private javax.swing.JLabel lblNyAgent;
     private javax.swing.JLabel lblOBS;
     private javax.swing.JLabel lblText;
     // End of variables declaration//GEN-END:variables
