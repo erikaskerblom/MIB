@@ -35,11 +35,11 @@
                                   <Component id="lblNamn" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblTelNr" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblOmradesID" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblOmrade" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="btnHamtaInfo" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtID" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbOmråde" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -51,7 +51,7 @@
                       <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="195" max="32767" attributes="0"/>
+              <EmptySpace pref="202" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,8 +62,8 @@
               <Component id="lblText" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblOmradesID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblOmrade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbOmråde" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnHamtaInfo" min="-2" max="-2" attributes="0"/>
@@ -84,17 +84,9 @@
         <Property name="text" type="java.lang.String" value="S&#xf6;k omr&#xe5;deschef"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtID">
+    <Component class="javax.swing.JLabel" name="lblOmrade">
       <Properties>
-        <Property name="columns" type="int" value="8"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtIDMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblOmradesID">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Omr&#xe5;des ID"/>
+        <Property name="text" type="java.lang.String" value="Omr&#xe5;de"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNamn">
@@ -122,6 +114,18 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTillbakaActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbOmr&#xe5;de">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="V&#xe4;lj ett omr&#xe5;de"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

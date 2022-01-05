@@ -49,9 +49,25 @@ public class MetoderFyllaCB {
 
         try {
             allaPlatser = idb.fetchColumn(platsFraga);
-            for (String o : allaPlatser) {
+            for (String p : allaPlatser) {
+                cb.addItem(p);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void laggTillOmrade(JComboBox cb) {
+        String omradesFraga = "Select benamning from omrade";
+
+        ArrayList<String> allaOmraden;
+
+        try {
+            allaOmraden = idb.fetchColumn(omradesFraga);
+            for (String o : allaOmraden) {
                 cb.addItem(o);
             }
+
         } catch (InfException ex) {
             Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
         }

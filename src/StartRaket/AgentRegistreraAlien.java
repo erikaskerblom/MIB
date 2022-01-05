@@ -83,7 +83,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
-        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett område" }));
+        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett plats" }));
         cbPlats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPlatsActionPerformed(evt);
@@ -179,16 +179,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) 
               && Validering.rattIndexComboBox(cbPlats))
         try {
-            int platsID;
-            if (cbPlats.equals("Örebro")) {
-                platsID = 1;
-            } else if (cbPlats.equals("Västerås")) {
-                platsID = 2;
-            } else if (cbPlats.equals("Vilhelmina")) {
-                platsID = 3;
-            } else if (cbPlats.equals("Borås")) {
-                platsID = 4;
-            }
+            
 
             String maxID = "SELECT max(Alien_ID) FROM Alien";
             String ID = idb.fetchSingle(maxID);

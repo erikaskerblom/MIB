@@ -22,6 +22,7 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
     public AgentSokOmradeschef(InfDB idb) {
         this.idb = idb;
         initComponents();
+        MetoderFyllaCB.laggTillOmrade(cbOmråde);
     }
 
     /**
@@ -34,25 +35,18 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
     private void initComponents() {
 
         lblText = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
-        lblOmradesID = new javax.swing.JLabel();
+        lblOmrade = new javax.swing.JLabel();
         lblNamn = new javax.swing.JLabel();
         lblTelNr = new javax.swing.JLabel();
         btnHamtaInfo = new javax.swing.JButton();
         btnTillbaka = new javax.swing.JButton();
+        cbOmråde = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblText.setText("Sök områdeschef");
 
-        txtID.setColumns(8);
-        txtID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtIDMouseClicked(evt);
-            }
-        });
-
-        lblOmradesID.setText("Områdes ID");
+        lblOmrade.setText("Område");
 
         lblNamn.setText("Namn");
 
@@ -72,6 +66,8 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
             }
         });
 
+        cbOmråde.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ett område" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,15 +84,15 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
                                     .addComponent(lblNamn)
                                     .addComponent(lblTelNr)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblOmradesID)
+                                        .addComponent(lblOmrade)
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btnHamtaInfo)
-                                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(cbOmråde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnTillbaka)))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,8 +101,8 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
                 .addComponent(lblText)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOmradesID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblOmrade)
+                    .addComponent(cbOmråde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnHamtaInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
@@ -121,20 +117,23 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIDMouseClicked
-        txtID.setText("");
-    }//GEN-LAST:event_txtIDMouseClicked
-
     private void btnHamtaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHamtaInfoActionPerformed
-        if (Validering.textFaltHarVarde(txtID))
-try {
+        Validering.rattIndexComboBox(cbOmråde);
+        try {
+            int omradesID = 0;
+            String omradet = (String) cbOmråde.getSelectedItem();
+            if (omradet.equals("Svealand")) {
+                omradesID = 1;
+            } else if (omradet.equals("Götaland")) {
+                omradesID = 2;
+            } else if (omradet.equals("Norrland")) {
+                omradesID = 4;
+            }
 
-            String id = txtID.getText();
-
-            String query = "SELECT Namn FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id + ")";
+            String query = "SELECT Namn FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + omradesID + ")";
             String namn = idb.fetchSingle(query);
 
-            String query2 = "SELECT Telefon FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + id + ")";
+            String query2 = "SELECT Telefon FROM agent where agent_ID = (SELECT Agent_ID from omradeschef where omrade = " + omradesID + ")";
 
             String telNr = idb.fetchSingle(query2);
 
@@ -158,10 +157,10 @@ try {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHamtaInfo;
     private javax.swing.JButton btnTillbaka;
+    private javax.swing.JComboBox<String> cbOmråde;
     private javax.swing.JLabel lblNamn;
-    private javax.swing.JLabel lblOmradesID;
+    private javax.swing.JLabel lblOmrade;
     private javax.swing.JLabel lblTelNr;
     private javax.swing.JLabel lblText;
-    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }
