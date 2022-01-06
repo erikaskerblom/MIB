@@ -124,19 +124,25 @@ private InfDB idb;
    }   
    
    else if(cbInfo.getSelectedItem().toString().equals("Område")){
-   String Område = txtNyInfo.getText();
+   String område = txtNyInfo.getText();
    int Omrades_ID=1;
-     if (txtNyInfo.equals("Svealand")) {
-                Omrades_ID = 1;
-            } else if (txtNyInfo.equals("Götaland")) {
+     if (område.equals("Svealand")) 
+    {
+     Omrades_ID = 1;
+    }
+     
+              if (område.equals("Götaland")) {
                 Omrades_ID = 2;
-            } else if (txtNyInfo.equals("Norrland")) {
+              }
+
+if (område.equals("Norrland")) {
                 Omrades_ID = 4;
-            } 
-   String uppdateraOmråde = "update agent set område="+ Omrades_ID + "' where Agent_ID =" + id;
+}
+            
+   String uppdateraOmråde = "update agent set omrade="+ Omrades_ID + " where Agent_ID =" + id;
    idb.update(uppdateraOmråde);
    }   
-
+   
 
       JOptionPane.showMessageDialog(null, "Infon har ändrats!");
       }
