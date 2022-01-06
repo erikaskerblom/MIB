@@ -182,7 +182,7 @@ private InfDB idb;
     }//GEN-LAST:event_btnAndraKChefActionPerformed
 
     private void btnAndraAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraAgentInfoActionPerformed
-        
+        new AdminAndraAgentInfo(idb).setVisible(true);
     }//GEN-LAST:event_btnAndraAgentInfoActionPerformed
 
 
