@@ -4,6 +4,9 @@
  */
 package StartRaket;
 
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
@@ -42,6 +45,8 @@ public class AgentSokAlien extends javax.swing.JFrame {
         lblPlats = new javax.swing.JLabel();
         lblAnsvarigAgent = new javax.swing.JLabel();
         btnSok = new javax.swing.JButton();
+        lblRasExtra = new javax.swing.JLabel();
+        lblRasExtraRubrik = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,19 +79,14 @@ public class AgentSokAlien extends javax.swing.JFrame {
             }
         });
 
+        lblRasExtra.setText("Ras");
+
+        lblRasExtraRubrik.setText("Mer om ras");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRegDatum)
-                    .addComponent(lblAlienID)
-                    .addComponent(lblTelefon)
-                    .addComponent(lblPlats)
-                    .addComponent(lblAnsvarigAgent))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(189, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,6 +102,17 @@ public class AgentSokAlien extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(btnTillbaka)
                             .addGap(41, 41, 41)))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRasExtraRubrik)
+                    .addComponent(lblRasExtra)
+                    .addComponent(lblRegDatum)
+                    .addComponent(lblAlienID)
+                    .addComponent(lblTelefon)
+                    .addComponent(lblPlats)
+                    .addComponent(lblAnsvarigAgent))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +133,11 @@ public class AgentSokAlien extends javax.swing.JFrame {
                 .addComponent(lblPlats)
                 .addGap(18, 18, 18)
                 .addComponent(lblAnsvarigAgent)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(lblRasExtra)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblRasExtraRubrik)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
                 .addGap(33, 33, 33))
         );
@@ -165,6 +180,10 @@ public class AgentSokAlien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println("Internt felmeddelande" + e.getMessage());
         }
+
+
+
+
     }//GEN-LAST:event_btnSokActionPerformed
 
     
@@ -177,6 +196,8 @@ public class AgentSokAlien extends javax.swing.JFrame {
     private javax.swing.JLabel lblAnsvarigAgent;
     private javax.swing.JLabel lblInfoOmAliens;
     private javax.swing.JLabel lblPlats;
+    private javax.swing.JLabel lblRasExtra;
+    private javax.swing.JLabel lblRasExtraRubrik;
     private javax.swing.JLabel lblRegDatum;
     private javax.swing.JLabel lblTelefon;
     // End of variables declaration//GEN-END:variables

@@ -15,6 +15,7 @@ import oru.inf.InfException;
  */
 public class AdminTaBortAgent extends javax.swing.JFrame {
     private InfDB idb;
+   
 
     /**
      * Creates new form AdminTaBortAgent

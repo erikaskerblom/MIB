@@ -86,4 +86,22 @@ public class MetoderFyllaCB {
             Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public static void laggTillUtrustning(JComboBox cb) {
+        String utrustningFraga = "Select Benamning from utrustning";
+
+        ArrayList<String> allaUturstningar;
+
+        try {
+            allaUturstningar = idb.fetchColumn(utrustningFraga);
+            for (String a : allaUturstningar) {
+                cb.addItem(a);
+            }
+        } catch (InfException ex) {
+            Logger.getLogger(MetoderFyllaCB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+
 }

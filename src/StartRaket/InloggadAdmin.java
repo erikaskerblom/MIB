@@ -34,12 +34,18 @@ private InfDB idb;
         btnAliens = new javax.swing.JButton();
         btnAgenter = new javax.swing.JButton();
         btnLoggaUt = new javax.swing.JButton();
+        btnTaBort = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblText.setText("Vad vill du administrera");
 
-        btnUtrustning.setText("Utrustning");
+        btnUtrustning.setText("Ta bort Utrustning");
+        btnUtrustning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUtrustningActionPerformed(evt);
+            }
+        });
 
         btnAliens.setText("Aliens");
         btnAliens.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +68,13 @@ private InfDB idb;
             }
         });
 
+        btnTaBort.setText("Ta bort Alien");
+        btnTaBort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaBortActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,31 +85,37 @@ private InfDB idb;
                         .addGap(28, 28, 28)
                         .addComponent(lblText))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnUtrustning)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAliens)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnLoggaUt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAgenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGap(285, 285, 285)
+                        .addComponent(btnLoggaUt))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUtrustning)
+                            .addComponent(btnAgenter, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAliens)
+                            .addComponent(btnTaBort))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(93, 237, Short.MAX_VALUE)
-                .addComponent(btnLoggaUt)
-                .addGap(34, 34, 34))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblText)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUtrustning)
-                    .addComponent(btnAliens)
-                    .addComponent(btnAgenter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLoggaUt)
+                        .addGap(22, 22, 22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnAgenter)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAliens)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTaBort)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(btnUtrustning)
+                        .addGap(52, 52, 52))))
         );
 
         pack();
@@ -115,12 +134,23 @@ private InfDB idb;
         this.setVisible(false);
     }//GEN-LAST:event_btnLoggaUtActionPerformed
 
+    private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
+        new AdminTaBortAlien(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTaBortActionPerformed
+
+    private void btnUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUtrustningActionPerformed
+        new AdminTaBortUtrustning(idb).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnUtrustningActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgenter;
     private javax.swing.JButton btnAliens;
     private javax.swing.JButton btnLoggaUt;
+    private javax.swing.JButton btnTaBort;
     private javax.swing.JButton btnUtrustning;
     private javax.swing.JLabel lblText;
     // End of variables declaration//GEN-END:variables
