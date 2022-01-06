@@ -26,16 +26,24 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtNyInfo" min="-2" max="-2" attributes="0"/>
                   <Component id="cbInfo" min="-2" max="-2" attributes="0"/>
                   <Component id="cbAgent" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                      <Component id="btnAndra" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNyInfo" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="btnAndra" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblDatum" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="148" max="32767" attributes="0"/>
+              <EmptySpace pref="84" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,7 +57,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="cbInfo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txtNyInfo" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtNyInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDatum" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Component id="btnAndra" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="39" max="32767" attributes="0"/>
@@ -106,6 +117,14 @@
     <Component class="javax.swing.JTextField" name="txtNyInfo">
       <Properties>
         <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDatum">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Var v&#xe4;nlig ange datum i YYYY-MM-DD"/>
       </Properties>
     </Component>
   </SubComponents>

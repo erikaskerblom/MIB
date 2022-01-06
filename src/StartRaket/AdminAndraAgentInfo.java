@@ -21,6 +21,7 @@ private InfDB idb;
         initComponents();
         this.idb=idb;
         MetoderFyllaCB.laggTillAgent(cbAgent);
+        lblDatum.setVisible(false);
         
     }
 
@@ -38,6 +39,7 @@ private InfDB idb;
         btnAndra = new javax.swing.JButton();
         cbInfo = new javax.swing.JComboBox<>();
         txtNyInfo = new javax.swing.JTextField();
+        lblDatum = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +63,9 @@ private InfDB idb;
 
         txtNyInfo.setColumns(8);
 
+        lblDatum.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblDatum.setText("Var vänlig ange datum i YYYY-MM-DD");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,14 +73,19 @@ private InfDB idb;
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(btnAndra)))
-                .addContainerGap(148, Short.MAX_VALUE))
+                        .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(btnAndra))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblDatum)))))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +97,9 @@ private InfDB idb;
                 .addGap(18, 18, 18)
                 .addComponent(cbInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDatum))
                 .addGap(81, 81, 81)
                 .addComponent(btnAndra)
                 .addContainerGap(39, Short.MAX_VALUE))
@@ -123,33 +135,34 @@ private InfDB idb;
    idb.update(uppdateraLösen);
    }   
    
-   else if(cbInfo.getSelectedItem().toString().equals("Område")){
-   String område = txtNyInfo.getText();
-   int Omrades_ID=1;
-     if (område.equals("Svealand")) 
-    {
-     Omrades_ID = 1;
-    }
-     
-              if (område.equals("Götaland")) {
+        else if (cbInfo.getSelectedItem().toString().equals("Område")) {
+            String område = txtNyInfo.getText();
+            int Omrades_ID = 1;
+            if (område.equals("Svealand")) {
+                Omrades_ID = 1;
+            }
+
+            if (område.equals("Götaland")) {
                 Omrades_ID = 2;
-              }
+            }
 
-if (område.equals("Norrland")) {
+            if (område.equals("Norrland")) {
                 Omrades_ID = 4;
-}
-            
-   String uppdateraOmråde = "update agent set omrade="+ Omrades_ID + " where Agent_ID =" + id;
-   idb.update(uppdateraOmråde);
-   }   
-   
+            }
 
-      JOptionPane.showMessageDialog(null, "Infon har ändrats!");
-      }
-  
+            String uppdateraOmråde = "update agent set omrade=" + Omrades_ID + " where Agent_ID =" + id;
+            idb.update(uppdateraOmråde);
+        }
+        else if(cbInfo.getSelectedItem().toString().equals("Anställningsdatum") && Validering.textArDatum(txtNyInfo))
+        {     
+         String datum = txtNyInfo.getText();
+         String uppdateraDatum = "update agent set anstallningsdatum ='" + datum + "' where Agent_ID =" + id;
+         idb.update(uppdateraDatum);
+         } 
 
-        catch(InfException e)
-        {
+
+        JOptionPane.showMessageDialog(null, "Infon har ändrats!");
+    } catch (InfException e) {
         JOptionPane.showMessageDialog(null, "Något gick fel");
         System.out.println(e.getMessage());
 
@@ -157,7 +170,8 @@ if (område.equals("Norrland")) {
     }//GEN-LAST:event_btnAndraActionPerformed
 
     private void cbInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbInfoActionPerformed
-        // TODO add your handling code here:
+        if(cbInfo.getSelectedItem().toString().equals("Anställningsdatum"))
+        {lblDatum.setVisible(true);}
     }//GEN-LAST:event_cbInfoActionPerformed
 
     /**
@@ -169,6 +183,7 @@ if (område.equals("Norrland")) {
     private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbInfo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblDatum;
     private javax.swing.JTextField txtNyInfo;
     // End of variables declaration//GEN-END:variables
 }

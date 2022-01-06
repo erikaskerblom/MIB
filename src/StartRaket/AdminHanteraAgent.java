@@ -43,7 +43,7 @@ private InfDB idb;
 
         lblText.setText("Vad vill du göra");
 
-        btnRegistrera.setText("Registrera Agent");
+        btnRegistrera.setText("Registrera ny Agent");
         btnRegistrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistreraActionPerformed(evt);

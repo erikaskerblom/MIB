@@ -90,7 +90,7 @@ public class Validering {
             Date dateFran = formatter.parse(rutan);
             return true;
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(null, "Ange ett formatet YYYY/MM/DD");
+            JOptionPane.showMessageDialog(null, "Ange formatet YYYY-MM-DD");
             return false;
         }
 
