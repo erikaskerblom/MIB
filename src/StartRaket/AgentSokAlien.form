@@ -23,17 +23,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblRegDatum" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAlienID" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPlats" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAnsvarigAgent" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="189" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -54,6 +43,19 @@
                       </Group>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblRasExtraRubrik" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRasExtra" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRegDatum" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAlienID" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPlats" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAnsvarigAgent" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,7 +79,11 @@
               <Component id="lblPlats" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblAnsvarigAgent" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblRasExtra" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="lblRasExtraRubrik" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
               <Component id="btnTillbaka" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
@@ -143,6 +149,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSokActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRasExtra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ras"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRasExtraRubrik">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mer om ras"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

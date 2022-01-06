@@ -176,8 +176,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) 
-              && Validering.rattIndexComboBox(cbPlats))
+        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent)  && Validering.rattIndexComboBox(cbPlats) && Validering.rattLangd(txtLosenord))
         try {
             
 

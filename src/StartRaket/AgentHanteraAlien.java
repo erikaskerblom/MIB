@@ -31,11 +31,14 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         btnRegistrera = new javax.swing.JButton();
         lblHuvudText = new javax.swing.JLabel();
         btnUppdatera = new javax.swing.JButton();
         btnSok = new javax.swing.JButton();
         btnTillbaka = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +58,7 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
             }
         });
 
-        btnSok.setText("Sök Alien");
+        btnSok.setText("Sök info om Alien");
         btnSok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSokActionPerformed(evt);
@@ -92,13 +95,13 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(lblHuvudText)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegistrera)
                 .addGap(18, 18, 18)
                 .addComponent(btnUppdatera)
                 .addGap(18, 18, 18)
                 .addComponent(btnSok)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
                 .addGap(43, 43, 43))
         );
@@ -129,6 +132,7 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
     private javax.swing.JButton btnSok;
     private javax.swing.JButton btnTillbaka;
     private javax.swing.JButton btnUppdatera;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblHuvudText;
     // End of variables declaration//GEN-END:variables
 }
