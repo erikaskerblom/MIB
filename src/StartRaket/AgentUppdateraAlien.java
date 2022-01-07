@@ -165,12 +165,15 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String agent = (String) cbAgent.getSelectedItem();
             
             String fragaPlatsID = "select plats_ID from plats where benamning = '" + Plats +"'";
+            String platsID = idb.fetchSingle(fragaPlatsID);
+            
             String fragaAgentID = "select agent_ID from agent where namn = '" + agent +"'";
+            String agentID = idb.fetchSingle(fragaAgentID);
 
             String datum = txtRegDatum.getText();
             
             
-            idb.update("Update Alien SET Namn = '"+ Namnet + "', Telefon = '" + Telefon + "', Registreringsdatum = '" +datum+"', Plats = '" + fragaPlatsID + "', Ansvarig_Agent = '" + fragaAgentID + "' where AlienID = '" + id + ")");
+            idb.update("Update Alien SET Namn = '" + Namnet + "', Telefon = '" + Telefon + "', Registreringsdatum = '" + datum + "', Plats = '" + platsID + "', Ansvarig_Agent = '" + agentID + "' where AlienID = '" + id + ")");
         
           
             
