@@ -91,7 +91,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSok">
       <Properties>
-        <Property name="text" type="java.lang.String" value="S&#xf6;k info om Alien"/>
+        <Property name="text" type="java.lang.String" value="Info om Alien"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSokActionPerformed"/>

@@ -58,7 +58,7 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
             }
         });
 
-        btnSok.setText("Sök info om Alien");
+        btnSok.setText("Info om Alien");
         btnSok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSokActionPerformed(evt);
@@ -111,18 +111,22 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
 
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
         new AgentRegistreraAlien(idb).setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
         new AgentUppdateraAlien(idb).setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnUppdateraActionPerformed
 
     private void btnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSokActionPerformed
-        new AgentSokAlien(idb).setVisible(true);
+        new AgentSokaAlltAlien(idb).setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnSokActionPerformed
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
-        this.setVisible(false);
+
+        dispose();
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
 

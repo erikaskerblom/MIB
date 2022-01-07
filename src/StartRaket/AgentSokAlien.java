@@ -170,6 +170,10 @@ public class AgentSokAlien extends javax.swing.JFrame {
             String getAgentNamn = "Select namn from agent where agent_id = " + agentID;
             String agentNamn = idb.fetchSingle(getAgentNamn);
 
+            
+
+            
+
             lblAlienID.setText("AlienID: " + id);
             lblRegDatum.setText("Registrerad: " + regDatum);
             lblTelefon.setText("Tel.Nr: " + telefon);

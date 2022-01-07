@@ -27,6 +27,9 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         this.idb = idb;
         MetoderFyllaCB.laggTillAgent(cbAgent);
         MetoderFyllaCB.laggTillPlats(cbPlats);
+        txtArmar.setVisible(false);
+        txtBoogies.setVisible(false);
+        
     }
 
     /**
@@ -49,6 +52,10 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         cbPlats = new javax.swing.JComboBox<>();
         cbAgent = new javax.swing.JComboBox<>();
         txtLosenord = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        cbRas = new javax.swing.JComboBox<>();
+        txtArmar = new javax.swing.JTextField();
+        txtBoogies = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +111,39 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Ras");
+
+        cbRas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj ras", "Worm", "Squid", "Boglodite", "Ingen av ovan" }));
+        cbRas.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                cbRasComponentAdded(evt);
+            }
+        });
+        cbRas.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                cbRasPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                cbRasPopupMenuWillBecomeVisible(evt);
+            }
+        });
+        cbRas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbRasActionPerformed(evt);
+            }
+        });
+
+        txtArmar.setText("Antal armar");
+        txtArmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtArmarActionPerformed(evt);
+            }
+        });
+
+        txtBoogies.setText("Antal boogies");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,29 +152,36 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(txtArmar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtBoogies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblLosenord)
                             .addComponent(lblAnsvarigAgent)
                             .addComponent(lblPlats)
-                            .addComponent(lblTelefon))
+                            .addComponent(lblTelefon)
+                            .addComponent(jLabel1)
+                            .addComponent(lblNamn))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(164, 164, 164))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(btnLaggTill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cbPlats, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cbAgent, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtLosenord, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNamn)
-                        .addContainerGap())))
+                                .addGap(77, 209, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,13 +202,21 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAnsvarigAgent)
                     .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLosenord)
                     .addComponent(txtLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtArmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBoogies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(btnLaggTill)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -176,28 +231,37 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent)  && Validering.rattIndexComboBox(cbPlats) && Validering.rattLangd(txtLosenord))
+        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) && Validering.rattIndexComboBox(cbPlats) && Validering.rattLangd(txtLosenord) && Validering.rattIndexComboBox(cbRas))
         try {
-            
 
             String maxID = "SELECT max(Alien_ID) FROM Alien";
             String ID = idb.fetchSingle(maxID);
             int nyttID = Integer.parseInt(ID) + 1;
-            
+
             Date ettDatum = new Date();
             SimpleDateFormat datumet = new SimpleDateFormat("yyyyMMdd");
             String datum = datumet.format(ettDatum);
-            
+
             String fragaPlats = "SELECT Plats_ID FROM Plats WHERE Benamning = '" + cbPlats.getSelectedItem() + "'";
             String pID = idb.fetchSingle(fragaPlats);
-            
+
             String fragaAgent = "SELECT Agent_ID from Agent where Namn = '" + cbAgent.getSelectedItem() + "'";
-            String agentID = idb.fetchSingle(fragaAgent);            
-            
+            String agentID = idb.fetchSingle(fragaAgent);
+
             String nyttLosen = new String(txtLosenord.getPassword());
-            
+
             idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + pID + ", " + agentID + ")");
-            
+            String ras = (String) cbRas.getSelectedItem();
+            if (ras.equals("Worm")) {
+                idb.insert("INSERT INTO Worm values(" + nyttID + ")");
+            } else if (ras.equals("Squid")) {
+                
+                idb.insert("INSERT into Squid values (" + nyttID + "," + txtArmar.getText() + ")");
+            } else if (ras.equals("Boglodite")) {
+                
+                idb.insert("INSERT into boglodite values (" + nyttID + "," + txtBoogies.getText() + ")");
+            }
+
             JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
             this.setVisible(false);
         } catch (InfException e) {
@@ -218,16 +282,47 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbAgentActionPerformed
 
+    private void txtArmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtArmarActionPerformed
+
+    private void cbRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRasActionPerformed
+       if(cbRas.getSelectedItem().toString().equals("Squid"))
+        {
+         txtArmar.setVisible(true);
+         txtArmar.revalidate();
+         txtArmar.repaint();
+        }
+        
+       
+    }//GEN-LAST:event_cbRasActionPerformed
+
+    private void cbRasPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbRasPopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbRasPopupMenuWillBecomeInvisible
+
+    private void cbRasPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbRasPopupMenuWillBecomeVisible
+      
+    }//GEN-LAST:event_cbRasPopupMenuWillBecomeVisible
+
+    private void cbRasComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_cbRasComponentAdded
+     
+    }//GEN-LAST:event_cbRasComponentAdded
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTill;
     private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbPlats;
+    private javax.swing.JComboBox<String> cbRas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAnsvarigAgent;
     private javax.swing.JLabel lblLosenord;
     private javax.swing.JLabel lblNamn;
     private javax.swing.JLabel lblPlats;
     private javax.swing.JLabel lblTelefon;
+    private javax.swing.JTextField txtArmar;
+    private javax.swing.JTextField txtBoogies;
     private javax.swing.JPasswordField txtLosenord;
     private javax.swing.JTextField txtNamn;
     private javax.swing.JTextField txtTelefon;
