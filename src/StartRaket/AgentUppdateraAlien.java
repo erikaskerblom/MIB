@@ -23,6 +23,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         initComponents();
         this.idb = idb;
         MetoderFyllaCB.laggTillAlien(cbAlien);
+        MetoderFyllaCB.laggTillPlats(cbPlats);
+        MetoderFyllaCB.laggTillAgent(cbAgent);
     }
 
     /**
@@ -40,12 +42,13 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnUppdatera = new javax.swing.JButton();
         txtTelefon = new javax.swing.JTextField();
-        txtPlats = new javax.swing.JTextField();
-        txtAnsvarigAgent = new javax.swing.JTextField();
         btnTillbaka = new javax.swing.JButton();
         lblReg = new javax.swing.JLabel();
         txtRegDatum = new javax.swing.JTextField();
         cbAlien = new javax.swing.JComboBox<>();
+        cbPlats = new javax.swing.JComboBox<>();
+        cbAgent = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,15 +69,6 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
 
         txtTelefon.setColumns(8);
 
-        txtPlats.setColumns(8);
-
-        txtAnsvarigAgent.setColumns(8);
-        txtAnsvarigAgent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAnsvarigAgentActionPerformed(evt);
-            }
-        });
-
         btnTillbaka.setText("Tillbaka");
 
         lblReg.setText("Registreringsdatum");
@@ -83,12 +77,19 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
 
         cbAlien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en alien" }));
 
+        cbPlats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en plats" }));
+
+        cbAgent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en agent" }));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel5.setText("YYYY-MM-DD");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnUppdatera)
@@ -102,12 +103,15 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5))
                             .addComponent(cbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAnsvarigAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(141, 141, 141))))
+                            .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(94, 94, 94))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(btnTillbaka)
@@ -125,7 +129,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblReg)
-                    .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,11 +138,11 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtAnsvarigAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(btnUppdatera)
                 .addGap(39, 39, 39))
@@ -147,8 +152,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
-        if ( Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtPlats)
-                && Validering.textFaltHarVarde(txtAnsvarigAgent) && Validering.ogiltigtVarde(txtPlats) && Validering.ogiltigtVarde(txtAnsvarigAgent) && Validering.textArDatum(txtRegDatum) && Validering.textFaltHarVarde(txtRegDatum))
+        if ( Validering.textFaltHarVarde(txtTelefon) && Validering.rattIndexComboBox(cbPlats)
+                && Validering.rattIndexComboBox(cbAgent) && Validering.textArDatum(txtRegDatum) && Validering.textFaltHarVarde(txtRegDatum))
         
         try {
             String Namnet = (String) cbAlien.getSelectedItem();
@@ -156,13 +161,16 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String id = idb.fetchSingle(frågaID);
             
             String Telefon = txtTelefon.getText();
-            int PlatsID = Integer.parseInt(txtPlats.getText());
-            int AgentID = Integer.parseInt(txtAnsvarigAgent.getText());
+            String Plats = (String) cbPlats.getSelectedItem();
+            String agent = (String) cbAgent.getSelectedItem();
+            
+            String fragaPlatsID = "select plats_ID from plats where benamning = '" + Plats +"'";
+            String fragaAgentID = "select agent_ID from agent where namn = '" + agent +"'";
 
             String datum = txtRegDatum.getText();
             
             
-            idb.update("Update Alien SET Namn = '"+ Namnet + "', Telefon = '" + Telefon + "', Plats = '" + PlatsID + "', Ansvarig_Agent = '" + AgentID + "' where AlienID = '" + id + ")");
+            idb.update("Update Alien SET Namn = '"+ Namnet + "', Telefon = '" + Telefon + "', Registreringsdatum = '" +datum+"', Plats = '" + fragaPlatsID + "', Ansvarig_Agent = '" + fragaAgentID + "' where AlienID = '" + id + ")");
         
           
             
@@ -177,22 +185,19 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnUppdateraActionPerformed
 
-    private void txtAnsvarigAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnsvarigAgentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAnsvarigAgentActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTillbaka;
     private javax.swing.JButton btnUppdatera;
+    private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbAlien;
+    private javax.swing.JComboBox<String> cbPlats;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblReg;
-    private javax.swing.JTextField txtAnsvarigAgent;
-    private javax.swing.JTextField txtPlats;
     private javax.swing.JTextField txtRegDatum;
     private javax.swing.JTextField txtTelefon;
     // End of variables declaration//GEN-END:variables
