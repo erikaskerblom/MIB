@@ -104,6 +104,8 @@ import oru.inf.InfException;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Klass som tar reda på vem som är områdeschef för inloggad alien
+    
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
   try {
             

@@ -144,7 +144,7 @@ public class AgentSokAlien extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Denna metod låter en agent söka efter en alien
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         dispose();
     }//GEN-LAST:event_btnTillbakaActionPerformed

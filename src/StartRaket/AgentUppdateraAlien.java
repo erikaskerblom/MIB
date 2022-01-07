@@ -151,6 +151,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Metod som uppdaterar information om alien
+
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
         if ( Validering.textFaltHarVarde(txtTelefon) && Validering.rattIndexComboBox(cbPlats)
                 && Validering.rattIndexComboBox(cbAgent) && Validering.textArDatum(txtRegDatum) && Validering.textFaltHarVarde(txtRegDatum))

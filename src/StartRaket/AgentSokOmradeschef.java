@@ -117,6 +117,7 @@ public class AgentSokOmradeschef extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod låter en agent söka efter en given områdeschef 
     private void btnHamtaInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHamtaInfoActionPerformed
         Validering.rattIndexComboBox(cbOmråde);
         try {

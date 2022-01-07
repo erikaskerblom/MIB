@@ -124,6 +124,7 @@ public class InloggadAgent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod skickar användaren vidare till vald knapp
     private void btnNyUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyUtrustningActionPerformed
         new AgentRegistreraUtrustning(idb).setVisible(true);
     }//GEN-LAST:event_btnNyUtrustningActionPerformed

@@ -104,6 +104,7 @@ public class LoggaInAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod låter alien logga in i systmet
     private void txtAnvandarNamnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAnvandarNamnMouseClicked
         txtAnvandarNamn.setText("");
     }//GEN-LAST:event_txtAnvandarNamnMouseClicked

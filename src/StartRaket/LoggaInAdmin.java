@@ -106,6 +106,7 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod loggar in och kollar ifall du är admin
     private void btnLoggaInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoggaInActionPerformed
         if( Validering.ogiltigtAnvandarNamn(txtAnvandarNamn) && Validering.textFaltHarVarde(txtAnvandarNamn))
         

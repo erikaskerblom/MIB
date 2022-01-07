@@ -99,6 +99,7 @@ public class InloggadAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna klass skickar alien vidare till vald knapp
     private void btnNyttLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNyttLosenActionPerformed
         new AndraLosenAlien(idb, alienNamn, alienID).setVisible(true);
         

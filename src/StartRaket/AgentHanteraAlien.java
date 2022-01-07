@@ -4,6 +4,7 @@
  */
 package StartRaket;
  
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 
 
@@ -109,14 +110,18 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod skickar användaren vidare till den knapp den tycker på
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
         new AgentRegistreraAlien(idb).setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
-        new AgentUppdateraAlien(idb).setVisible(true);
-        dispose();
+        
+        JOptionPane.showMessageDialog(null, "Ojdå. Här var det inte klart. Sidan under konstruktion.");
+    
+        /*new AgentUppdateraAlien(idb).setVisible(true);
+        dispose();*/
         
         
     }//GEN-LAST:event_btnUppdateraActionPerformed

@@ -134,7 +134,7 @@ public class AdminTaBortAgent extends javax.swing.JFrame {
     private void cbAgentAttTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAgentAttTaBortActionPerformed
  
     }//GEN-LAST:event_cbAgentAttTaBortActionPerformed
-
+    //Denna metod tar bort en given agent ur systmet
     private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
     if (Validering.rattIndexComboBox(cbAgentAttTaBort) && Validering.rattIndexComboBox(cbNyAgent))
     try {

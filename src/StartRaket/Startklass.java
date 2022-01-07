@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
+//Klass som sköter databasuppkoppling och startar programemt
+
 public class Startklass {
 
 public Startklass()

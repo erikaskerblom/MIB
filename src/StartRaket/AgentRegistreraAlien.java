@@ -233,6 +233,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod registrerar en alien
     private void txtNamnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNamnMouseClicked
         txtNamn.setText("");
     }//GEN-LAST:event_txtNamnMouseClicked

@@ -137,6 +137,8 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    //Denna metod låter en agent registrera utrustning
     private void txtBenämningMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBenämningMouseClicked
         txtBenämning.setText("");
     }//GEN-LAST:event_txtBenämningMouseClicked

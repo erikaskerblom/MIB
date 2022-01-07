@@ -98,7 +98,7 @@ private InfDB idb;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Denna metod ändrar vem som är områdeschef för ett valt område
     private void btnAndraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraActionPerformed
         if (Validering.rattIndexComboBox(cbOmrade) && Validering.rattIndexComboBox(cbChef))
 

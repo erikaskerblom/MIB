@@ -108,6 +108,7 @@ private InfDB idb;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod ändrar agentinfo 
     private void btnAndraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraActionPerformed
     if(Validering.rattIndexComboBox(cbAgent) && Validering.rattIndexComboBox(cbInfo) && Validering.textFaltHarVarde(txtNyInfo))
  try {

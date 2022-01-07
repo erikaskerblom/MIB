@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+//Klass som utför validering av inmatingsdata
+
 public class Validering {
 
     //Kollar så att fältet inte lämnats tomt

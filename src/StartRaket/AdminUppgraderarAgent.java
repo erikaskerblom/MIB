@@ -85,6 +85,7 @@ public class AdminUppgraderarAgent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod uppgraderar en given agent till administrator
     private void btnUppgraderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppgraderaActionPerformed
 
         if (Validering.rattIndexComboBox(cbNamn))

@@ -115,6 +115,7 @@ public class AgentSokaAlltAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna klass skickar användaren vidare till den knapp den trycker på
     private void btnSeInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeInfoActionPerformed
         new AgentSokAlien(idb).setVisible(true);
     }//GEN-LAST:event_btnSeInfoActionPerformed

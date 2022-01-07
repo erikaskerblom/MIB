@@ -78,7 +78,8 @@ public class AlienAvRas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //Metod som låter användaren söka efter en alien av viss ras
     private void cbRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRasActionPerformed
         if (Validering.rattIndexComboBox(cbRas)) {
             txtArea.setText("");
@@ -95,7 +96,7 @@ public class AlienAvRas extends javax.swing.JFrame {
                             + "JOIN BOGLODITE ON ALIEN.ALIEN_ID = BOGLODITE.ALIEN_ID");
                     for (String namn : boglodite) {
                         txtArea.append(namn + ("\n"));
-                        
+
                     }
 
                 } catch (InfException ex) {
@@ -136,14 +137,12 @@ public class AlienAvRas extends javax.swing.JFrame {
 
             }
     }//GEN-LAST:event_cbRasActionPerformed
+
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbRas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblRas;
     private javax.swing.JTextArea txtArea;
     // End of variables declaration//GEN-END:variables
-
 }

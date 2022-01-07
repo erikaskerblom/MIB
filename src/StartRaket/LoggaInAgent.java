@@ -123,6 +123,8 @@ public class LoggaInAgent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    //Denna metod låter agenter logga in 
     private void txtAnvandarNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnvandarNamnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAnvandarNamnActionPerformed
@@ -158,7 +160,7 @@ public class LoggaInAgent extends javax.swing.JFrame {
             
          
         } catch (InfException undantag) {
-                JOptionPane.showMessageDialog(null, "råtta");
+                JOptionPane.showMessageDialog(null, "Ett fel uppstod");
                 //System.out.println(undantag.getMessage());
         }
         

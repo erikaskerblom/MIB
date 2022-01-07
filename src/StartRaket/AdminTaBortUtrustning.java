@@ -80,6 +80,7 @@ public class AdminTaBortUtrustning extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod tar bort en given utrustning ur systmet
     private void btnTaBortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaBortActionPerformed
        if(Validering.rattIndexComboBox(cbUtrustning))
       

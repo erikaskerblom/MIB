@@ -11,7 +11,7 @@ import javax.swing.JComboBox;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
-
+//Klass som finns för att fylla Comboboxar med relevant information
 /**
  *
  * @author erika

@@ -150,6 +150,8 @@ private InfDB idb;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   //Denna klass finns skickar användaren vidare till vald knapp
+
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
         new AdminRegistreraAgent(idb).setVisible(true);
         

@@ -77,6 +77,7 @@ private InfDB idb;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod ändrar vem som är kontorschef
     private void btnAndraChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraChefActionPerformed
     
     if (Validering.rattIndexComboBox(cbChef))

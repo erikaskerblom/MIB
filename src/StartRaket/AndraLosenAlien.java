@@ -130,6 +130,7 @@ public class AndraLosenAlien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna metod låter inloggad alien ändra sitt lösenord
     private void txtNuvarandeLosenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNuvarandeLosenMouseClicked
         txtNuvarandeLosen.setText("");
     }//GEN-LAST:event_txtNuvarandeLosenMouseClicked

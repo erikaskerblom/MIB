@@ -165,7 +165,8 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // Denna klass registrara en ny agent
     private void btnRegistreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraActionPerformed
         if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtTelefon) && Validering.textFaltHarVarde(txtLosen) &&
             Validering.rattLangd(txtLosen) && Validering.rattIndexComboBox(cbAdmin) && Validering.rattIndexComboBox(cbOmråde))

@@ -121,6 +121,7 @@ private InfDB idb;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Denna klass skickar användaren vidare till vald knapp
     private void btnAliensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAliensActionPerformed
        new AgentHanteraAlien(idb).setVisible(true);
     }//GEN-LAST:event_btnAliensActionPerformed
