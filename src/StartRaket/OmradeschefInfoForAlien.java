@@ -41,6 +41,7 @@ import oru.inf.InfException;
         lblSeChef = new javax.swing.JLabel();
         lblTelNr = new javax.swing.JLabel();
         btnInfo = new javax.swing.JButton();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,13 @@ import oru.inf.InfException;
         btnInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInfoActionPerformed(evt);
+            }
+        });
+
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
             }
         });
 
@@ -72,6 +80,10 @@ import oru.inf.InfException;
                         .addComponent(btnInfo)
                         .addGap(91, 91, 91)))
                 .addContainerGap(182, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTillbaka)
+                .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +96,9 @@ import oru.inf.InfException;
                 .addComponent(lblTelNr)
                 .addGap(33, 33, 33)
                 .addComponent(btnInfo)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(btnTillbaka)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,10 +126,16 @@ import oru.inf.InfException;
         }
     }//GEN-LAST:event_btnInfoActionPerformed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        
+        dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInfo;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblSeChef;
     private javax.swing.JLabel lblTelNr;
     private javax.swing.JLabel lblText;

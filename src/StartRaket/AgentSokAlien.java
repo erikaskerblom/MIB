@@ -45,8 +45,8 @@ public class AgentSokAlien extends javax.swing.JFrame {
         lblPlats = new javax.swing.JLabel();
         lblAnsvarigAgent = new javax.swing.JLabel();
         btnSok = new javax.swing.JButton();
-        lblRasExtra = new javax.swing.JLabel();
-        lblRasExtraRubrik = new javax.swing.JLabel();
+        lblRas = new javax.swing.JLabel();
+        lblRasInfo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,9 +79,9 @@ public class AgentSokAlien extends javax.swing.JFrame {
             }
         });
 
-        lblRasExtra.setText("Ras");
+        lblRas.setText("Ras");
 
-        lblRasExtraRubrik.setText("Mer om ras");
+        lblRasInfo.setText("Mer om ras");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,8 +105,8 @@ public class AgentSokAlien extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblRasExtraRubrik)
-                    .addComponent(lblRasExtra)
+                    .addComponent(lblRasInfo)
+                    .addComponent(lblRas)
                     .addComponent(lblRegDatum)
                     .addComponent(lblAlienID)
                     .addComponent(lblTelefon)
@@ -134,9 +134,9 @@ public class AgentSokAlien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblAnsvarigAgent)
                 .addGap(18, 18, 18)
-                .addComponent(lblRasExtra)
+                .addComponent(lblRas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblRasExtraRubrik)
+                .addComponent(lblRasInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btnTillbaka)
                 .addGap(33, 33, 33))
@@ -170,27 +170,24 @@ public class AgentSokAlien extends javax.swing.JFrame {
             String getAgentNamn = "Select namn from agent where agent_id = " + agentID;
             String agentNamn = idb.fetchSingle(getAgentNamn);
 
-            
-
-            
+     
 
             lblAlienID.setText("AlienID: " + id);
             lblRegDatum.setText("Registrerad: " + regDatum);
             lblTelefon.setText("Tel.Nr: " + telefon);
             lblPlats.setText("Finns i: " + benamning);
             lblAnsvarigAgent.setText("Ansvarig Agent: " + agentNamn);
-
-        } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, "Något gick fel!");
-            System.out.println("Internt felmeddelande" + e.getMessage());
-        }
-
-
-
+            }
+            catch(InfException e)
+            {
+            JOptionPane.showMessageDialog(null, "Något blev fel");
+            }
 
     }//GEN-LAST:event_btnSokActionPerformed
 
     
+
+         
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSok;
@@ -200,8 +197,8 @@ public class AgentSokAlien extends javax.swing.JFrame {
     private javax.swing.JLabel lblAnsvarigAgent;
     private javax.swing.JLabel lblInfoOmAliens;
     private javax.swing.JLabel lblPlats;
-    private javax.swing.JLabel lblRasExtra;
-    private javax.swing.JLabel lblRasExtraRubrik;
+    private javax.swing.JLabel lblRas;
+    private javax.swing.JLabel lblRasInfo;
     private javax.swing.JLabel lblRegDatum;
     private javax.swing.JLabel lblTelefon;
     // End of variables declaration//GEN-END:variables
