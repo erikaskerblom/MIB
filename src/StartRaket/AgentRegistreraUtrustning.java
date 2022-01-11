@@ -158,6 +158,7 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
 
                 if(cbTyp.getSelectedItem().equals("Vapen"))
                 {
+                Validering.ogiltigtVarde(txtEgenskap);
                 idb.insert("Insert into Vapen values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
                 JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen" );
                 txtBenämning.setText("");
