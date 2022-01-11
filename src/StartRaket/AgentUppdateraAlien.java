@@ -557,7 +557,12 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String queryTele = "update alien set telefon = '" + nyttTelefon + "' where alien_id = " + id;
             idb.update(queryTele);
 
+            JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+            txtTelefon.setText("");
             
+            String query2 = "select telefon from alien where alien_id= " + id;
+            String senasteDatum = idb.fetchSingle(query2);
+            lblVisaDatum.setText(senasteDatum);
         
     }
     catch(InfException e)
