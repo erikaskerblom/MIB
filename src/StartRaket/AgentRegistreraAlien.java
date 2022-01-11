@@ -28,9 +28,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
         MetoderFyllaCB.laggTillAgent(cbAgent);
         MetoderFyllaCB.laggTillPlats(cbPlats);
         lblInfo.setVisible(false);
-        
-        
-        
+
     }
 
     /**
@@ -243,7 +241,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        if (Validering.textFaltHarVarde(txtNamn) && Validering.ogiltigtVarde(txtTelefon) && Validering.ogiltigtVarde(txtAntal) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) && Validering.rattIndexComboBox(cbPlats) && Validering.rattLangd(txtLosenord) && Validering.rattIndexComboBox(cbRas))
+        if (Validering.textFaltHarVarde(txtNamn) && Validering.textFaltHarVarde(txtLosenord) && Validering.rattIndexComboBox(cbAgent) && Validering.rattIndexComboBox(cbPlats) && Validering.rattLangd(txtLosenord) && Validering.rattIndexComboBox(cbRas))
         try {
 
             String maxID = "SELECT max(Alien_ID) FROM Alien";
@@ -264,13 +262,22 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
 
             idb.insert("INSERT INTO ALIEN values(" + nyttID + ", " + datum + ", '" + nyttLosen + "', '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', " + pID + ", " + agentID + ")");
             String ras = (String) cbRas.getSelectedItem();
+
+            if (!txtTelefon.getText().isEmpty()) {
+                Validering.ogiltigtVarde(txtTelefon);
+            }
+
+            if (ras.equals("Ingen av ovan")) {
+                txtAntal.setVisible(false);
+
+            }
             if (ras.equals("Worm")) {
                 idb.insert("INSERT INTO Worm values(" + nyttID + ")");
             } else if (ras.equals("Squid")) {
-                
+                Validering.ogiltigtVarde(txtAntal);
                 idb.insert("INSERT into Squid values (" + nyttID + "," + txtAntal.getText() + ")");
             } else if (ras.equals("Boglodite")) {
-                
+                Validering.ogiltigtVarde(txtAntal);
                 idb.insert("INSERT into boglodite values (" + nyttID + "," + txtAntal.getText() + ")");
             }
 
@@ -283,7 +290,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
     private void cbPlatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPlatsActionPerformed
-        
+
     }//GEN-LAST:event_cbPlatsActionPerformed
 
     private void txtLosenordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLosenordMouseClicked
@@ -299,7 +306,7 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAntalActionPerformed
 
     private void cbRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRasActionPerformed
-    
+
         if (cbRas.getSelectedItem().equals("Boglodite")) {
             txtAntal.setVisible(true);
             lblInfo.setVisible(true);
@@ -319,11 +326,11 @@ public class AgentRegistreraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_cbRasPopupMenuWillBecomeInvisible
 
     private void cbRasPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbRasPopupMenuWillBecomeVisible
-      
+
     }//GEN-LAST:event_cbRasPopupMenuWillBecomeVisible
 
     private void cbRasComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_cbRasComponentAdded
-     
+
     }//GEN-LAST:event_cbRasComponentAdded
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
