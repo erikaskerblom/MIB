@@ -163,38 +163,39 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEgenskapMouseClicked
 
     private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-            if(Validering.rattIndexComboBox(cbTyp) && Validering.textFaltHarVarde(txtBenämning) && Validering.textFaltHarVarde(txtEgenskap))
+        if (Validering.rattIndexComboBox(cbTyp) && Validering.textFaltHarVarde(txtBenämning) && Validering.textFaltHarVarde(txtEgenskap))
              try {
-                String quary = "SELECT max(Utrustnings_ID) FROM utrustning";
-                String id = idb.fetchSingle(quary);
-                int nyttID = Integer.parseInt(id) + 1;
-                
-                idb.insert("INSERT into Utrustning values(" + nyttID + ", '" + txtBenämning.getText() + "')");
+            String quary = "SELECT max(Utrustnings_ID) FROM utrustning";
+            String id = idb.fetchSingle(quary);
+            int nyttID = Integer.parseInt(id) + 1;
 
-                if(cbTyp.getSelectedItem().equals("Vapen"))
-                {
-                idb.insert("Insert into Vapen values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
-                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen" );
-                txtBenämning.setText("");
-                txtEgenskap.setText("");
-                }
-                else if(cbTyp.getSelectedItem().equals("Teknik"))
-                {
-                idb.insert("Insert into Teknik values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
-                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som teknik" );
-                txtBenämning.setText("");
-                txtEgenskap.setText("");
-                }
-                else if(cbTyp.getSelectedItem().equals("Kommunikation"))
-                {
-                idb.insert("Insert into Kommunikation values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
-                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som kommunikation" );
-                txtBenämning.setText("");
-                txtEgenskap.setText("");
-                }
+            idb.insert("INSERT into Utrustning values(" + nyttID + ", '" + txtBenämning.getText() + "')");
+
+            if (cbTyp.getSelectedItem().equals("Vapen")) {
                 
+                    
+                    String kaliber = txtEgenskap.getText();
+                    idb.insert("Insert into Vapen values (" + nyttID + "," + kaliber + ")");
+                    JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen");
+                    txtBenämning.setText("");
+                    txtEgenskap.setText("");
+                    Validering.ogiltigtVarde(txtEgenskap);
+                
+
+            } else if (cbTyp.getSelectedItem().equals("Teknik")) {
+                idb.insert("Insert into Teknik values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som teknik");
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
+            } else if (cbTyp.getSelectedItem().equals("Kommunikation")) {
+                idb.insert("Insert into Kommunikation values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som kommunikation");
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
+            }
+
         } catch (InfException e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Något gick fel");
         }
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
