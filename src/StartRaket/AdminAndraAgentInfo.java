@@ -64,7 +64,7 @@ private InfDB idb;
         txtNyInfo.setColumns(8);
 
         lblDatum.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblDatum.setText("Var vänlig ange datum i YYYY-MM-DD");
+        lblDatum.setText("\"\"");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,8 +84,9 @@ private InfDB idb;
                                 .addComponent(btnAndra))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(lblDatum)))))
-                .addContainerGap(84, Short.MAX_VALUE))
+                                .addComponent(lblDatum)))
+                        .addGap(10, 10, 10)))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +137,8 @@ private InfDB idb;
    idb.update(uppdateraLösen);
    }   
    
-        else if (cbInfo.getSelectedItem().toString().equals("Område")) {
+        else if (!Validering.ogiltigtVarde(txtNyInfo) && cbInfo.getSelectedItem().toString().equals("Område")) {
+            
             String område = txtNyInfo.getText();
             int Omrades_ID = 1;
             if (område.equals("Svealand")) {
@@ -150,6 +152,8 @@ private InfDB idb;
             if (område.equals("Norrland")) {
                 Omrades_ID = 4;
             }
+            
+          
 
             String uppdateraOmråde = "update agent set omrade=" + Omrades_ID + " where Agent_ID =" + id;
             idb.update(uppdateraOmråde);
@@ -171,8 +175,21 @@ private InfDB idb;
     }//GEN-LAST:event_btnAndraActionPerformed
 
     private void cbInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbInfoActionPerformed
+        lblDatum.setVisible(true);
         if(cbInfo.getSelectedItem().toString().equals("Anställningsdatum"))
-        {lblDatum.setVisible(true);}
+        {lblDatum.setText("Ange det nya datumet, YYYY-MM-DD");}
+     
+        else if(cbInfo.getSelectedItem().toString().equals("Namn"))
+        {lblDatum.setText("Skriv in det nya namnet");}
+       
+        else if(cbInfo.getSelectedItem().toString().equals("Lösenord"))
+        {lblDatum.setText("Skriv in det nya Lösenordet");}
+       
+        else if(cbInfo.getSelectedItem().toString().equals("Område"))
+        {lblDatum.setText("Välj mellan Svealand/Götaland/Norrland");}
+       
+        else if(cbInfo.getSelectedItem().toString().equals("Telefon"))
+        {lblDatum.setText("Skriv in det nya telefonnumret");}
     }//GEN-LAST:event_cbInfoActionPerformed
 
     /**

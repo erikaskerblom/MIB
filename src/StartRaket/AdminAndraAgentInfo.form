@@ -41,9 +41,10 @@
                               <Component id="lblDatum" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <EmptySpace pref="191" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -124,7 +125,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="2"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Var v&#xe4;nlig ange datum i YYYY-MM-DD"/>
+        <Property name="text" type="java.lang.String" value="&quot;&quot;"/>
       </Properties>
     </Component>
   </SubComponents>
