@@ -557,7 +557,12 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String queryTele = "update alien set telefon = '" + nyttTelefon + "' where alien_id = " + id;
             idb.update(queryTele);
 
+            JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+            txtTelefon.setText("");
             
+            String query2 = "select telefon from alien where alien_id= " + id;
+            String senasteDatum = idb.fetchSingle(query2);
+            lblVisaDatum.setText(senasteDatum);
         
     }
     catch(InfException e)
@@ -567,7 +572,29 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAndraTelActionPerformed
 
     private void btnAndraLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraLosenActionPerformed
+        try
+        {
+            String namn = (String) cbAlien.getSelectedItem();
+            String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
+            String id = idb.fetchSingle(query);
+
+            String nyttLosen = txtLosen.getText(); 
+            String queryLosen = "update alien set Losenord = '" + nyttLosen + "' where alien_id = " + id;
+            idb.update(queryLosen);
+            
+            JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+            txtLosen.setText("");
+            
+            String query2 = "select Losenord from alien where alien_id= " + id;
+            String senasteLosen = idb.fetchSingle(query2);
+            lblVisaLosenord.setText(senasteLosen);
+            
+        }
         
+        catch(InfException e)
+        {
+        JOptionPane.showMessageDialog(null, "Något gick fel");
+        }
     }//GEN-LAST:event_btnAndraLosenActionPerformed
 
 
