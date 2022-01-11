@@ -118,10 +118,10 @@ public class AgentHanteraAlien extends javax.swing.JFrame {
 
     private void btnUppdateraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUppdateraActionPerformed
         
-        JOptionPane.showMessageDialog(null, "Ojdå. Här var det inte klart. Sidan under konstruktion.");
+        //JOptionPane.showMessageDialog(null, "Ojdå. Här var det inte klart. Sidan under konstruktion.");
     
-        /*new AgentUppdateraAlien(idb).setVisible(true);
-        dispose();*/
+        new AgentUppdateraAlien(idb).setVisible(true);
+        dispose();
         
         
     }//GEN-LAST:event_btnUppdateraActionPerformed
