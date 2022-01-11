@@ -55,11 +55,21 @@ public class AndraLosenAlien extends javax.swing.JFrame {
                 txtNuvarandeLosenMouseClicked(evt);
             }
         });
+        txtNuvarandeLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNuvarandeLosenKeyPressed(evt);
+            }
+        });
 
         txtNyttLosen.setText("jPasswordField2");
         txtNyttLosen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNyttLosenMouseClicked(evt);
+            }
+        });
+        txtNyttLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNyttLosenKeyPressed(evt);
             }
         });
 
@@ -164,6 +174,18 @@ try {
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void txtNyttLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNyttLosenKeyPressed
+        if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnByt.doClick();
+      }
+    }//GEN-LAST:event_txtNyttLosenKeyPressed
+
+    private void txtNuvarandeLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNuvarandeLosenKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnByt.doClick();
+      }
+    }//GEN-LAST:event_txtNuvarandeLosenKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -48,11 +48,21 @@ public class LoggaInAlien extends javax.swing.JFrame {
                 txtAnvandarNamnMouseClicked(evt);
             }
         });
+        txtAnvandarNamn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnvandarNamnKeyPressed(evt);
+            }
+        });
 
         txtLosen.setText("jPasswordField1");
         txtLosen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtLosenMouseClicked(evt);
+            }
+        });
+        txtLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLosenKeyPressed(evt);
             }
         });
 
@@ -134,7 +144,7 @@ public class LoggaInAlien extends javax.swing.JFrame {
             
          
         } catch (InfException undantag) {
-                JOptionPane.showMessageDialog(null, "råtta");
+                JOptionPane.showMessageDialog(null, "Något gick fel, beklagar!");
                 //System.out.println(undantag.getMessage());
         }
     }//GEN-LAST:event_btnLoggaInActionPerformed
@@ -143,6 +153,18 @@ public class LoggaInAlien extends javax.swing.JFrame {
         this.setVisible(false);
         new MainMenu(idb).setVisible(true);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void txtLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLosenKeyPressed
+        if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnLoggaIn.doClick();
+      }
+    }//GEN-LAST:event_txtLosenKeyPressed
+
+    private void txtAnvandarNamnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnvandarNamnKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnLoggaIn.doClick();
+      }
+    }//GEN-LAST:event_txtAnvandarNamnKeyPressed
 
    
 

@@ -55,11 +55,21 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                 txtLosenMouseClicked(evt);
             }
         });
+        txtLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLosenKeyPressed(evt);
+            }
+        });
 
         btnLoggaIn.setText("Logga in");
         btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoggaInActionPerformed(evt);
+            }
+        });
+        btnLoggaIn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLoggaInKeyPressed(evt);
             }
         });
 
@@ -167,6 +177,16 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         this.setVisible(false);
         new MainMenu(idb).setVisible(true);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void btnLoggaInKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoggaInKeyPressed
+   
+    }//GEN-LAST:event_btnLoggaInKeyPressed
+
+    private void txtLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLosenKeyPressed
+        if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnLoggaIn.doClick();
+      }
+    }//GEN-LAST:event_txtLosenKeyPressed
 
 
 
