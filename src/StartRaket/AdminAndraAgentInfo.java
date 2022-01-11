@@ -63,6 +63,11 @@ private InfDB idb;
         });
 
         txtNyInfo.setColumns(8);
+        txtNyInfo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNyInfoKeyPressed(evt);
+            }
+        });
 
         lblDatum.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         lblDatum.setText("\"\"");
@@ -208,6 +213,12 @@ private InfDB idb;
         new AdminHanteraAgent(idb).setVisible(true);
         dispose();
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void txtNyInfoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNyInfoKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+         this.btnAndra.doClick();
+      }
+    }//GEN-LAST:event_txtNyInfoKeyPressed
 
     /**
      * @param args the command line arguments

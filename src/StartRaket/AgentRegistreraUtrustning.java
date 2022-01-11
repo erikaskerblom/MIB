@@ -69,6 +69,11 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
                 txtBenämningMouseClicked(evt);
             }
         });
+        txtBenämning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBenämningActionPerformed(evt);
+            }
+        });
 
         lblEgenskap.setText("Egenskap");
 
@@ -76,6 +81,16 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
         txtEgenskap.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtEgenskapMouseClicked(evt);
+            }
+        });
+        txtEgenskap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEgenskapActionPerformed(evt);
+            }
+        });
+        txtEgenskap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEgenskapKeyPressed(evt);
             }
         });
 
@@ -186,6 +201,20 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtEgenskapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEgenskapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEgenskapActionPerformed
+
+    private void txtEgenskapKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEgenskapKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnLaggTill.doClick();
+      }
+    }//GEN-LAST:event_txtEgenskapKeyPressed
+
+    private void txtBenämningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBenämningActionPerformed
+        
+    }//GEN-LAST:event_txtBenämningActionPerformed
 
     
 

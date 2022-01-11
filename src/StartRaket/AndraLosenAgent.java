@@ -61,6 +61,11 @@ public class AndraLosenAgent extends javax.swing.JFrame {
                 txtNyttLosenMouseClicked(evt);
             }
         });
+        txtNyttLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNyttLosenKeyPressed(evt);
+            }
+        });
 
         btnByt.setText("Byt lösenord");
         btnByt.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +169,12 @@ public class AndraLosenAgent extends javax.swing.JFrame {
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void txtNyttLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNyttLosenKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+        this.btnByt.doClick();
+      }
+    }//GEN-LAST:event_txtNyttLosenKeyPressed
 
 
 
