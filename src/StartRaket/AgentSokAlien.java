@@ -196,7 +196,6 @@ public class AgentSokAlien extends javax.swing.JFrame {
             boolean isSquid = false;
 
             for (String bogID : boglodite) {
-                System.out.print(bogID);
                 if (bogID.equals(svarID)) {
                     isBoglodite = true;
                     break;
@@ -205,7 +204,6 @@ public class AgentSokAlien extends javax.swing.JFrame {
 
             if (isBoglodite == false) {
                 for (String worID : worm) {
-                    System.out.print(worID);
                     if (worID.equals(svarID)) {
                         isWorm = true;
                         break;
@@ -215,7 +213,6 @@ public class AgentSokAlien extends javax.swing.JFrame {
 
             if (isWorm == false && isBoglodite == false) {
                 for (String squID : squid) {
-                    System.out.print(squID);
                     if (squID.equals(svarID)) {
                         isSquid = true;
                         break;
@@ -225,21 +222,22 @@ public class AgentSokAlien extends javax.swing.JFrame {
             }
 
             if (isBoglodite == true) {
-                lblRas.setText("Boglodite");
-                String fraga1 = "Select antal_boogies from boglodite";
+                lblRas.setText("Ras: Boglodite");
+                String fraga1 = "Select antal_boogies from boglodite where Alien_ID = (SELECT Alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "')";
                 String svar1 = idb.fetchSingle(fraga1);
                 lblRasInfo.setText("Antal boogies: " + svar1);
 
             } else if (isWorm == true) {
-                lblRas.setText("Worm");
+                lblRas.setText("Ras: Worm");
                 lblRasInfo.setText("");
             } else if (isSquid == true) {
-                lblRas.setText("Squid");
-                String fraga1 = "Select Antal_armar from squid";
+                lblRas.setText("Ras: Squid");
+                String fraga1 = "Select antal_armar from squid where Alien_ID = (SELECT Alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "')";
                 String svar1 = idb.fetchSingle(fraga1);
                 lblRasInfo.setText("Antal armar: " + svar1);
-            } else {
-                System.out.println("Ingen ras hittad");
+            } else if(isSquid == false && isWorm == false && isBoglodite == false){
+                lblRas.setText("Ingen identifierad ras");
+                lblRasInfo.setText("");
             }
 
         } catch (InfException e) {
