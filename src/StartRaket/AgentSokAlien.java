@@ -16,9 +16,12 @@ import oru.inf.InfException;
  * @author filip
  */
 public class AgentSokAlien extends javax.swing.JFrame {
-        private InfDB idb;
+
+    private InfDB idb;
+
     /**
      * Creates new form AgentSokAlien
+     *
      * @param idb
      */
     public AgentSokAlien(InfDB idb) {
@@ -112,7 +115,7 @@ public class AgentSokAlien extends javax.swing.JFrame {
                     .addComponent(lblTelefon)
                     .addComponent(lblPlats)
                     .addComponent(lblAnsvarigAgent))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +156,7 @@ public class AgentSokAlien extends javax.swing.JFrame {
         try {
             String query = "Select alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "'";
             String id = idb.fetchSingle(query);
-            
+
             String query2 = "Select registreringsdatum from alien where namn = '" + cbAliens.getSelectedItem() + "'";
             String regDatum = idb.fetchSingle(query2);
 
@@ -164,30 +167,85 @@ public class AgentSokAlien extends javax.swing.JFrame {
             String platsID = idb.fetchSingle(query4);
             String getBenamning = "select benamning from plats where plats_id = " + platsID;
             String benamning = idb.fetchSingle(getBenamning);
-            
+
             String query5 = "Select ansvarig_agent from alien where namn = '" + cbAliens.getSelectedItem() + "'";
             String agentID = idb.fetchSingle(query5);
             String getAgentNamn = "Select namn from agent where agent_id = " + agentID;
             String agentNamn = idb.fetchSingle(getAgentNamn);
 
-     
+            String fraga = "Select alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "'";
+            String svarID = idb.fetchSingle(fraga);
+
+            String fragaBoglodite = "Select alien_id from boglodite";
+            ArrayList<String> boglodite = idb.fetchColumn(fragaBoglodite);
+
+            String fragaWorm = "Select alien_id from worm";
+            ArrayList<String> worm = idb.fetchColumn(fragaWorm);
+
+            String fragaSquid = "Select alien_id from squid";
+            ArrayList<String> squid = idb.fetchColumn(fragaSquid);
 
             lblAlienID.setText("AlienID: " + id);
             lblRegDatum.setText("Registrerad: " + regDatum);
             lblTelefon.setText("Tel.Nr: " + telefon);
             lblPlats.setText("Finns i: " + benamning);
             lblAnsvarigAgent.setText("Ansvarig Agent: " + agentNamn);
+
+            boolean isBoglodite = false;
+            boolean isWorm = false;
+            boolean isSquid = false;
+
+            for (String bogID : boglodite) {
+                if (bogID.equals(svarID)) {
+                    isBoglodite = true;
+                    break;
+                }
             }
-            catch(InfException e)
-            {
+
+            if (isBoglodite == false) {
+                for (String worID : worm) {
+                    if (worID.equals(svarID)) {
+                        isWorm = true;
+                        break;
+                    }
+                }
+            }
+
+            if (isWorm == false && isBoglodite == false) {
+                for (String squID : squid) {
+                    if (squID.equals(svarID)) {
+                        isSquid = true;
+                        break;
+
+                    }
+                }
+            }
+
+            if (isBoglodite == true) {
+                lblRas.setText("Ras: Boglodite");
+                String fraga1 = "Select antal_boogies from boglodite where Alien_ID = (SELECT Alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "')";
+                String svar1 = idb.fetchSingle(fraga1);
+                lblRasInfo.setText("Antal boogies: " + svar1);
+
+            } else if (isWorm == true) {
+                lblRas.setText("Ras: Worm");
+                lblRasInfo.setText("");
+            } else if (isSquid == true) {
+                lblRas.setText("Ras: Squid");
+                String fraga1 = "Select antal_armar from squid where Alien_ID = (SELECT Alien_id from alien where namn = '" + cbAliens.getSelectedItem() + "')";
+                String svar1 = idb.fetchSingle(fraga1);
+                lblRasInfo.setText("Antal armar: " + svar1);
+            } else if(isSquid == false && isWorm == false && isBoglodite == false){
+                lblRas.setText("Ingen identifierad ras");
+                lblRasInfo.setText("");
+            }
+
+        } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något blev fel");
-            }
+        }
 
     }//GEN-LAST:event_btnSokActionPerformed
 
-    
-
-         
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSok;
