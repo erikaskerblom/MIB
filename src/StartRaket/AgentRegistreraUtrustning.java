@@ -13,6 +13,7 @@ import oru.inf.InfException;
  * @author erika
  */
 public class AgentRegistreraUtrustning extends javax.swing.JFrame {
+
     InfDB idb;
 
     /**
@@ -152,7 +153,6 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     //Denna metod låter en agent registrera utrustning
     private void txtBenämningMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBenämningMouseClicked
         txtBenämning.setText("");
@@ -172,15 +172,13 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
             idb.insert("INSERT into Utrustning values(" + nyttID + ", '" + txtBenämning.getText() + "')");
 
             if (cbTyp.getSelectedItem().equals("Vapen")) {
-                
-                    
-                    String kaliber = txtEgenskap.getText();
-                    idb.insert("Insert into Vapen values (" + nyttID + "," + kaliber + ")");
-                    JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen");
-                    txtBenämning.setText("");
-                    txtEgenskap.setText("");
-                    Validering.ogiltigtVarde(txtEgenskap);
-                
+
+                Validering.ogiltigtVarde(txtEgenskap);
+                String kaliber = txtEgenskap.getText();
+                idb.insert("Insert into Vapen values (" + nyttID + "," + kaliber + ")");
+                JOptionPane.showMessageDialog(null, "En ny utrustning har registrerats som vapen");
+                txtBenämning.setText("");
+                txtEgenskap.setText("");
 
             } else if (cbTyp.getSelectedItem().equals("Teknik")) {
                 idb.insert("Insert into Teknik values (" + nyttID + ",'" + txtEgenskap.getText() + "')");
@@ -208,16 +206,15 @@ public class AgentRegistreraUtrustning extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEgenskapActionPerformed
 
     private void txtEgenskapKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEgenskapKeyPressed
-         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
-        this.btnLaggTill.doClick();
-      }
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            this.btnLaggTill.doClick();
+        }
     }//GEN-LAST:event_txtEgenskapKeyPressed
 
     private void txtBenämningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBenämningActionPerformed
-        
+
     }//GEN-LAST:event_txtBenämningActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLaggTill;

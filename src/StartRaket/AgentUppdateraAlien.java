@@ -31,7 +31,6 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         lblVisaDatum.setVisible(false);
         lblVisaLosenord.setVisible(false);
         lblVisaPlats.setVisible(false);
-        
         lblVisaAgent.setVisible(false);
         
         
@@ -63,8 +62,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         lblRasInfo = new javax.swing.JLabel();
         lblLosenord = new javax.swing.JLabel();
         txtLosen = new javax.swing.JTextField();
-        txtRas = new javax.swing.JTextField();
-        txtMerOmRas = new javax.swing.JTextField();
+        txtAntal = new javax.swing.JTextField();
         txtNamn = new javax.swing.JTextField();
         lblVisaNamn = new javax.swing.JLabel();
         lblVisaDatum = new javax.swing.JLabel();
@@ -79,7 +77,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         btnAndraPlats = new javax.swing.JButton();
         btnAndraAgent = new javax.swing.JButton();
         btnAndraRas = new javax.swing.JButton();
-        btnAndraMerOmRas = new javax.swing.JButton();
+        cbRas = new javax.swing.JComboBox<>();
 
         jLabel11.setText("jLabel11");
 
@@ -151,19 +149,11 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             }
         });
 
-        txtRas.setColumns(8);
-        txtRas.setText("Ras");
-        txtRas.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtAntal.setColumns(8);
+        txtAntal.setText("Mer om ras");
+        txtAntal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtRasMouseClicked(evt);
-            }
-        });
-
-        txtMerOmRas.setColumns(8);
-        txtMerOmRas.setText("Mer om ras");
-        txtMerOmRas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtMerOmRasMouseClicked(evt);
+                txtAntalMouseClicked(evt);
             }
         });
 
@@ -223,10 +213,25 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         });
 
         btnAndraAgent.setText("Ändra");
+        btnAndraAgent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraAgentActionPerformed(evt);
+            }
+        });
 
         btnAndraRas.setText("Ändra");
+        btnAndraRas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraRasActionPerformed(evt);
+            }
+        });
 
-        btnAndraMerOmRas.setText("Ändra");
+        cbRas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en ras", "Worm", "Squid", "Boglodite", "Ingen av ovan" }));
+        cbRas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbRasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,7 +245,6 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAgent)
-                                    .addComponent(lblRasInfo)
                                     .addComponent(lblLosenord)
                                     .addComponent(lblPlats)
                                     .addComponent(lblRas)
@@ -258,7 +262,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                                 .addGap(73, 73, 73)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblVisaDatum)
-                                    .addComponent(lblVisaNamn))))
+                                    .addComponent(lblVisaNamn)))
+                            .addComponent(lblRasInfo))
                         .addGap(303, 303, 303)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -266,12 +271,12 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMerOmRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblDatum)))
+                                .addComponent(lblDatum))
+                            .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAndraRas)
@@ -280,7 +285,6 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addComponent(btnAndraLosen)
                             .addComponent(btnAndraTel)
                             .addComponent(btnAndraReg)
-                            .addComponent(btnAndraMerOmRas)
                             .addComponent(btnAndraNamn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(318, 318, 318)
@@ -316,11 +320,11 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                                     .addComponent(lblAgent))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblRas))
+                                    .addComponent(lblRas)
+                                    .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtMerOmRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblRasInfo)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -357,9 +361,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnAndraAgent)
                         .addGap(18, 18, 18)
-                        .addComponent(btnAndraRas)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAndraMerOmRas)))
+                        .addComponent(btnAndraRas)))
                 .addGap(27, 27, 27))
         );
 
@@ -386,13 +388,9 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         txtLosen.setText("");
     }//GEN-LAST:event_txtLosenMouseClicked
 
-    private void txtRasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRasMouseClicked
-       txtRas.setText("");
-    }//GEN-LAST:event_txtRasMouseClicked
-
-    private void txtMerOmRasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMerOmRasMouseClicked
-       txtMerOmRas.setText("");
-    }//GEN-LAST:event_txtMerOmRasMouseClicked
+    private void txtAntalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAntalMouseClicked
+       txtAntal.setText("");
+    }//GEN-LAST:event_txtAntalMouseClicked
 
     private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         new AgentHanteraAlien(idb).setVisible(true);
@@ -610,42 +608,80 @@ try {
     }//GEN-LAST:event_btnAndraLosenActionPerformed
 
     private void btnAndraPlatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraPlatsActionPerformed
-        if(Validering.rattIndexComboBox(cbPlats))
-        try
-        {
+        if (Validering.rattIndexComboBox(cbPlats))
+        try {
             String namn = (String) cbAlien.getSelectedItem();
             String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
             String id = idb.fetchSingle(query);
 
             String nyPlats = (String) cbPlats.getSelectedItem();
-            String queryID = "select plats_id from plats where benamning = '" + nyPlats + "'"; 
+            String queryID = "select plats_id from plats where benamning = '" + nyPlats + "'";
             String platsID = idb.fetchSingle(queryID);
             String queryPlats = "update alien set plats = " + platsID + " where alien_id = " + id;
             idb.update(queryPlats);
-            
+
             JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
-            
-            
+
             String query2 = "select benamning from plats where plats_id= " + platsID;
             String senastePlats = idb.fetchSingle(query2);
             lblVisaPlats.setText(senastePlats);
-            
 
-            
-        }
-        
-        catch(InfException e)
-        {
-        JOptionPane.showMessageDialog(null, "Något gick fel");
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
         }
     }//GEN-LAST:event_btnAndraPlatsActionPerformed
+
+    private void btnAndraAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraAgentActionPerformed
+        if (Validering.rattIndexComboBox(cbAgent))
+        try {
+            String namn = (String) cbAlien.getSelectedItem();
+            String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
+            String id = idb.fetchSingle(query);
+
+            String agentNamn = (String) cbAgent.getSelectedItem();
+            String hämtaAgentID = "SELECT Agent_ID from Agent where namn = '" + agentNamn + "'";
+            String agentID = idb.fetchSingle(hämtaAgentID);
+
+            String uppdatera = "Update Alien set Ansvarig_Agent = " + agentID + " where Alien_ID = " + id;
+            idb.update(uppdatera);
+
+            JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+
+            String query7 = "Select ansvarig_agent from alien where Alien_ID = " + id;
+            String agentIDsenaste = idb.fetchSingle(query7);
+            String getAgentNamn = "Select namn from agent where agent_id = " + agentIDsenaste;
+            String agentNamnSenaste = idb.fetchSingle(getAgentNamn);
+
+            lblVisaAgent.setText(agentNamnSenaste);
+
+        } catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+        }
+    }//GEN-LAST:event_btnAndraAgentActionPerformed
+
+    private void btnAndraRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraRasActionPerformed
+            /*if(Validering.rattIndexComboBox(cbRas))
+            try{
+            String 
+
+            JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
+            }
+            catch(InfException e)
+            {
+            JOptionPane.showMessageDialog(null, "Något gick fel");
+            }*/
+    }//GEN-LAST:event_btnAndraRasActionPerformed
+
+    private void cbRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRasActionPerformed
+        
+              
+    }//GEN-LAST:event_cbRasActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraAgent;
     private javax.swing.JButton btnAndraLosen;
-    private javax.swing.JButton btnAndraMerOmRas;
     private javax.swing.JButton btnAndraNamn;
     private javax.swing.JButton btnAndraPlats;
     private javax.swing.JButton btnAndraRas;
@@ -655,6 +691,7 @@ try {
     private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbAlien;
     private javax.swing.JComboBox<String> cbPlats;
+    private javax.swing.JComboBox<String> cbRas;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel lblAgent;
     private javax.swing.JLabel lblDatum;
@@ -671,10 +708,9 @@ try {
     private javax.swing.JLabel lblVisaNamn;
     private javax.swing.JLabel lblVisaPlats;
     private javax.swing.JLabel lblVisaTelefon;
+    private javax.swing.JTextField txtAntal;
     private javax.swing.JTextField txtLosen;
-    private javax.swing.JTextField txtMerOmRas;
     private javax.swing.JTextField txtNamn;
-    private javax.swing.JTextField txtRas;
     private javax.swing.JTextField txtRegDatum;
     private javax.swing.JTextField txtTelefon;
     // End of variables declaration//GEN-END:variables

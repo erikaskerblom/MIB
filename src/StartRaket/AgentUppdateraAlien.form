@@ -38,7 +38,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblAgent" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRasInfo" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLosenord" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblPlats" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblRas" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -63,6 +62,7 @@
                                   <Component id="lblVisaNamn" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="lblRasInfo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="303" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -71,13 +71,13 @@
                           <Component id="cbPlats" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="cbAgent" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNamn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtRas" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtMerOmRas" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAntal" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="txtRegDatum" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblDatum" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="cbRas" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -87,7 +87,6 @@
                           <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAndraTel" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAndraReg" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAndraMerOmRas" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAndraNamn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -132,12 +131,12 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtRas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblRas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbRas" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtMerOmRas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAntal" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblRasInfo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -187,8 +186,6 @@
                       <Component id="btnAndraAgent" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnAndraRas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnAndraMerOmRas" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -320,22 +317,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLosenActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtRas">
-      <Properties>
-        <Property name="columns" type="int" value="8"/>
-        <Property name="text" type="java.lang.String" value="Ras"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtRasMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtMerOmRas">
+    <Component class="javax.swing.JTextField" name="txtAntal">
       <Properties>
         <Property name="columns" type="int" value="8"/>
         <Property name="text" type="java.lang.String" value="Mer om ras"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtMerOmRasMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtAntalMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNamn">
@@ -421,16 +409,36 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraAgentActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAndraRas">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAndraRasActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAndraMerOmRas">
+    <Component class="javax.swing.JComboBox" name="cbRas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="V&#xe4;lj en ras"/>
+            <StringItem index="1" value="Worm"/>
+            <StringItem index="2" value="Squid"/>
+            <StringItem index="3" value="Boglodite"/>
+            <StringItem index="4" value="Ingen av ovan"/>
+          </StringArray>
+        </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbRasActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
