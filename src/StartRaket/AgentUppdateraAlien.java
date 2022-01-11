@@ -216,6 +216,11 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         });
 
         btnAndraPlats.setText("Ändra");
+        btnAndraPlats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraPlatsActionPerformed(evt);
+            }
+        });
 
         btnAndraAgent.setText("Ändra");
 
@@ -498,7 +503,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_cbAlienActionPerformed
 
     private void btnAndraNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraNamnActionPerformed
-        try {
+try {
             String namn = (String) cbAlien.getSelectedItem();
             String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
             String id = idb.fetchSingle(query);
@@ -512,6 +517,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String query1 = "Select namn from Alien where Alien_ID = " + id;
             String uppdateratNamn = idb.fetchSingle(query1);
             lblVisaNamn.setText(uppdateratNamn);
+            Validering.textFaltHarVarde(txtNamn);
+
             
 
             } catch (InfException e) {
@@ -537,7 +544,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String query2 = "select registreringsdatum from alien where alien_id= " + id;
             String senasteDatum = idb.fetchSingle(query2);
             lblVisaDatum.setText(senasteDatum);
-            
+            Validering.textFaltHarVarde(txtRegDatum);
+
             
 }
 
@@ -563,6 +571,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String query2 = "select telefon from alien where alien_id= " + id;
             String senasteDatum = idb.fetchSingle(query2);
             lblVisaDatum.setText(senasteDatum);
+            Validering.textFaltHarVarde(txtTelefon);
+
         
     }
     catch(InfException e)
@@ -588,6 +598,8 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             String query2 = "select Losenord from alien where alien_id= " + id;
             String senasteLosen = idb.fetchSingle(query2);
             lblVisaLosenord.setText(senasteLosen);
+            Validering.textFaltHarVarde(txtLosen);
+
             
         }
         
@@ -596,6 +608,37 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Något gick fel");
         }
     }//GEN-LAST:event_btnAndraLosenActionPerformed
+
+    private void btnAndraPlatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraPlatsActionPerformed
+        if(Validering.rattIndexComboBox(cbPlats))
+        try
+        {
+            String namn = (String) cbAlien.getSelectedItem();
+            String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
+            String id = idb.fetchSingle(query);
+
+            String nyPlats = (String) cbPlats.getSelectedItem();
+            String queryID = "select plats_id from plats where benamning = '" + nyPlats + "'"; 
+            String platsID = idb.fetchSingle(queryID);
+            String queryPlats = "update alien set plats = " + platsID + " where alien_id = " + id;
+            idb.update(queryPlats);
+            
+            JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+            
+            
+            String query2 = "select benamning from plats where plats_id= " + platsID;
+            String senastePlats = idb.fetchSingle(query2);
+            lblVisaPlats.setText(senastePlats);
+            
+
+            
+        }
+        
+        catch(InfException e)
+        {
+        JOptionPane.showMessageDialog(null, "Något gick fel");
+        }
+    }//GEN-LAST:event_btnAndraPlatsActionPerformed
 
 
 
