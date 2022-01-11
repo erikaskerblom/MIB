@@ -150,7 +150,7 @@ private InfDB idb;
   
    else if(cbInfo.getSelectedItem().toString().equals("Lösenord")){
    String Lösenord = txtNyInfo.getText();
-   String uppdateraLösen = "update agent set Lösenord='" + Lösenord + "' where Agent_ID =" + id;
+   String uppdateraLösen = "update agent set Losenord='" + Lösenord + "' where Agent_ID =" + id;
    idb.update(uppdateraLösen);
    }   
    
