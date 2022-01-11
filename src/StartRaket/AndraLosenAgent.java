@@ -54,6 +54,11 @@ public class AndraLosenAgent extends javax.swing.JFrame {
                 txtNuvarandeLosenMouseClicked(evt);
             }
         });
+        txtNuvarandeLosen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNuvarandeLosenKeyPressed(evt);
+            }
+        });
 
         txtNyttLosen.setText("jPasswordField2");
         txtNyttLosen.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -175,6 +180,16 @@ public class AndraLosenAgent extends javax.swing.JFrame {
         this.btnByt.doClick();
       }
     }//GEN-LAST:event_txtNyttLosenKeyPressed
+
+    private void txtNuvarandeLosenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNuvarandeLosenKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+         this.btnByt.doClick();
+
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_TAB){
+         this.txtNyttLosen.requestFocus();
+      }
+     }
+    }//GEN-LAST:event_txtNuvarandeLosenKeyPressed
 
 
 

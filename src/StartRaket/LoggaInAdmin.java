@@ -48,6 +48,11 @@ public class LoggaInAdmin extends javax.swing.JFrame {
                 txtAnvandarNamnMouseClicked(evt);
             }
         });
+        txtAnvandarNamn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnvandarNamnKeyPressed(evt);
+            }
+        });
 
         txtLosen.setText("jPasswordField1");
         txtLosen.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -187,6 +192,15 @@ public class LoggaInAdmin extends javax.swing.JFrame {
         this.btnLoggaIn.doClick();
       }
     }//GEN-LAST:event_txtLosenKeyPressed
+
+    private void txtAnvandarNamnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnvandarNamnKeyPressed
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
+         this.btnLoggaIn.doClick();
+      }
+         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_TAB){
+         this.txtLosen.requestFocus();
+      }
+    }//GEN-LAST:event_txtAnvandarNamnKeyPressed
 
 
 
