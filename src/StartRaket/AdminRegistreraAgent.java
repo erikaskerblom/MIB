@@ -183,11 +183,30 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
             String nyttLosen = new String(txtLosen.getPassword());
             
             String arAdmin = (String) cbAdmin.getSelectedItem();
+            if(arAdmin.toString().equals("Ja")){
+            arAdmin="J";
+            }
+            else if(arAdmin.toString().equals("Nej")){
+            arAdmin="N";
+            }
             
+          
             String område = (String) cbOmråde.getSelectedItem();
+            int Omrades_ID = 1;
+            if (område.equals("Svealand")) {
+                Omrades_ID = 1;
+            }
+
+            if (område.equals("Götaland")) {
+                Omrades_ID = 2;
+            }
+
+            if (område.equals("Norrland")) {
+                Omrades_ID = 4;
+            }
             
             
-            idb.insert("INSERT INTO AGENT values(" + nyttID + ", " + txtNamn.getText() + ", '" + txtNamn.getText() + "', '" + datum + "', '" + arAdmin + "', " + nyttLosen + ", " + område + ")");
+            idb.insert("INSERT INTO AGENT values(" + nyttID + ", '" + txtNamn.getText() + "', '" + txtTelefon.getText() + "', '" + datum + "', '" + arAdmin + "', '" + nyttLosen + "', " + Omrades_ID + ")");
             
             JOptionPane.showMessageDialog(null, "En ny agent har registrerats");
             this.setVisible(false);
@@ -198,6 +217,7 @@ public class AdminRegistreraAgent extends javax.swing.JFrame {
         catch (InfException e) 
         {
             JOptionPane.showMessageDialog(null, "Något gick fel");
+            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_btnRegistreraActionPerformed
 
