@@ -137,7 +137,7 @@ private InfDB idb;
    idb.update(uppdateraLösen);
    }   
    
-        else if (!Validering.ogiltigtVarde(txtNyInfo) && cbInfo.getSelectedItem().toString().equals("Område")) {
+        else if (cbInfo.getSelectedItem().toString().equals("Område")) {
             
             String område = txtNyInfo.getText();
             int Omrades_ID = 1;
@@ -173,7 +173,7 @@ private InfDB idb;
 
     }
     }//GEN-LAST:event_btnAndraActionPerformed
-
+// metod som visar text beroende på vilket alternativ i comboboxen som valts
     private void cbInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbInfoActionPerformed
         lblDatum.setVisible(true);
         if(cbInfo.getSelectedItem().toString().equals("Anställningsdatum"))
