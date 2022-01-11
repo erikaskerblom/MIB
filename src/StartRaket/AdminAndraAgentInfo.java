@@ -40,6 +40,7 @@ private InfDB idb;
         cbInfo = new javax.swing.JComboBox<>();
         txtNyInfo = new javax.swing.JTextField();
         lblDatum = new javax.swing.JLabel();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +67,13 @@ private InfDB idb;
         lblDatum.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         lblDatum.setText("\"\"");
 
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,13 +88,15 @@ private InfDB idb;
                         .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(btnAndra))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(lblDatum)))
-                        .addGap(10, 10, 10)))
-                .addContainerGap(191, Short.MAX_VALUE))
+                                .addComponent(lblDatum)
+                                .addGap(10, 10, 10))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(btnAndra)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                                .addComponent(btnTillbaka)))))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +112,9 @@ private InfDB idb;
                     .addComponent(txtNyInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDatum))
                 .addGap(81, 81, 81)
-                .addComponent(btnAndra)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAndra)
+                    .addComponent(btnTillbaka))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -192,12 +204,18 @@ private InfDB idb;
         {lblDatum.setText("Skriv in det nya telefonnumret");}
     }//GEN-LAST:event_cbInfoActionPerformed
 
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        new AdminHanteraAgent(idb).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndra;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JComboBox<String> cbAgent;
     private javax.swing.JComboBox<String> cbInfo;
     private javax.swing.JLabel jLabel1;
