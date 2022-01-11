@@ -35,6 +35,7 @@ public class MainMenu extends javax.swing.JFrame {
         btnAgent = new javax.swing.JButton();
         btnAlien = new javax.swing.JButton();
         btnAdmin = new javax.swing.JButton();
+        btnStangAv = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +63,18 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        btnStangAv.setText("Stäng av");
+        btnStangAv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnStangAvMouseClicked(evt);
+            }
+        });
+        btnStangAv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStangAvActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,13 +91,15 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(btnAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addComponent(btnAdmin)))
+                        .addComponent(btnAdmin))
+                    .addComponent(btnStangAv))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addComponent(btnStangAv)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblHuvudtext, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,11 +129,20 @@ public class MainMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnAdminActionPerformed
 
+    private void btnStangAvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStangAvActionPerformed
+       
+    }//GEN-LAST:event_btnStangAvActionPerformed
+
+    private void btnStangAvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStangAvMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnStangAvMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnAgent;
     private javax.swing.JButton btnAlien;
+    private javax.swing.JButton btnStangAv;
     private javax.swing.JLabel lblHuvudtext;
     // End of variables declaration//GEN-END:variables
 }
