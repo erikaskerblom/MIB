@@ -194,6 +194,10 @@ public class LoggaInAgent extends javax.swing.JFrame {
     private void txtAnvandarNamnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnvandarNamnKeyPressed
         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
         this.btnLoggaIn.doClick();
+       
+        if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_TAB){
+        this.txtLosen.requestFocus();
+      }
       }
     }//GEN-LAST:event_txtAnvandarNamnKeyPressed
 
