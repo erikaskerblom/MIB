@@ -127,9 +127,10 @@ public class LoggaInAlien extends javax.swing.JFrame {
          try {
             Validering.ogiltigtAnvandarNamn(txtAnvandarNamn);
             Validering.textFaltHarVarde(txtAnvandarNamn);
+            Validering.textFaltHarVarde(txtLosen);
             txtAnvandarNamn.requestFocus();
             String anvandarNamn = txtAnvandarNamn.getText();
-            String query = "SELECT Losenord FROM Alien WHERE Alien_ID = " + anvandarNamn;
+            String query = "SELECT Losenord FROM Alien WHERe Alien_ID = " + anvandarNamn;
             String query2 = "SELECT Namn from Alien Where Alien_ID = " + anvandarNamn;
             String losenText = new String(txtLosen.getPassword());
             String namn = idb.fetchSingle(query2);
