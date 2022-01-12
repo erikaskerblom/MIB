@@ -32,6 +32,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         lblVisaLosenord.setVisible(false);
         lblVisaPlats.setVisible(false);
         lblVisaAgent.setVisible(false);
+        lblInfoOmRas.setVisible(false);
         
         
     }
@@ -78,6 +79,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
         btnAndraAgent = new javax.swing.JButton();
         btnAndraRas = new javax.swing.JButton();
         cbRas = new javax.swing.JComboBox<>();
+        lblInfoOmRas = new javax.swing.JLabel();
 
         jLabel11.setText("jLabel11");
 
@@ -149,8 +151,7 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             }
         });
 
-        txtAntal.setColumns(8);
-        txtAntal.setText("Mer om ras");
+        txtAntal.setColumns(6);
         txtAntal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtAntalMouseClicked(evt);
@@ -226,12 +227,14 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
             }
         });
 
-        cbRas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en ras", "Worm", "Squid", "Boglodite", "Ingen av ovan" }));
+        cbRas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Välj en ras", "Worm", "Squid", "Boglodite", "Inget av ovan" }));
         cbRas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbRasActionPerformed(evt);
             }
         });
+
+        lblInfoOmRas.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,78 +269,99 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addComponent(lblRasInfo))
                         .addGap(303, 303, 303)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblDatum))
-                            .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAndraRas)
-                            .addComponent(btnAndraAgent)
-                            .addComponent(btnAndraPlats)
-                            .addComponent(btnAndraLosen)
-                            .addComponent(btnAndraTel)
-                            .addComponent(btnAndraReg)
-                            .addComponent(btnAndraNamn)))
+                                .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(lblInfoOmRas))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lblDatum))
+                                    .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAndraRas)
+                                    .addComponent(btnAndraAgent)
+                                    .addComponent(btnAndraPlats)
+                                    .addComponent(btnAndraLosen)
+                                    .addComponent(btnAndraTel)
+                                    .addComponent(btnAndraReg)
+                                    .addComponent(btnAndraNamn)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(318, 318, 318)
                         .addComponent(btnTillbaka))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(cbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(cbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblLosenord)
-                            .addComponent(lblVisaLosenord))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(92, 92, 92)
+                                .addComponent(txtTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblVisaAgent)
-                                    .addComponent(lblAgent))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblRas)
-                                    .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblRasInfo)))
-                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txtLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblLosenord)
+                                    .addComponent(lblVisaLosenord))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblPlats)
-                                    .addComponent(lblVisaPlats))))
+                                    .addComponent(lblVisaPlats)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(cbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblVisaAgent)
+                                            .addComponent(lblAgent))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(lblRas)
+                                            .addComponent(cbRas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnAndraNamn)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnAndraReg)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnAndraTel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnAndraLosen)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnAndraPlats)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnAndraAgent)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnAndraRas)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtAntal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRasInfo)
+                                    .addComponent(lblInfoOmRas))))
                         .addGap(31, 31, 31)
                         .addComponent(btnTillbaka))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnAndraNamn))
+                            .addComponent(txtNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblVisaNamn)
                                 .addComponent(lblNamn)))
@@ -346,22 +370,11 @@ public class AgentUppdateraAlien extends javax.swing.JFrame {
                             .addComponent(lblVisaDatum)
                             .addComponent(lblReg)
                             .addComponent(txtRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDatum)
-                            .addComponent(btnAndraReg))
+                            .addComponent(lblDatum))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAndraTel)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblVisaTelefon)
-                                .addComponent(lblTelefon)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAndraLosen)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAndraPlats)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAndraAgent)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAndraRas)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblVisaTelefon)
+                            .addComponent(lblTelefon))))
                 .addGap(27, 27, 27))
         );
 
@@ -660,21 +673,90 @@ try {
     }//GEN-LAST:event_btnAndraAgentActionPerformed
 
     private void btnAndraRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraRasActionPerformed
-            /*if(Validering.rattIndexComboBox(cbRas))
-            try{
-            String 
-
-            JOptionPane.showMessageDialog(null, "En ny alien har registrerats");
+        if (Validering.rattIndexComboBox(cbRas))
+            try {
+            String namn = (String) cbAlien.getSelectedItem();
+            String query = "SELECT Alien_ID from Alien where Namn = '" + namn + "'";
+            String id = idb.fetchSingle(query);
+            
+            if (cbRas.getSelectedItem().equals("Boglodite")) {
+                Validering.textFaltHarVarde(txtAntal);
+                String egenskap = txtAntal.getText();
+                String laggTill = "Insert into Boglodite values(" + id + "," + egenskap + ")";
+                String taBort1 = "Delete from Worm where alien_ID = " + id;
+                String taBort2 = "DELETE from Squid where alien_ID = " + id;
+                
+                idb.insert(laggTill);
+                idb.delete(taBort1);
+                idb.delete(taBort2);
+                
+                JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+                lblRas.setText("Ras: Boglodite");
+                lblRasInfo.setText("Antal boggies:  " + egenskap);
+                
+            } else if (cbRas.getSelectedItem().equals("Squid")) {
+                Validering.textFaltHarVarde(txtAntal);
+                String egenskap = txtAntal.getText();
+                String laggTill = "Insert into Squid values(" + id + "," + egenskap + ")";
+                String taBort1 = "Delete from Worm where alien_ID = " + id;
+                String taBort2 = "DELETE from Boglodite where alien_ID = " + id;
+                
+                idb.insert(laggTill);
+                idb.delete(taBort1);
+                idb.delete(taBort2);
+                
+                JOptionPane.showMessageDialog(null, "Informationen har uppdaterats");
+                lblRas.setText("Ras: Squid");
+                lblRasInfo.setText("Antal armar: " + egenskap);
+            } else if (cbRas.getSelectedItem().equals("Worm")) {
+                
+                String laggTill = "Insert into Worm values(" + id + ")";
+                String taBort1 = "Delete from Squid where alien_ID = " + id;
+                String taBort2 = "DELETE from Boglodite where alien_ID = " + id;
+                
+                idb.insert(laggTill);
+                idb.delete(taBort1);
+                idb.delete(taBort2);
+                
+                JOptionPane.showMessageDialog(null, "Informationen har ändrats");
+                lblRas.setText("Ras: Worm");
+            } else if (cbRas.getSelectedItem().equals("Inget av ovan")) {
+                String taBortWorm = "DELETE FROM Worm where Alien_ID = " + id;
+                String taBortSquid = "DELETE FROM Squid where Alien_ID = " + id;
+                String taBortBog = "DELETE FROM Boglodite where Alien_ID = " + id;
+                
+                idb.delete(taBortWorm);
+                idb.delete(taBortSquid);
+                idb.delete(taBortBog);
+                JOptionPane.showMessageDialog(null, "Informationen har ändrats");                
+                lblRas.setText("Ingen av oss känd ras");
+                lblRasInfo.setVisible(false);
             }
-            catch(InfException e)
-            {
+            txtAntal.setText("");
+            
+        } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel");
-            }*/
+        }
     }//GEN-LAST:event_btnAndraRasActionPerformed
 
     private void cbRasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRasActionPerformed
         
-              
+            if(cbRas.getSelectedItem().equals("Boglodite"))
+            {
+            
+            lblInfoOmRas.setVisible(true);
+            lblInfoOmRas.setText("Ange antal boogies");           
+            } 
+            else if(cbRas.getSelectedItem().equals("Squid"))
+            {
+            
+            lblInfoOmRas.setVisible(true);
+            lblInfoOmRas.setText("Ange antal armar");
+            }
+            else
+            {
+            lblInfoOmRas.setVisible(false);
+            }
     }//GEN-LAST:event_cbRasActionPerformed
 
 
@@ -695,6 +777,7 @@ try {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel lblAgent;
     private javax.swing.JLabel lblDatum;
+    private javax.swing.JLabel lblInfoOmRas;
     private javax.swing.JLabel lblLosenord;
     private javax.swing.JLabel lblNamn;
     private javax.swing.JLabel lblPlats;
